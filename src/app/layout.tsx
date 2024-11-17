@@ -4,8 +4,8 @@ import { inter } from '@/app/ui/fonts';
 
 export const metadata: Metadata = {
   title:{
-    template: '%s | M. Fryer Website',
-    default: 'M. Fryer Website',
+    template: '%s | M. Fryer',
+    default: 'M. Fryer',
   },
   description: 'The Official Michael Fryer website. Created by Michael Fryer.',
 };
