@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { inter } from '@/app/ui/fonts';
+import Footer from '@/app/ui/footer';
 
 export const metadata: Metadata = {
   title:{
@@ -17,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        {children}
+        <Footer/>
+      </body>
     </html>
   );
 }
