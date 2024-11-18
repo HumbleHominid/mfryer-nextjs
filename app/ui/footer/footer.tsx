@@ -1,19 +1,17 @@
-'use-client'
-
 import Image from 'next/image';
 import { Email, GitHub, Resume, YouTube } from '@/app/lib/ref-links';
 import { DocumentIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
-import Link from 'next/link';
+import FooterLink from '@/app/ui/footer/footer-link';
 
 export default function Footer() {
+	const footerLinkClass = "flex items-center gap-2 hover:underline hover:underline-offset-4";
+
 	return (
-		<footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center px-8">
+		<footer className="row-start-3 flex flex-col sm:flex-row gap-6 flex-wrap items-center justify-center px-8">
 			{/* GitHub */}
-		  <Link
-				className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+		  <FooterLink
 				href={GitHub}
-				target="_blank"
-				rel="noopener noreferrer"
+				className={footerLinkClass}
 		  >
 				{/* Dark-mode Icon */}
 				<Image
@@ -34,23 +32,19 @@ export default function Footer() {
 					className="dark:hidden inline"
 				/>
 				<span>GitHub</span>
-				</Link>
+				</FooterLink>
 			{/* Resume */}
-		  <Link
-				className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+		  <FooterLink
 				href={Resume}
-				target="_blank"
-				rel="noopener noreferrer"
+				className={footerLinkClass}
 		  >
 				<DocumentIcon className="w-5"/>
 				<span>Resume</span>
-		  </Link>
+		  </FooterLink>
 			{/* YouTube */}
-			<Link
-				className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+			<FooterLink
 				href={YouTube}
-				target="_blank"
-				rel="noopener noreferrer"
+				className={footerLinkClass}
 			>
 				<Image
 					aria-hidden
@@ -61,11 +55,11 @@ export default function Footer() {
 					className="dark:filter dark:invert dark:contrast-200"
 				/>
 			<span>YouTube</span>
-			</Link>
+			</FooterLink>
 
 			{/* Email */}
 			<div
-				className="flex relative items-center gap-2 hover:cursor-pointer hover:underline hover:underline-offset-4"
+				className={`${footerLinkClass} hover:cursor-pointer`}
 			>
 				<EnvelopeIcon className="w-5"/>
 				<span className="select-all">{Email}</span>
