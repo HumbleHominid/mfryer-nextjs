@@ -1,3 +1,5 @@
+'use-client'
+
 import Image from 'next/image';
 import { Email, GitHub, Resume, YouTube } from '@/app/lib/ref-links';
 import { DocumentIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
@@ -13,13 +15,24 @@ export default function Footer() {
 				target="_blank"
 				rel="noopener noreferrer"
 		  >
-			<Image
-			  aria-hidden
-			  src="github-mark-white.svg"
-			  alt="GitHub icon"
-			  width={16}
-			  height={16}
-			/>
+				{/* Dark-mode Icon */}
+				<Image
+					aria-hidden
+					src="github-mark-white.svg"
+					alt="GitHub icon"
+					width={16}
+					height={16}
+					className="hidden dark:inline"
+				/>
+				{/* Light-mode Icon */}
+				<Image
+					aria-hidden
+					src="github-mark.svg"
+					alt="GitHub icon"
+					width={16}
+					height={16}
+					className="dark:hidden inline"
+				/>
 				<span>GitHub</span>
 				</Link>
 			{/* Resume */}
@@ -39,14 +52,14 @@ export default function Footer() {
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-			<Image
-			  aria-hidden
-			  src="/youtube_social_icon_dark.png"
-			  alt="YouTube icon"
-			  width={20}
-			  height={20}
-				className="filter invert contrast-200"
-			/>
+				<Image
+					aria-hidden
+					src="/youtube_social_icon_dark.png"
+					alt="YouTube icon"
+					width={20}
+					height={20}
+					className="dark:filter dark:invert dark:contrast-200"
+				/>
 			<span>YouTube</span>
 			</Link>
 
