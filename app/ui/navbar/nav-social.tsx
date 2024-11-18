@@ -11,7 +11,7 @@ export default function NavSocial({
 		<Link
 			href={href}
 			target="_blank"
-			className="self-center"
+			className="self-center hover:animate-pulse"
 		>
 			{children}
 		</Link>
