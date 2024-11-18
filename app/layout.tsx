@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: '%s | M. Fryer',
     default: 'M. Fryer',
   },
-  description: 'The Official Michael Fryer website. Created by Michael Fryer.',
+  description: 'The official Michael Fryer website. Created by Michael Fryer.',
 };
 
 export default function RootLayout({
