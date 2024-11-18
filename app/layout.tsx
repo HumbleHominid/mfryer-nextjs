@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import '@/app/globals.css';
 import { inter } from '@/app/ui/fonts';
 import Footer from '@/app/ui/footer';
-import Navbar from '@/app/ui/navbar';
+import Navbar from '@/app/ui/navbar/navbar';
 import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
