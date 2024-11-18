@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 import { YouTube, GitHub, Resume } from "@/app/lib/ref-links";
+import ArcadiaVideo from "@/app/ui/video/ArcadiaVideo";
 
 export const metadata : Metadata = {
 	title: "About",
@@ -40,13 +41,11 @@ export default function Page() {
 			</div>
 			{/* YouTube Paragraph */}
 			<div>
-				<Image
-					src="/arcadia_thumbnail.png"
-					alt="Arcadia Thumbnail"
-					width={1280}
-					height={720}
+				<ArcadiaVideo
+					width={1280/3}
+					height={720/3}
 					className={clsx(
-						"shadow-xl rounded-sm mb-4 sm:mb-2 h-auto w-full sm:w-3/4 md:w-7/12",
+						"shadow-xl rounded-sm mb-4 sm:mb-2",
 						(++incVal) % 2 === 0 ? "float-right sm:ml-4" : "float-left sm:mr-4"
 					)}
 				/>
@@ -67,7 +66,7 @@ export default function Page() {
 					)}
 				/>
 				<p className="sm:text-justify">
-					Not all my hobbies are related to the computer. I also enjoy getting outdoors, especially during the summer. Taking a drive out to Polebridge, MT or floating down the tobacco are both fantastic ways to spend a summer day. Or even spending time closer to home by just throwing bags in the backyard. I also enjoy getting out early in the morning to go do some trolling on Lake Koocanusa. In the fall of 2024 I caught the biggest rainbow trout I&apos;ve ever seen out on Koocanusa. It weighed in around 4.5 pounds! After some time in the smoker it tasted delicious as well! I&apos;m looking forward to getting out a fly fishing in the spring again. Montana winters can be pretty long so you have to make the most out of summer while it's around!
+					Not all my hobbies are related to the computer. I also enjoy getting outdoors, especially during the summer. Taking a drive out to Polebridge, MT or floating down the tobacco are both fantastic ways to spend a summer day. Or even spending time closer to home by just throwing bags in the backyard. I also enjoy getting out early in the morning to go do some trolling on Lake Koocanusa. In the fall of 2024 I caught the biggest rainbow trout I&apos;ve ever seen out on Koocanusa. It weighed in around 4.5 pounds! After some time in the smoker it tasted delicious as well! I&apos;m looking forward to getting out a fly fishing in the spring again. Montana winters can be pretty long so you have to make the most out of summer while it&apos;s around!
 				</p>
 			</div>
 			{/* Cabin Paragraph */}
