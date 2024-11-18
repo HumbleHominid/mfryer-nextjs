@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-6 font-normal text-white">
+    <main className="flex flex-col gap-6 font-normal text-white text-lg">
       <h1 className="text-9xl font-thin">Home</h1>
       <p className="m-0 p-0 text-gray-200 font-extralight text-2xl">Welcome to my website. This website is built using Next.js and Tailwind and deployed via Vercel.</p>
       <div>
