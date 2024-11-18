@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-6 font-normal text-lg">
       <h1 className="text-9xl font-thin">Home</h1>
-      <p className="m-0 p-0 text-slate-700 dark:text-gray-200 font-extralight text-2xl">Welcome to my website. This website is built using Next.js and Tailwind and deployed via Vercel.</p>
+      <p className="m-0 p-0 leading-8 tracking-wide text-slate-700 dark:text-gray-200 font-extralight text-2xl">Welcome to my website. This website is built using Next.js and Tailwind and deployed via Vercel.</p>
       <div>
         <Image
           src="/irl.jpg"
