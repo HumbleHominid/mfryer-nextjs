@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <div className="grid grid-rows-layout min-h-lvh justify-items-stretch">
           <Navbar/>
-          <div className="p-4 w-11/12 sm:w-3/5 justify-self-center">
+          <div className="p-4 w-11/12 sm:w-4/5 md:w-3/5 justify-self-center">
             {children}
           </div>
           <div className="row-start-4 my-4">

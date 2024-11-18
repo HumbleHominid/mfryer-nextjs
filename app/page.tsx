@@ -13,7 +13,7 @@ export default function Home() {
           alt="Me IRL"
           width={612}
           height={816}
-          className="rounded-sm shadow-xl float-left h-auto w-40 lg:w-80 mr-4"
+          className="rounded-sm shadow-xl float-left h-auto w-40 lg:w-60 mr-4"
         />
         <p className="mb-4 p-0">
           I am Software Developer who graduated with the class of 2019 from Montana Tech. I graduated with a Bachelor's of Science in both Software Engineering and Computer Science. As part of my graduation, I was presented with an award for "Outstanding Achievement in the Department of Computer Science" from my department head.
