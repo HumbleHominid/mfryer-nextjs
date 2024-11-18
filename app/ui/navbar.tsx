@@ -7,7 +7,7 @@ import { DocumentIcon } from '@heroicons/react/24/solid';
 
 export default function Navbar() {
 	return (
-		<div className="h-15 grid grid-cols-2 w-full bg-white text-gray-800 text-sm font-medium px-4 py-3 sm:py-1">
+		<div className="h-15 flex justify-between w-full bg-white text-gray-800 text-sm font-medium px-4 py-3 sm:py-1 sticky top-0">
 			<div className="flex justify-start gap-4">
 				<Link
 					className="hidden sm:flex items-end justify-start rounded-md self-center"
