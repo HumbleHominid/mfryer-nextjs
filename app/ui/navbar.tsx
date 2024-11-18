@@ -1,7 +1,7 @@
 import Link from "next/link";
 import MFLogo from "@/app/ui/MFLogo";
 import NavLinks from "@/app/ui/nav-links";
-import { GitHub, Resume } from "@/app/lib/ref-links";
+import { GitHub, Resume, YouTube } from "@/app/lib/ref-links";
 import Image from "next/image";
 import { DocumentIcon } from '@heroicons/react/24/solid';
 
@@ -27,7 +27,7 @@ export default function Navbar() {
 				>
 					<Image
 						aria-hidden
-						src="github-mark.svg"
+						src="/github-mark.svg"
 						alt="GitHub icon"
 						width={24}
 						height={24}
@@ -38,6 +38,19 @@ export default function Navbar() {
 					className="self-center"
 				>
 					<DocumentIcon className="w-5"/>
+				</Link>
+				<Link
+					href={YouTube}
+					className="self-center"
+					target="_blank"
+				>
+					<Image
+						aria-hidden
+						src="/youtube_social_icon_dark.png"
+						alt="YouTube icon"
+						width={24}
+						height={24}
+					/>
 				</Link>
 			</div>
 		</div>
