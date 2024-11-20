@@ -18,13 +18,10 @@ export default function NavLink({
 	isNavExpanded: boolean;
 	routeClickCallback: Function;
 }) {
-	// This doesn't work if you do it in clsx for some reason. No clue why
-	const delay = `delay-${200*(index+1)}`;
-
 	return (
 		<div
 			className={clsx(
-				`flex items-baseline gap-4 transition-all ease-in-out ${delay}`,
+				`flex items-baseline gap-4 transition-all ease-in-out delay-${200*(index+1)}`,
 				{
 					"translate-x-0 opacity-100 duration-1000" : isNavExpanded,
 					"translate-x-full opacity-0 duration-1000" : !isNavExpanded,
