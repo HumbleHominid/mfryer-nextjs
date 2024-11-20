@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} text-slate-900 dark:text-white antialiased`}>
-        <div className="grid grid-rows-layout min-h-lvh justify-items-stretch overflow-x-hidden">
+        <div className="grid grid-rows-layout min-h-lvh justify-items-stretch">
           <Navbar/>
           <div className="p-4 w-11/12 sm:w-4/5 lg:w-3/5 justify-self-center">
             {children}

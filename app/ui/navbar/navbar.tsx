@@ -45,7 +45,7 @@ export default function Navbar() {
 				)}
 			/>
 			{/* Sub-Menu Components */}
-			<div className="flex flex-col gap-16 m-20">
+			<div className="flex flex-col gap-16 m-20 mr-0 overflow-hidden">
 				{/* Socials */}
 				{/* Page Links */}
 				{
