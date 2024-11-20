@@ -18,7 +18,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const navHeight = "h-32";
+  const navHeight = "h-20";
 
   return (
     <html lang="en">
