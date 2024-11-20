@@ -8,13 +8,13 @@ export default {
   ],
   theme: {
     letterSpacing: {
-      tighter: '-0.05em',
-      tight: '-0.025em',
-      normal: '0.0em',
-      wide: '0.025em',
-      wider: '0.05em',
-      widest: '0.1em',
-      megaWide: '0.25em',
+      tighter: "-0.05em",
+      tight: "-0.025em",
+      normal: "0.0em",
+      wide: "0.025em",
+      wider: "0.05em",
+      widest: "0.1em",
+      megaWide: "0.25em",
     },
     extend: {
       colors: {
@@ -22,11 +22,16 @@ export default {
         foreground: "var(--foreground)",
       },
       gridTemplateRows: {
-        layout: 'auto auto 1fr auto'
+        layout: "auto auto 1fr auto"
       },
       transitionDuration: {
-        2000: '2000ms'
-      }
+        "2000": "2000ms",
+      },
+      transitionDelay: {
+        "400": "400ms",
+        "600": "600ms",
+        "800": "800ms",
+      },
     },
   },
   plugins: [],
