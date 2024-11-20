@@ -1,19 +1,22 @@
 import Link from "next/link";
 
 export default function NavSocial({
-	children,
 	href,
+	children,
 } : {
-		children: React.ReactNode;
-		href: string;
+	href: string;
+	children: React.ReactNode;
 }) {
 	return (
 		<Link
 			href={href}
 			target="_blank"
-			className="self-center hover:animate-pulse"
+			rel="noopener noreferrer"
+			className="transition-all hover:-translate-x-1 hover:-translate-y-1 duration-300 ease-in-out hover:filter hover:drop-shadow-md"
 		>
-			{children}
+			<div className="w-10 h-auto" >
+				{children}
+			</div>
 		</Link>
 	);
 }
