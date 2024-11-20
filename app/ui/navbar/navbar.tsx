@@ -43,22 +43,7 @@ export default function Navbar() {
 			{/* Sub-Menu Components */}
 			<div className="flex flex-col gap-16 m-20 mr-0 overflow-hidden">
 				{/* Socials */}
-				{/* Two wrapper divs, one to animate position, one to animate opacity */}
-				<div
-					className={clsx(
-						"overflow-y-hidden transition-all delay-300 duration-500 ease-in-out",
-						isNavExpanded ? "translate-y-0" : "-translate-y-20",
-					)}
-				>
-					<div
-						className={clsx(
-							"transition-all duration-300 ease-in-out",
-							isNavExpanded ? "delay-500 opacity-100" : "delay-150 opacity-0",
-						)}
-					>
-						<NavSocials />
-					</div>
-				</div>
+				<NavSocials isNavExpanded={isNavExpanded} />
 				{/* Page Links */}
 				{routeLinks.map((link, index) => {
 					return (
