@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Email, GitHub, Resume, YouTube } from '@/app/lib/ref-links';
+import { Email, GitHub, Resume } from '@/app/lib/ref-links';
 import { DocumentIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import FooterLink from '@/app/ui/footer/footer-link';
 
@@ -25,7 +25,7 @@ export default function Footer() {
 				{/* Light-mode Icon */}
 				<Image
 					aria-hidden
-					src="github-mark.svg"
+					src="/icons/github-mark-dark.svg"
 					alt="GitHub icon"
 					width={16}
 					height={16}
