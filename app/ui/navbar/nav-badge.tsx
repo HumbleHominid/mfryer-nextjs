@@ -14,7 +14,12 @@ export default function NavBadge() {
 				alt="Michel logo"
 				width={48}
 				height={48}
-				className="rounded-full drop-shadow-lg"
+				className={clsx(
+					"rounded-full drop-shadow-lg",
+					{
+						"hover:cursor-pointer" : !clicked
+					}
+				)}
 				onClick={() => setClicked(() => true)}
 			/>
 			<div
