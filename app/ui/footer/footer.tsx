@@ -16,7 +16,7 @@ export default function Footer() {
 				{/* Dark-mode Icon */}
 				<Image
 					aria-hidden
-					src="github-mark-white.svg"
+					src="/icons/github-mark-white.svg"
 					alt="GitHub icon"
 					width={16}
 					height={16}
@@ -41,22 +41,6 @@ export default function Footer() {
 				<DocumentIcon className="w-5"/>
 				<span>Resume</span>
 		  </FooterLink>
-			{/* YouTube */}
-			<FooterLink
-				href={YouTube}
-				className={footerLinkClass}
-			>
-				<Image
-					aria-hidden
-					src="/youtube_social_icon_dark.png"
-					alt="YouTube icon"
-					width={20}
-					height={20}
-					className="dark:filter dark:invert dark:contrast-200"
-				/>
-			<span>YouTube</span>
-			</FooterLink>
-
 			{/* Email */}
 			<div
 				className={`${footerLinkClass} hover:cursor-pointer`}
