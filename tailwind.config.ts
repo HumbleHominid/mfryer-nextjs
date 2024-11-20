@@ -14,6 +14,9 @@ export default {
       },
       gridTemplateRows: {
         "layout": 'auto auto 1fr auto'
+      },
+      transitionDuration: {
+        '2000': '2000ms'
       }
     },
   },

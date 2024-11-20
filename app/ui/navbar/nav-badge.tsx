@@ -5,7 +5,8 @@ import clsx from "clsx";
 import { useState } from "react";
 
 export default function NavBadge() {
-	const [clicked, setClicked] = useState(false);
+	const [ hasHovered, setHasHovered ] = useState(false);
+	const [ isHovered, setIsHovered ] = useState(false);
 
 	return (
 		<div className="relative">
@@ -17,16 +18,19 @@ export default function NavBadge() {
 				className={clsx(
 					"rounded-full drop-shadow-lg",
 					{
-						"hover:cursor-pointer" : !clicked
+						"hover:cursor-pointer" : !hasHovered
 					}
 				)}
-				onClick={() => setClicked(() => true)}
+				onMouseEnter={() => { setHasHovered(() => true); setIsHovered(() => true); }}
+				onMouseLeave={() => setIsHovered(() => false)}
 			/>
 			<div
 				className={clsx(
-					"w-12 h-12 bg-blue-400 rounded-full absolute top-0 left-0 -z-10",
+					"w-12 h-12 bg-blue-300 rounded-full absolute top-0 left-0 -z-10 transform ease-in-out duration-2000",
 					{
-						"transform translate-x-3 translate-y-2 ease-in duration-1000" : clicked
+						"translate-x-2" : isHovered || hasHovered,
+						"translate-y-1" : hasHovered && !isHovered,
+						"translate-y-2" : isHovered,
 					}
 				)}
 			/>
