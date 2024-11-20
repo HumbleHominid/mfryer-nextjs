@@ -19,19 +19,19 @@ export default function Navbar() {
 					{/* Menu Toggle */}
 					<div
 						className={clsx(
-							" flex flex-col w-24 h-4 gap-8 hover:cursor-pointer text-purple-900 font-sans font-semibold leading-4 tracking-wider overflow-hidden"
+							"flex flex-col w-16 h-4 gap-8 hover:cursor-pointer text-purple-900 font-sans font-semibold leading-4 tracking-wider overflow-hidden"
 						)}
 						onClick={() => toggleNaveExpanded(!isNavExpanded)}
 					>
-						<span
+						<div
 							className={clsx(
-								"top-0 transition duration-150",
+								"top-0 transition-all duration-150 text-center hover:tracking-megaWide",
 								isNavExpanded ? "-translate-y-4" : "translate-y-0"
 							)}
 						>
 							MENU<br/>
 							BACK
-						</span>
+						</div>
 					</div>
 				</div>
 				<div>
