@@ -20,11 +20,12 @@ export default function NavLink({
 }) {
 	return (
 		<div
+			style={{transitionDelay: `${200*(index+1)}ms`}}
 			className={clsx(
-				`flex items-baseline gap-4 transition-all ease-in-out delay-${200*(index+1)}`,
+				"flex items-baseline gap-4 transition-all ease-in-out duration-1000",
 				{
-					"translate-x-0 opacity-100 duration-1000" : isNavExpanded,
-					"translate-x-full opacity-0 duration-1000" : !isNavExpanded,
+					"translate-x-0 opacity-100" : isNavExpanded,
+					"translate-x-full opacity-0" : !isNavExpanded,
 				},
 			)}
 		>

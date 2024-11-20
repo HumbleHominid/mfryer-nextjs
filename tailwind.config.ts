@@ -27,11 +27,6 @@ export default {
       transitionDuration: {
         "2000": "2000ms",
       },
-      transitionDelay: {
-        "400": "400ms",
-        "600": "600ms",
-        "800": "800ms",
-      },
     },
   },
   plugins: [],
