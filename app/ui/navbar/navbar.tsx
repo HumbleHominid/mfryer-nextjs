@@ -17,7 +17,7 @@ export default function Navbar() {
 	];
 
 	return (
-		<div className="sticky top-0 h-20">
+		<>
 			{/* Top-Level Nav */}
 			<div className="flex justify-between items-center p-4">
 				<div className="flex gap-8 items-center">
@@ -36,7 +36,7 @@ export default function Navbar() {
 			{/* Sub-Menu Mask */}
 			<div
 				className={clsx(
-					"absolute w-full top-0 bg-blue-200 -z-20 transition-all duration-1000 ease-in-out",
+					"absolute w-full top-0 bg-blue-200 -z-10 transition-all duration-1000 ease-in-out",
 						isNavExpanded ? "h-lvh opacity-100" : "h-0 opacity-0 delay-700",
 				)}
 			/>
@@ -57,6 +57,6 @@ export default function Navbar() {
 					)
 				})}
 			</div>
-		</div>
+		</>
 	)
 }

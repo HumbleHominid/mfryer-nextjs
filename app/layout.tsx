@@ -18,15 +18,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const navHeight = "h-32";
+
   return (
     <html lang="en">
       <body className={`${inter.className} text-slate-900 dark:text-white antialiased`}>
+        {/* Vercel Analytics */}
+        <Analytics />
         <div className="grid grid-rows-layout min-h-lvh justify-items-stretch">
-          <Navbar/>
-          <div className="p-4 w-11/12 sm:w-4/5 lg:w-3/5 justify-self-center">
-            {children}
-            <Analytics/>
+          {/* Navbar */}
+          <div className="w-full sticky top-0">
+            {/* Fader thing for mobile */}
+            <div className="absolute lg:hidden flex flex-col top-0 right-0 left-0 -z-10">
+              {/* Full nav-height color */}
+              <div className={`w-100 ${navHeight} bg-background`} />
+              {/* Gradient for nice fadeout */}
+              <div className="h-4 bg-gradient-to-b from-background" />
+            </div>
+            {/* Actual Navbar */}
+            <div className={navHeight}>
+              <Navbar/>
+            </div>
           </div>
+          {/* Content */}
+          <div
+            className="overflow-hidden lg:overflow-visible p-4 w-11/12 lg:w-2/3 justify-self-center -z-20"
+          >
+            {children}
+          </div>
+          {/* Footer */}
           <div className="row-start-4 my-4">
             <Footer/>
           </div>
