@@ -12,8 +12,8 @@ export default function Navbar() {
 	const [ isNavExpanded, setNavExpanded ] = useState(false);
 
 	const routeLinks = [
-		{ href: "/", routeName: "Home", text: "Back to home."},
-		{ href: "/about", routeName: "About", text: "More about me." }
+		{ href: "/", routeName: "Home", text: "Back to home"},
+		{ href: "/about", routeName: "About", text: "More about me" }
 	];
 
 	return (
