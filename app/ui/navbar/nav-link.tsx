@@ -16,7 +16,7 @@ export default function NavLink({
 	data: NavLinkData;
 	index: number;
 	isNavExpanded: boolean;
-	routeClickCallback: Function;
+	routeClickCallback: () => void;
 }) {
 	return (
 		<div

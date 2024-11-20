@@ -49,7 +49,7 @@ export default function Navbar() {
 				{/* Socials */}
 				{/* Page Links */}
 				{
-						routeLinks.map((link, index, arr) => {
+						routeLinks.map((link, index) => {
 							return (
 								<NavLink
 									key={link.href}

@@ -5,7 +5,7 @@ export default function NavExpansionWidget({
 	clickCallback,
 } : {
 	isNavExpanded: boolean;
-	clickCallback: Function;
+	clickCallback: () => void;
 }) {
 	return (
 		<div
