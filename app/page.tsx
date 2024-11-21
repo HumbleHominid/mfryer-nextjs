@@ -10,12 +10,12 @@ export default function Home() {
     <main className="flex flex-col gap-6 font-normal text-lg">
       <div className="relative min-h-lvh grid grid-rows-layout xl:mt-32">
         {/* Title Section */}
-        <h1 className="text-8xl sm:text-8xl lg:text-9xl font-thin mb-8 w-3/4">
+        <h1 className="text-7xl sm:text-8xl lg:text-9xl font-thin mb-8 w-3/4">
           <span>Hi, I&apos;m </span>
           <span className="font-semibold text-green-950">Michael</span>
           <span className="font-light text-blue-900">.</span>
         </h1>
-        <p className="pl-8 leading-8 tracking-wide text-slate-700 font-light text-2xl lg:text-4xl w-1/2 sm:w-3/4">
+        <p className="pl-8 leading-8 tracking-wide text-slate-700 font-light text-xl sm:text-2xl lg:text-4xl w-3/4 sm:w-1/2 md:3/4">
           I am a Software Engineer from Montana, USA.
         </p>
         {/* Scroll Indicator */}
