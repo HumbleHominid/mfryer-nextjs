@@ -21,6 +21,8 @@ export default function HomeItem({
 			if (divPos < 0.80 * window.innerHeight) doShow(true);
 		}
 
+		onScroll();
+
 		window.addEventListener("scroll", () => onScroll());
 		window.removeEventListener("scroll", () => onScroll());
 	});
