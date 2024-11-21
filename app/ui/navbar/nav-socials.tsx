@@ -1,5 +1,6 @@
-import { GitHub, Resume, Bluesky } from "@/app/lib/ref-links";
+import { GitHub, Resume, Bluesky, Email } from "@/app/lib/ref-links";
 import { DocumentIcon } from "@heroicons/react/24/solid";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import NavSocial from "@/app/ui/navbar/nav-social";
 import NavSocialWrapper from "@/app/ui/navbar/nav-social-wrapper";
@@ -32,7 +33,7 @@ export default function NavSocials({
 				visible={isNavExpanded}
 				delayFactor={++count}
 			>
-				<NavSocial href={GitHub} >
+				<NavSocial href={GitHub}>
 					<Image
 						src="/icons/github-mark-dark.svg"
 						alt="GitHub Icon"
@@ -47,7 +48,7 @@ export default function NavSocials({
 				visible={isNavExpanded}
 				delayFactor={++count}
 			>
-				<NavSocial href={Bluesky} >
+				<NavSocial href={Bluesky}>
 					<Image
 						src="/icons/bluesky_icon.svg"
 						alt="Bluesky Icon"
@@ -62,10 +63,24 @@ export default function NavSocials({
 				visible={isNavExpanded}
 				delayFactor={++count}
 			>
-				<NavSocial href={Resume} >
+				<NavSocial href={Resume}>
 					<DocumentIcon
 						title="View Resume"
 						fill="black"
+						width={96}
+						height={96}
+						className="w-10"
+					/>
+				</NavSocial>
+			</NavSocialWrapper>
+			{/* Email */}
+			<NavSocialWrapper
+				visible={isNavExpanded}
+				delayFactor={++count}
+			>
+				<NavSocial href={Email}>
+					<EnvelopeIcon
+						title="Hire me!"
 						width={96}
 						height={96}
 						className="w-10"
