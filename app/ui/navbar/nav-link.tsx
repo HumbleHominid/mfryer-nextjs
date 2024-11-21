@@ -47,7 +47,7 @@ export default function NavLink({
 			<span className="font-extralight text-3xl text-purple-600 self-end">
 				{data.text}
 				{/* Neato big period */}
-				<span className="font-extrabold text-4xl text-black">.</span>
+				<span className="font-light text-4xl text-black">.</span>
 			</span>
 		</div>
 	);
