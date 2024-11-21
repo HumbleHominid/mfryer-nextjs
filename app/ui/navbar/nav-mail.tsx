@@ -19,7 +19,11 @@ export default function NavMail() {
 				onMouseEnter={() => { setHasHovered(() => true); setIsHovered(() => true); }}
 				onMouseLeave={() => setIsHovered(() => false)}
 			>
-				<EnvelopeIcon width={32} height={32} />
+				<EnvelopeIcon
+					title="Hire me!"
+					width={32}
+					height={32}
+				/>
 			</Link>
 			<div
 				className={clsx(
