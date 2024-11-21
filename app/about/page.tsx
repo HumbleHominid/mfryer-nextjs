@@ -16,7 +16,7 @@ export default function Page() {
 		<main className="flex flex-col gap-6 font-normal text-lg">
 			<h1 className="text-9xl font-thin">About Me</h1>
 			{/* Lead Paragraph */}
-			<p className=" leading-8 tracking-wide text-slate-700 dark:text-gray-200 font-extralight text-2xl">
+			<p className=" leading-8 tracking-wide text-slate-700 font-extralight text-2xl">
 				Hello there! I am Michael Fryer, a Software Engineer that graduated from <Link target="_blank" rel="noopener noreferrer" href="https://www.mtech.edu">Montana Technological University</Link> in 2019 with a Bachelor of Science in Software Engineering and a Bachelor of Science in Computer Science with emphasis in Game Design. During the graduation ceremony I was awarded an award for <span className="italic">Outstanding Achievement in the Department of Computer Science.</span>
 			</p>
 			{/* Background Paragraph */}

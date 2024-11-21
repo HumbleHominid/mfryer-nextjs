@@ -12,16 +12,7 @@ export default function Footer() {
 		  <FooterLink
 				href={GitHub}
 				className={footerLinkClass}
-		  >
-				{/* Dark-mode Icon */}
-				<Image
-					aria-hidden
-					src="/icons/github-mark-white.svg"
-					alt="GitHub icon"
-					width={16}
-					height={16}
-					className="hidden dark:inline"
-				/>
+			>
 				{/* Light-mode Icon */}
 				<Image
 					aria-hidden
@@ -29,10 +20,10 @@ export default function Footer() {
 					alt="GitHub icon"
 					width={16}
 					height={16}
-					className="dark:hidden inline"
+					className="inline"
 				/>
 				<span>GitHub</span>
-				</FooterLink>
+			</FooterLink>
 			{/* Resume */}
 		  <FooterLink
 				href={Resume}

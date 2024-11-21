@@ -22,7 +22,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${inter.className} text-slate-900 dark:text-white antialiased`}>
+      <body className={`${inter.className} text-slate-900 antialiased`}>
         {/* Vercel Analytics */}
         <Analytics />
         <div className="grid grid-rows-layout min-h-lvh justify-items-stretch">

@@ -13,7 +13,7 @@ export default function Home() {
           <span className="font-normal text-green-950">Michael</span>
           <span className="font-light text-blue-900">.</span>
         </h1>
-        <p className="pl-8 leading-8 tracking-wide text-slate-700 dark:text-gray-200 font-light text-2xl lg:text-4xl w-1/2 sm:w-3/4">
+        <p className="pl-8 leading-8 tracking-wide text-slate-700 font-light text-2xl lg:text-4xl w-1/2 sm:w-3/4">
           I am a Software Engineer from Montana, USA.
         </p>
         {/* Scroll Indicator */}
