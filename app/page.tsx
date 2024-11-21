@@ -38,6 +38,7 @@ export default function Home() {
               alt="Me IRL"
               width={612}
               height={816}
+              loading="eager"
               className="rounded-lg shadow-xl float-left w-1/2 sm:w-1/4 md:w-1/4 h-auto"
             />
             <p className="p-4 text-3xl sm:text-6xl md:text-7xl xl:text-8xl">
@@ -57,6 +58,7 @@ export default function Home() {
               alt="Diplomas"
               width={612}
               height={816}
+              loading="eager"
               className="rounded-lg shadow-xl float-right w-full sm:w-3/4 lg:w-1/2 h-auto ml-4 mb-2"
             />
             <p className="p-4 text-3xl sm:text-4txl md:text-5xl">
@@ -80,6 +82,7 @@ export default function Home() {
               alt="Feesh"
               width={612}
               height={816}
+              loading="eager"
               className="rounded-lg shadow-xl float-right w-56 sm:w-50 md:w-5/12 h-auto"
             />
             <p className="p-4 text-3xl sm:text-3xl md:text-5xl xl:text-6xl">
