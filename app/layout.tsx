@@ -36,16 +36,16 @@ export default function RootLayout({
               <div className="h-4 bg-gradient-to-b from-background" />
             </div>
             {/* Actual Navbar */}
-            <div className={`relative ${navHeight}`}>
+            <div className={`${navHeight}`}>
               <Navbar/>
             </div>
           </div>
           {/* Content */}
-          <div className="relative z-10 overflow-hidden lg:overflow-visible p-4 w-11/12 lg:w-2/3 justify-self-center" >
+          <div className="z-10 overflow-hidden lg:overflow-visible p-4 w-11/12 lg:w-2/3 justify-self-center" >
             {children}
           </div>
           {/* Footer */}
-          <div className="relative z-10 row-start-4 my-4">
+          <div className="z-10 row-start-4 my-4">
             <Footer/>
           </div>
         </div>
