@@ -15,7 +15,7 @@ export default function NavSocials({
 	return (
 		<div
 			className={clsx(
-				"flex items-center gap-12",
+				"flex items-center gap-4 md:gap-12",
 				{
 					"collapse" : !isNavExpanded,
 				},
@@ -26,7 +26,7 @@ export default function NavSocials({
 				visible={isNavExpanded}
 				delayFactor={++count}
 			>
-				<div className="h-1 w-32 bg-purple-800 rounded-sm" />
+				<div className="h-1 w-16 sm:w-32 bg-purple-800 rounded-sm" />
 			</NavSocialWrapper>
 			{/* GitHub */}
 			<NavSocialWrapper
@@ -40,6 +40,7 @@ export default function NavSocials({
 						title="GitHub"
 						width={98}
 						height={96}
+						className="w-8 m:w-10 h-auto"
 					/>
 				</NavSocial>
 			</NavSocialWrapper>
@@ -55,6 +56,7 @@ export default function NavSocials({
 						title="Bluesky"
 						width={600}
 						height={530}
+						className="w-8 m:w-10 h-auto"
 					/>
 				</NavSocial>
 			</NavSocialWrapper>
@@ -69,7 +71,7 @@ export default function NavSocials({
 						fill="black"
 						width={96}
 						height={96}
-						className="w-10"
+						className="w-8 md:w-10"
 					/>
 				</NavSocial>
 			</NavSocialWrapper>
@@ -83,7 +85,7 @@ export default function NavSocials({
 						title="Hire me!"
 						width={96}
 						height={96}
-						className="w-10"
+						className="w-8 md:w-10"
 					/>
 				</NavSocial>
 			</NavSocialWrapper>

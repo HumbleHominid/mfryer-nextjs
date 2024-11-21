@@ -37,14 +37,14 @@ export default function NavLink({
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}
 			>
-				<span className="font-extrabold text-5xl transition-colors text-purple-950 hover:text-white filter hover:drop-shadow-md">
+				<span className="font-extrabold text-3xl md:text-5xl transition-colors text-purple-950 hover:text-white filter hover:drop-shadow-md">
 					{data.routeName}
 				</span>
 			</Link>
 			{/* Dash */}
-			<div className="w-8 h-0.5 bg-slate-500 self-center translate translate-y-1" />
+			<div className="w-4 md:w-8 h-0.5 bg-slate-500 self-center translate translate-y-1" />
 			{/* Extra Text */}
-			<span className="font-extralight text-3xl text-purple-600 self-end">
+			<span className="font-extralight text-xl md:text-3xl text-purple-600 md:self-end">
 				{data.text}
 				{/* Neato big period */}
 				<span className="font-light text-4xl text-black">.</span>
