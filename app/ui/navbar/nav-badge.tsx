@@ -8,6 +8,16 @@ export default function NavBadge() {
 	const [ hasHovered, setHasHovered ] = useState(false);
 	const [ isHovered, setIsHovered ] = useState(false);
 
+	let resetHoveredTimeout: NodeJS.Timeout;
+
+	function handleHover() {
+		setHasHovered(true);
+		setIsHovered(true);
+
+		if (resetHoveredTimeout) clearTimeout(resetHoveredTimeout);
+		resetHoveredTimeout = setTimeout(() => setHasHovered(false), 69 * 1000);
+	}
+
 	return (
 		<div className="relative">
 			<Image
@@ -21,7 +31,7 @@ export default function NavBadge() {
 						"hover:cursor-pointer" : !hasHovered
 					}
 				)}
-				onMouseEnter={() => { setHasHovered(() => true); setIsHovered(() => true); }}
+				onMouseEnter={handleHover}
 				onMouseLeave={() => setIsHovered(() => false)}
 			/>
 			<div
