@@ -36,9 +36,9 @@ export default function Home() {
               alt="Me IRL"
               width={612}
               height={816}
-              className="rounded-lg shadow-xl float-left w-1/4 sm:w-1/4 md:w-1/4 h-auto"
+              className="rounded-lg shadow-xl float-left w-1/2 sm:w-1/4 md:w-1/4 h-auto"
             />
-            <p className="p-4 text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
+            <p className="p-4 text-3xl sm:text-6xl md:text-7xl xl:text-8xl">
               <span>And this is my cat, </span>
               <span className="font-black text-purple-950">Lily</span>
               <span className="font-bold text-indigo-900">.</span>
@@ -55,7 +55,7 @@ export default function Home() {
               height={816}
               className="rounded-lg shadow-xl float-right w-full sm:w-3/4 lg:w-1/2 h-auto ml-4 mb-2"
             />
-            <p className="p-4 text-4xl sm:text-4txl md:text-5xl">
+            <p className="p-4 text-3xl sm:text-4txl md:text-5xl">
               <span>I graduated from </span>
               <span className="font-bold text-purple-950">Montana Tech</span>
               <span> with a Bachelor&apos;s of Science in </span>
@@ -68,7 +68,7 @@ export default function Home() {
         </HomeItem>
         {/* Fish */}
         <HomeItem>
-          <div className="flex gap-4 md:gap-12 items-center">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-12 items-center">
             <Image
               src="/fish.jpeg"
               alt="Feesh"
@@ -92,7 +92,7 @@ export default function Home() {
                 height={720/3}
               />
             </div>
-            <p className="p-4 text-4xl sm:text-4txl md:text-5xl">
+            <p className="p-4 text-3xl sm:text-4txl md:text-5xl">
               <span>In 2022 I started making </span>
               <span className="font-bold text-green-950">Minecraft</span>
               <span> content on </span>
