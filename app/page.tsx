@@ -1,13 +1,30 @@
 import Link from "next/link";
 import { GitHub, YouTube } from "./lib/ref-links";
 import Image from "next/image";
+import { ArrowDownIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
   return (
     <main className="flex flex-col gap-6 font-normal text-lg">
-      <h1 className="text-9xl font-thin">Hi, I&apos;m Michael.</h1>
-      <p className="m-0 p-0 leading-8 tracking-wide text-slate-700 dark:text-gray-200 font-extralight text-2xl">Welcome to my website. This website is built using Next.js and Tailwind and deployed via Vercel.</p>
-      <div>
+      <div className="min-h-lvh grid grid-rows-layout mb-48">
+        {/* Title Section */}
+        <h1 className="text-8xl sm:text-8xl lg:text-9xl font-thin mb-8 w-3/4">
+          <span>Hi, I&apos;m </span>
+          <span className="font-normal text-green-950">Michael</span>
+          <span className="font-light text-blue-900">.</span>
+        </h1>
+        <p className="pl-8 leading-8 tracking-wide text-slate-700 dark:text-gray-200 font-light text-2xl lg:text-4xl w-1/2 sm:w-3/4">
+          I am a Software Engineer from Montana, USA.
+        </p>
+        {/* Scroll Indicator */}
+        <div className="absolute -bottom-60 place-self-center row-start-4 flex flex-col gap-6 items-center h-96">
+          {/* Arrow */}
+          <ArrowDownIcon width={24} height={24} className="animate-bounce" />
+          {/* Line */}
+          <div className="border h-full border-gray-600 rounded-lg" />
+        </div>
+      </div>
+      <div className="">
         <Image
           src="/irl.jpg"
           alt="Me IRL"
