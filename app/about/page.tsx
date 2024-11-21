@@ -41,14 +41,17 @@ export default function Page() {
 			</div>
 			{/* YouTube Paragraph */}
 			<div>
-				<ArcadiaVideo
-					width={1280/3}
-					height={720/3}
+				<div
 					className={clsx(
-						"shadow-xl rounded-sm mb-4 sm:mb-2",
-						(++incVal) % 2 === 0 ? "float-right sm:ml-4" : "float-left sm:mr-4"
+						"w-full md:w-1/2 mb-4 md:mb-2",
+						(++incVal) % 2 === 0 ? "md:float-right md:ml-4" : "md:float-left md:mr-4"
 					)}
-				/>
+				>
+					<ArcadiaVideo
+						width={1280/3}
+						height={720/3}
+					/>
+				</div>
 				<p className="sm:text-justify">
 					In my free time I love to pursue my hobbies of playing video games and creating video game content. In 2021 I started creating Minecraft content on <a target="_blank" rel="noreferrer noopener" href={YouTube}>YouTube</a>. Over these years I have gained over 500 subscribers and have felt my skills as a creator and editor grow. Starting this hobby allowed me the opportunity to become part of a Survival Multiplayer Server, or SMP. By working together with the other members of Arcadia SMP, we have created a wonderful world for viewers to enjoy. One of my favorite projects on Arcadia was creating a deckbuilder game for my fellow members to play. I did everything from scratch from card design, card balance, and &quot;<span className="italic">programming</span>&quot; in Minecraft. The one exception would be card art which a fellow server member helped me with. When the game finally released, it was so amazing to see how many of my server members became addicted to it. The theory crafting about which cards go well together and players getting angry about the cards that they wanted not showing up in the shop was amazing to witness. Seeing this project through from start to finish was highly rewarding and has given me more ideas on how to go about similar projects in the future.
 				</p>
