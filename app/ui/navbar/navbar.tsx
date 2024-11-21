@@ -41,7 +41,13 @@ export default function Navbar() {
 				)}
 			/>
 			{/* Sub-Menu Components */}
-			<div className="flex flex-col gap-16 m-20 mr-0 overflow-hidden">
+			<div className={clsx(
+				"flex flex-col gap-16 m-20 mr-0 overflow-hidden",
+				{
+					"collapse" : !isNavExpanded
+				}
+			)}
+			>
 				{/* Socials */}
 				<NavSocials isNavExpanded={isNavExpanded} />
 				{/* Page Links */}
