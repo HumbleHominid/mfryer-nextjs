@@ -25,9 +25,9 @@ export default function RootLayout({
       <body className={`${inter.className} text-slate-900 antialiased`}>
         {/* Vercel Analytics */}
         <Analytics />
-        <div className="grid grid-rows-layout min-h-lvh justify-items-stretch">
+        <div className="relative grid grid-rows-layout min-h-lvh justify-items-stretch">
           {/* Navbar */}
-          <div className="w-full sticky top-0">
+          <div className="z-50 w-full sticky top-0">
             {/* Fader thing for mobile */}
             <div className="absolute lg:hidden flex flex-col top-0 right-0 left-0">
               {/* Full nav-height color */}
@@ -41,13 +41,11 @@ export default function RootLayout({
             </div>
           </div>
           {/* Content */}
-          <div
-            className="overflow-hidden lg:overflow-visible p-4 w-11/12 lg:w-2/3 justify-self-center"
-          >
+          <div className="relative z-10 overflow-hidden lg:overflow-visible p-4 w-11/12 lg:w-2/3 justify-self-center" >
             {children}
           </div>
           {/* Footer */}
-          <div className="row-start-4 my-4">
+          <div className="relative z-10 row-start-4 my-4">
             <Footer/>
           </div>
         </div>
