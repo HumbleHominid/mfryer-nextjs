@@ -29,6 +29,9 @@ export default {
       },
       transitionDelay: {
         "200": "200ms",
+      },
+      translate: {
+        'lvw': '100lvw'
       }
     },
   },

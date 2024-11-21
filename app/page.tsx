@@ -27,9 +27,11 @@ export default function Home() {
         </div>
       </div>
       {/* Info Section */}
-      <div className="flex flex-col justify-stretch divide-y divide-slate-400 mb-48">
+      <div className="flex flex-col justify-stretch divide-y divide-slate-400 mb-48 overflow-hidden">
         {/* Lily */}
-        <HomeItem>
+        <HomeItem
+          dir="left"
+        >
           <div className="flex gap-4 md:gap-12 items-center">
             <Image
               src="/irl.jpg"
@@ -46,7 +48,9 @@ export default function Home() {
           </div>
         </HomeItem>
         {/* Montana Tech */}
-        <HomeItem>
+        <HomeItem
+          dir="right"
+        >
           <div className="flex flex-col items-center lg:inline">
             <Image
               src="/diplomas_edit.jpg"
@@ -67,7 +71,9 @@ export default function Home() {
           </div>
         </HomeItem>
         {/* Fish */}
-        <HomeItem>
+        <HomeItem
+          dir="left"
+        >
           <div className="flex flex-col sm:flex-row gap-4 md:gap-12 items-center">
             <Image
               src="/fish.jpeg"
@@ -84,7 +90,9 @@ export default function Home() {
           </div>
         </HomeItem>
         {/* YouTube */}
-        <HomeItem>
+        <HomeItem
+          dir="right"
+        >
           <div className="flex flex-col items-center lg:inline">
             <div className="md:float-right w-full lg:w-1/2">
               <ArcadiaVideo
