@@ -29,14 +29,14 @@ export default function RootLayout({
           {/* Navbar */}
           <div className="w-full sticky top-0">
             {/* Fader thing for mobile */}
-            <div className="absolute lg:hidden flex flex-col top-0 right-0 left-0 -z-10">
+            <div className="absolute lg:hidden flex flex-col top-0 right-0 left-0">
               {/* Full nav-height color */}
               <div className={`w-100 ${navHeight} bg-background`} />
               {/* Gradient for nice fadeout */}
               <div className="h-4 bg-gradient-to-b from-background" />
             </div>
             {/* Actual Navbar */}
-            <div className={navHeight}>
+            <div className={`relative ${navHeight}`}>
               <Navbar/>
             </div>
           </div>

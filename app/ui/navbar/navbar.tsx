@@ -19,7 +19,7 @@ export default function Navbar() {
 	return (
 		<>
 			{/* Top-Level Nav */}
-			<div className="flex justify-between items-center p-4">
+			<div className="relative z-50 flex justify-between items-center p-4">
 				<div className="flex gap-8 items-center">
 					<NavBadge />
 					{/* Divider */}
@@ -36,13 +36,13 @@ export default function Navbar() {
 			{/* Sub-Menu Mask */}
 			<div
 				className={clsx(
-					"absolute w-full top-0 bg-blue-200 -z-20 transition-all duration-1000 ease-in-out",
+					"absolute w-full top-0 bg-blue-200 z-40 transition-all duration-1000 ease-in-out",
 						isNavExpanded ? "h-lvh opacity-100" : "h-0 opacity-0 delay-700",
 				)}
 			/>
 			{/* Sub-Menu Components */}
 			<div className={clsx(
-				"flex flex-col gap-16 m-20 mr-0 overflow-hidden",
+				"relative z-50 flex flex-col gap-16 m-20 mr-0 overflow-hidden",
 				{
 					"collapse" : !isNavExpanded
 				}
