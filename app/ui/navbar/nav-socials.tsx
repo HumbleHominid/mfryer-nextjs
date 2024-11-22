@@ -15,10 +15,8 @@ export default function NavSocials({
 	return (
 		<div
 			className={clsx(
-				"flex items-center gap-4 md:gap-12",
-				{
-					"collapse" : !isNavExpanded,
-				},
+				"flex items-center gap-4 md:gap-12 transition-all duration-0",
+				isNavExpanded ? "translate-y-0" : "delay-1000 -translate-y-full",
 			)}
 		>
 			{/* Front decorator */}
