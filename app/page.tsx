@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { ArrowDownIcon } from "@heroicons/react/24/outline";
+import { ArrowDownIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import HomeItem from "@/app/ui/home/home-item";
 import ArcadiaVideo from "@/app/ui/video/ArcadiaVideo";
 import Link from "next/link";
-import { YouTube } from "./lib/ref-links";
+import { YouTube, Email } from "@/app/lib/ref-links";
 
 export default function Home() {
   return (
@@ -147,6 +147,34 @@ export default function Home() {
             <span>.</span>
           </p>
         </div>
+        </HomeItem>
+        {/* Work */}
+        <HomeItem
+          dir="right"
+        >
+          <div className="flex flex-col items-center sm:inline">
+            <div className="h-32 w-32 float-right">
+              <EnvelopeIcon
+                width={96}
+                height={96}
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="p-4 text-3xl sm:text-4txl md:text-5xl">
+              <span>Want to </span>
+              <span className="font-extrabold text-green-600">hire</span>
+              <span> me? Send me an </span>
+              <Link
+                href={`mailto:${Email}`}
+                rel="noopener noreferrer"
+                target="_blank"
+                title="Hire me!"
+              >
+                <span className="font-extrabold text-indigo-800 hover:underline hover:underline-offset-4">Email</span>
+              </Link>
+              <span>!</span>
+            </p>
+          </div>
         </HomeItem>
       </div>
     </main>
