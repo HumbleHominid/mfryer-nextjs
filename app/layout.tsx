@@ -42,7 +42,7 @@ export default function RootLayout({
           </div>
           {/* Content */}
           <div className="z-10 overflow-hidden">
-            <div className=" p-4 w-11/12 lg:w-2/3 justify-self-center">
+            <div className=" p-4 w-11/12 lg:w-2/3 m-auto">
               {children}
             </div>
           </div>
