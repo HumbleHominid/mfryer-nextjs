@@ -80,7 +80,7 @@ export default function NavSocials({
 				visible={isNavExpanded}
 				delayFactor={++count}
 			>
-				<NavSocial href={Email}>
+				<NavSocial href={`mailto:${Email}`}>
 					<EnvelopeIcon
 						title="Hire me!"
 						width={96}
