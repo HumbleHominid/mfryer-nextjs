@@ -27,7 +27,7 @@ export default function Home() {
         </div>
       </div>
       {/* Info Section */}
-      <div className="flex flex-col justify-stretch divide-y divide-slate-400 mb-48 overflow-hidden">
+      <div className="flex flex-col justify-stretch divide-y divide-slate-400 mb-32">
         {/* Lily */}
         <HomeItem
           dir="left"
@@ -85,7 +85,7 @@ export default function Home() {
               loading="eager"
               className="rounded-lg shadow-xl float-right w-56 sm:w-50 md:w-5/12 h-auto"
             />
-            <p className="p-4 text-3xl sm:text-3xl md:text-5xl xl:text-6xl">
+            <p className="p-4 text-3xl md:text-5xl xl:text-6xl">
               <span>I love to </span>
               <span className="font-bold text-green-950">fish</span>
               <span> when I&apos;m not programming.</span>
@@ -123,7 +123,31 @@ export default function Home() {
             </p>
           </div>
         </HomeItem>
-        {/* Work */}
+        {/* Tech Stack */}
+        <HomeItem
+          dir="left"
+        >
+        <div className="flex flex-col sm:inline sm:flex-row">
+          <Image
+            src="/tech-stack.png"
+            alt="Tech Stack"
+            width={612}
+            height={816}
+            loading="eager"
+            className="rounded-lg float-left w-full sm:w-1/2 h-auto mr-4 mb-2"
+          />
+          <p className="p-4 text-3xl md:text-5xl xl:text-6xl">
+            <span>This application was built using </span>
+            <span className="font-bold">Next.js</span>
+            <span>, </span>
+            <span className="font-bold text-blue-400">Tailwind</span>
+            <span>, </span>
+            <span>and deployed via </span>
+            <span className="font-bold">Vercel</span>
+            <span>.</span>
+          </p>
+        </div>
+        </HomeItem>
       </div>
     </main>
   );
