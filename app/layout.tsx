@@ -41,8 +41,10 @@ export default function RootLayout({
             </div>
           </div>
           {/* Content */}
-          <div className="z-10 overflow-hidden lg:overflow-visible p-4 w-11/12 lg:w-2/3 justify-self-center" >
-            {children}
+          <div className="z-10 overflow-hidden">
+            <div className=" p-4 w-11/12 lg:w-2/3 justify-self-center">
+              {children}
+            </div>
           </div>
           {/* Footer */}
           <div className="z-10 row-start-4 my-4">
