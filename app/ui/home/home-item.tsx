@@ -31,7 +31,7 @@ export default function HomeItem({
 		<div
 		ref={ref}
 			className={clsx(
-				"my-8 p-8 transition-all duration-700 ease-in-out",
+				"mb-8 p-8 transition-all duration-700 ease-in-out",
 				show ? "opacity-100 translate-x-0" : "opacity-0",
 				{
 					"-translate-x-lvw" : !show && dir === "left",
