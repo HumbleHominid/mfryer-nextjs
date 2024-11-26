@@ -18,10 +18,12 @@ export default class Star {
 		const minTime = 5;
 		// Maximum time in seconds a star can be on for
 		const maxTime = 10;
+		// Time in seconds that this star is alive for
+		const displayTime = (minTime + Math.floor(Math.random() * (maxTime - minTime)));
 
 		this.isAlive = true;
 		this.timeout = setTimeout(() => {
 			this.isAlive = false;
-		}, (minTime + Math.floor(Math.random() * (maxTime - minTime))) * 1000);
+		}, displayTime * 1000);
 	}
 }
