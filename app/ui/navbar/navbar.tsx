@@ -13,7 +13,8 @@ export default function Navbar() {
 
 	const routeLinks = [
 		{ href: "/", routeName: "Home", text: "Back to home"},
-		{ href: "/about", routeName: "About", text: "More about me" }
+		{ href: "/about", routeName: "About", text: "More about me" },
+		{ href: "/game", routeName: "Game", text: "Totally original game" },
 	];
 
 	return (
