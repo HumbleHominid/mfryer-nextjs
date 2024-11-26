@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from "react";
+import Starfield from "@/app/lib/game/starfield";
 
 export default function GameCanvas({
 
@@ -9,6 +10,7 @@ export default function GameCanvas({
 }) {
 	const ref = useRef(null);
 	let renderInterval: NodeJS.Timeout;
+	let stars: Starfield | null = null;
 
 	const getContext = (): CanvasRenderingContext2D | null => {
 		if (!ref.current) return null;
@@ -20,8 +22,8 @@ export default function GameCanvas({
 		const ctx = getContext();
 		if (!ctx) return;
 
+		stars = new Starfield(ctx.canvas.width, ctx.canvas.height);
 		renderInterval = setInterval(() => render(), 50);
-		console.log(ctx.canvas.width, ctx.canvas.height)
 
 		// render immediately as well
 		render();
@@ -44,6 +46,9 @@ export default function GameCanvas({
 		// Draw a dark screen
 		ctx.fillStyle = '#1c1c1c';
 		ctx.fillRect(0, 0, width, height);
+
+		// Draw stars
+		stars?.render(ctx);
 
 		ctx.restore();
 	}
