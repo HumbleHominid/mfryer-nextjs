@@ -6,7 +6,6 @@ import { GRID_WIDTH, GRID_HEIGHT } from "@/app/lib/game/consts";
 
 export default function GameCanvas() {
 	const canvasRef = useRef(null);
-	const shouldTickRef = useRef(true);
 	const renderIntervalRef = useRef<NodeJS.Timeout | null>(null);
 	const gameRef = useRef<SnakeGame | null>(null);
 
@@ -31,7 +30,7 @@ export default function GameCanvas() {
 		gameRef.current = new SnakeGame(ctx.canvas.width, ctx.canvas.height);
 		// Set up the game tick
 		renderIntervalRef.current = setInterval(() => {
-			if (shouldTickRef.current) gameRef.current?.tick();
+			gameRef.current?.tick();
 			render();
 		}, 50);
 
