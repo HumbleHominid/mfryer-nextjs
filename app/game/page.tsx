@@ -9,7 +9,7 @@ export default function Page() {
 
 	return (
 		<>
-			<h1 className="text-6xl mb-6">Snake Game</h1>
+			<h1 className="text-6xl mb-6">Snake Game - WIP</h1>
 			<div className="flex justify-center w-full bg-gradient-to-r from-transparent via-slate-900 to-transparent">
 				<div>
 					<GameCanvas />
