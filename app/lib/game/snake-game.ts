@@ -72,16 +72,19 @@ export default class SnakeGame {
 	tick() {
 		this.ticking.forEach((tickable) => tickable.tick());
 
-		// After we tick everything do some game logic
-		// Check if the player is on an apple
-		if (this.snake.head?.equals(this.apple.pos)) {
-			this.snake.eatApple();
-			this.score += 1;
-			// Do something with the score
-			// Spawn a new apple
-			this.rendering.delete(this.apple);
-			this.apple = this.appleSpawner.spawnApple();
-			this.rendering.add(this.apple);
+		/**
+		 * Player eating apple logic. Only do this if the game isn't over
+		 */
+		if (!this.isGameOver) {
+			if (this.snake.head?.equals(this.apple.pos)) {
+				this.snake.eatApple();
+				this.score += 1;
+				// Do something with the score
+				// Spawn a new apple
+				this.rendering.delete(this.apple);
+				this.apple = this.appleSpawner.spawnApple();
+				this.rendering.add(this.apple);
+			}
 		}
 	}
 
