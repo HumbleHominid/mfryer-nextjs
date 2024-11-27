@@ -1,5 +1,5 @@
 import Starfield from "@/app/lib/game/starfield";
-import { GameObject, Position, Renderable, Tickable } from "@/app/lib/game/types";
+import { Position, Renderable, Tickable } from "@/app/lib/game/types";
 import Snake from "@/app/lib/game/snake";
 import { GRID_SIZE } from "@/app/lib/game/consts";
 import AppleSpawner from "@/app/lib/game/apple-spawner";
