@@ -10,8 +10,7 @@ export default class Star {
 	}
 
 	toString() : string {
-		const { x, y } = this.pos;
-		return `${x},${y}`;
+		return this.pos.toString();
 	}
 
 	init() {

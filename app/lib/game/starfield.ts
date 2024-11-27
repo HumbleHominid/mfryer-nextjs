@@ -1,5 +1,5 @@
 import Star from "@/app/lib/game/star";
-import { GameObject } from "@/app/lib/game/types";
+import { GameObject, Position } from "@/app/lib/game/types";
 
 export default class Starfield implements GameObject {
 	ctxWidth : number;
@@ -37,7 +37,7 @@ export default class Starfield implements GameObject {
 		for (let i = 0; i < numStars; ++i) {
 			const x = Math.floor(Math.random()*this.ctxWidth);
 			const y = Math.floor(Math.random()*this.ctxHeight);
-			const star = new Star({x, y});
+			const star = new Star(new Position(x, y));
 
 			if (this.litStars.has(star.toString())) continue;
 
