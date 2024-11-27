@@ -4,7 +4,7 @@ export type Position = {
 };
 
 export interface Tickable {
-	tick(dt:number): void;
+	tick(): void;
 };
 
 export interface Renderable {

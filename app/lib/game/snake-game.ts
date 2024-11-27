@@ -1,6 +1,5 @@
 import Starfield from "@/app/lib/game/starfield";
-import { GameObject } from "./types";
-
+import { GameObject } from "@/app/lib/game/types";
 /**
  * The actual snake game
  */
@@ -22,8 +21,8 @@ export default class SnakeGame {
 		this.components.push(starfield);
 	}
 
-	tick(dt:number) {
-		this.components.forEach((component) => component.tick(dt));
+	tick() {
+		this.components.forEach((component) => component.tick());
 	}
 
 	render(ctx: CanvasRenderingContext2D) {

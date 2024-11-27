@@ -26,7 +26,10 @@ export default function GameCanvas() {
 		}
 
 		gameRef.current = new SnakeGame(ctx.canvas.width, ctx.canvas.height);
-		renderIntervalRef.current = setInterval(() => render(), 50);
+		renderIntervalRef.current = setInterval(() => {
+			gameRef.current?.tick();
+			render();
+		}, 50);
 
 		// render immediately as well
 		render();

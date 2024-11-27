@@ -21,7 +21,7 @@ export default class Starfield implements GameObject {
 		this.litStars = new Set<string>();
 	}
 
-	tick(dt: number) {
+	tick() {
 		// filter the stars array so we only have the alive ones. Also update
 		// the litStars set if we have to
 		this.stars = this.stars.filter((star) => {
@@ -31,9 +31,7 @@ export default class Starfield implements GameObject {
 
 		// we will attempt to create between [0, maxNewStars)
 		const maxNewStars = 2;
-		// We don't care about the dt here but this is strictly for the linter....
-		const dtFactor = 1 + (0 * dt);
-		const numStars = Math.floor(Math.random()*((maxNewStars*dtFactor)+1));
+		const numStars = Math.floor(Math.random()*(maxNewStars+1));
 
 		// Create the new stars if possible and add them to the data structures
 		for (let i = 0; i < numStars; ++i) {
@@ -50,9 +48,6 @@ export default class Starfield implements GameObject {
 	}
 
 	render(ctx: CanvasRenderingContext2D) {
-		// TODO We should be ticking this from the outside but that's not set up yet so here we are
-		this.tick(0);
-
 		ctx.save();
 		ctx.fillStyle = '#eee';
 
