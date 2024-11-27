@@ -1,8 +1,8 @@
 import Starfield from "@/app/lib/game/starfield";
-import { GameObject } from "@/app/lib/game/types";
-import Apple from "@/app/lib/game/apple";
+import { GameObject, Position } from "@/app/lib/game/types";
 import Snake from "@/app/lib/game/snake";
 import { GRID_SIZE } from "@/app/lib/game/consts";
+import AppleSpawner from "@/app/lib/game/apple-spawner";
 
 /**
  * The actual snake game
@@ -14,6 +14,11 @@ export default class SnakeGame {
 	components: Array<GameObject> = [];
 	// This is a prop so we can bind/unbind input
 	snake: Snake;
+	// Apple spawner
+	appleSpawner: AppleSpawner;
+
+	// Set of valid apple spawns
+	validAppleSpawns: Set<string> = new Set<string>();
 
 	constructor(width: number, height: number) {
 		this.width = width;
@@ -25,18 +30,24 @@ export default class SnakeGame {
 		 */
 		const starfield = new Starfield(width, height);
 		this.components.push(starfield);
-		// Have to figure out how to make this a grid..
-		const applePos = {
-			x: Math.floor(Math.random()*(width/GRID_SIZE)),
-			y: Math.floor(Math.random()*(height/GRID_SIZE)),
-		};
-		const apple = new Apple(applePos);
-		this.components.push(apple);
+		// initialize the apple spawner
+		const appleSpawner = new AppleSpawner();
+		this.appleSpawner = appleSpawner;
 		// Player
 		const playerX = Math.floor(width/GRID_SIZE/2);
 		const playerY = Math.floor(height/GRID_SIZE/2);
-		const snake = new Snake({ x: playerX, y: playerY });
+		const snake = new Snake(
+			new Position(playerX, playerY),
+			appleSpawner.invalidateSpawn,
+			appleSpawner.validateSpawn
+		);
 		this.snake = snake;
+
+		// Apple
+		const apple = appleSpawner.spawnApple();
+		this.components.push(apple);
+
+		// Want snake to render after apple
 		this.components.push(snake);
 	}
 

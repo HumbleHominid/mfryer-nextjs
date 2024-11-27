@@ -32,12 +32,22 @@ export default class Snake implements GameObject {
 	// Looks bad but this is the code from the key event
 	inputState: string = "ArrowUp";
 
+	moveIn: (pos: Position) => void = (pos: Position) => {};
+	moveOut: (pos: Position) => void = (pos: Position) => {};
+
 	// Starting pos
-	constructor(pos: Position) {
+	constructor(pos: Position, moveIn: (pos: Position) => void, moveOut: (pos: Position) => void) {
 		const {x, y} = pos;
+		this.moveIn = moveIn;
+		this.moveOut = moveOut;
 
 		// Create a snake that is three segments long
-		for (let i = 0; i < 3; ++i) this.segments.push({ x: x, y: y+i });
+		for (let i = 0; i < 3; ++i) {
+			const segment = new Position(x, y+i);
+			// Invalidate the new segment in the apple spawner
+			this.moveIn(segment);
+			this.segments.push(segment);
+		}
 	}
 
 	handleInput(keyCode: string) {
@@ -59,6 +69,10 @@ export default class Snake implements GameObject {
 	}
 
 	tick() {
+		// Before we move, add the last segment back to the apple spawner
+		const tail = this.segments.at(-1);
+		if (tail) this.moveOut(tail);
+
 		// Iterate from the back to the front copying down the next node. Skip head
 		for (let i = this.segments.length - 1; i > 0; --i) {
 			this.segments[i].x = this.segments[i-1].x;
@@ -88,6 +102,8 @@ export default class Snake implements GameObject {
 				if (head.x >= gridWidth) head.x -= gridWidth;
 				break;
 		}
+
+		this.moveIn(head);
 	}
 
 	render(ctx: CanvasRenderingContext2D) {
