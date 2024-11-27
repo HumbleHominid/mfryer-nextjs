@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import SnakeGame from "@/app/lib/game/snake-game";
+import { GRID_WIDTH, GRID_HEIGHT } from "@/app/lib/game/consts";
 
 export default function GameCanvas() {
 	const canvasRef = useRef(null);
@@ -43,8 +44,8 @@ export default function GameCanvas() {
 		<canvas
 			id="snakeGameCanvas"
 			className="w-full h-full"
-			width="400"
-			height="300"
+			width={GRID_WIDTH}
+			height={GRID_HEIGHT}
 			ref={canvasRef}
 		/>
 	);
