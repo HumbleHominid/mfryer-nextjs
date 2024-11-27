@@ -15,6 +15,9 @@ export default function Page() {
 					<GameCanvas />
 				</div>
 			</div>
+			<p className="mt-4">
+				Use arrow keys to move the snake. Refresh the page to try again! Good luck!
+			</p>
 		</>
 	);
 }
