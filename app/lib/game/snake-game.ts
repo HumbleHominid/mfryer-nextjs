@@ -17,9 +17,6 @@ export default class SnakeGame {
 	// Apple spawner
 	appleSpawner: AppleSpawner;
 
-	// Set of valid apple spawns
-	validAppleSpawns: Set<string> = new Set<string>();
-
 	constructor(width: number, height: number) {
 		this.width = width;
 		this.height = height;
