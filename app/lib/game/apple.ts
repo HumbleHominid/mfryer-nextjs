@@ -1,12 +1,11 @@
 import { GameObject, Position } from "@/app/lib/game/types";
+import { BORDER_SIZE, GRID_SIZE } from "@/app/lib/game/consts";
 
 export default class Apple implements GameObject {
 	pos: Position;
-	size: number;
 
-	constructor(pos: Position, size: number) {
+	constructor(pos: Position) {
 		this.pos = pos;
-		this.size = size;
 	}
 
 	tick() { }
@@ -15,12 +14,17 @@ export default class Apple implements GameObject {
 		ctx.save();
 		ctx.fillStyle = '#f00';
 
-		const borderSize = 1;
+		const borderSize = BORDER_SIZE;
 		let { x, y } = this.pos;
-		x *= this.size;
-		y *= this.size;
+		x *= GRID_SIZE;
+		y *= GRID_SIZE;
 
-		ctx.fillRect(x+borderSize, y+borderSize, this.size-(2*borderSize), this.size-(2*borderSize));
+		ctx.fillRect(
+			x+borderSize,
+			y+borderSize,
+			GRID_SIZE-(2*borderSize),
+			GRID_SIZE-(2*borderSize)
+		);
 
 		ctx.restore();
 	}
