@@ -1,5 +1,7 @@
 import Starfield from "@/app/lib/game/starfield";
 import { GameObject } from "@/app/lib/game/types";
+import Apple from "@/app/lib/game/apple";
+
 /**
  * The actual snake game
  */
@@ -9,7 +11,7 @@ export default class SnakeGame {
 
 	components: Array<GameObject> = [];
 
-	constructor(width: number, height: number, ) {
+	constructor(width: number, height: number) {
 		this.width = width;
 		this.height = height;
 		/**
@@ -19,6 +21,14 @@ export default class SnakeGame {
 		 */
 		const starfield = new Starfield(width, height);
 		this.components.push(starfield);
+		// Have to figure out how to make this a grid..
+		const gridSize = 10;
+		const applePos = {
+			x: Math.floor(Math.random()*(width/gridSize)),
+			y: Math.floor(Math.random()*(height/gridSize)),
+		};
+		const apple = new Apple(applePos, gridSize);
+		this.components.push(apple);
 	}
 
 	tick() {
