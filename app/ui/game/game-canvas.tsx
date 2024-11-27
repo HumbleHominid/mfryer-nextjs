@@ -9,34 +9,40 @@ export default function GameCanvas() {
 	const renderIntervalRef = useRef<NodeJS.Timeout | null>(null); // TODO move to SnakeGame probably
 	const gameRef = useRef<SnakeGame | null>(null);
 
-	useEffect(() => {
-		const getContext = (): CanvasRenderingContext2D | null => {
-			if (!canvasRef.current) return null;
-			const get2dContext = (el: HTMLCanvasElement) => el.getContext('2d');
-			return get2dContext(canvasRef.current);
-		}
+	const getContext = (): CanvasRenderingContext2D | null => {
+		if (!canvasRef.current) return null;
+		const get2dContext = (el: HTMLCanvasElement) => el.getContext('2d');
+		return get2dContext(canvasRef.current);
+	}
 
+	const render = () => {
 		const ctx = getContext();
 		if (!ctx) return;
 
-		const render = () => {
-			const ctx = getContext();
-			if (!ctx) return;
+		gameRef.current?.render(ctx);
+	}
 
-			gameRef.current?.render(ctx);
-		}
+	useEffect(() => {
+		const ctx = getContext();
+		if (!ctx) return;
 
+		// Set up the game
 		gameRef.current = new SnakeGame(ctx.canvas.width, ctx.canvas.height);
+		// Set up the game tick
 		renderIntervalRef.current = setInterval(() => {
 			gameRef.current?.tick();
 			render();
 		}, 50);
 
-		// render immediately as well
+		// render immediately
 		render();
+
+		// Bind player listeners
+		gameRef.current?.bindPlayerInput();
 
 		return () => {
 			if (renderIntervalRef.current !== null) clearInterval(renderIntervalRef.current);
+			gameRef.current?.unbindPlayerInput();
 		}
 	}, [renderIntervalRef]);
 

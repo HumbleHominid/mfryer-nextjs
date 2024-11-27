@@ -12,6 +12,8 @@ export default class SnakeGame {
 	height: number;
 
 	components: Array<GameObject> = [];
+	// This is a prop so we can bind/unbind input
+	snake: Snake;
 
 	constructor(width: number, height: number) {
 		this.width = width;
@@ -34,8 +36,13 @@ export default class SnakeGame {
 		const playerX = Math.floor(width/GRID_SIZE/2);
 		const playerY = Math.floor(height/GRID_SIZE/2);
 		const snake = new Snake({ x: playerX, y: playerY });
+		this.snake = snake;
 		this.components.push(snake);
 	}
+
+	bindPlayerInput() { this.snake.bindInput(); }
+
+	unbindPlayerInput() { this.snake.unbindInput(); }
 
 	tick() {
 		this.components.forEach((component) => component.tick());
