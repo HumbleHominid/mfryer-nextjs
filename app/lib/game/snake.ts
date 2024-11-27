@@ -59,10 +59,6 @@ export default class Snake implements GameObject {
 	}
 
 	tick() {
-		// Allowing wrapping for now since it makes my life easier in the short term
-		// TODO Create an "input direction" component to handle which way the snake should move.
-		// Assume up for now
-
 		// Iterate from the back to the front copying down the next node. Skip head
 		for (let i = this.segments.length - 1; i > 0; --i) {
 			this.segments[i].x = this.segments[i-1].x;
@@ -81,7 +77,7 @@ export default class Snake implements GameObject {
 				break;
 			case InputMap.Down:
 				head.y += 1;
-				if (head.y > gridHeight) head.y -= gridHeight;
+				if (head.y >= gridHeight) head.y -= gridHeight;
 				break;
 			case InputMap.Left:
 				head.x -= 1;
@@ -89,7 +85,7 @@ export default class Snake implements GameObject {
 				break;
 			case InputMap.Right:
 				head.x += 1;
-				if (head.x > gridWidth) head.x -= gridWidth;
+				if (head.x >= gridWidth) head.x -= gridWidth;
 				break;
 		}
 	}
