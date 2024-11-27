@@ -46,8 +46,8 @@ export default class SnakeGame {
 		const playerY = Math.floor(height/GRID_SIZE/2);
 		const snake = new Snake(
 			new Position(playerX, playerY),
-			appleSpawner.invalidateSpawn,
-			appleSpawner.validateSpawn,
+			appleSpawner.invalidateSpawn.bind(appleSpawner),
+			appleSpawner.validateSpawn.bind(appleSpawner),
 			this.handleGameover.bind(this)
 		);
 		this.snake = snake;

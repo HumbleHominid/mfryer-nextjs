@@ -3,31 +3,25 @@ import Apple from "@/app/lib/game/apple";
 import { Position } from "@/app/lib/game/types";
 
 export default class AppleSpawner {
-	static validSpawns: Set<string> = new Set<string>();
-	private static isInitialized: boolean = false;
+	validSpawns: Set<string> = new Set<string>();
 
 	constructor() {
 		this.init();
 	}
 
-	private init() {
-		if (AppleSpawner.isInitialized) return;
-
+	init() {
 		const gridWidth = GRID_WIDTH/GRID_SIZE;
 		const gridHeight = GRID_HEIGHT/GRID_SIZE;
 		for (let x = 0; x < gridWidth; ++x) {
 			for (let y = 0; y <gridHeight; ++y) {
-				AppleSpawner.validSpawns.add(`${x},${y}`);
+				this.validSpawns.add(`${x},${y}`);
 			}
 		}
-
-		AppleSpawner.isInitialized = true;
 	}
 
 	spawnApple() {
-		if (!AppleSpawner.isInitialized) return new Apple(new Position(0, 0));
 		// Get a random valid position
-		const spawnsArr = Array.from(AppleSpawner.validSpawns);
+		const spawnsArr = Array.from(this.validSpawns);
 		const spawn = spawnsArr[Math.floor(Math.random() * spawnsArr.length)];
 		const x = parseInt(spawn.split(',')[0]);
 		const y = parseInt(spawn.split(',')[1]);
@@ -36,16 +30,12 @@ export default class AppleSpawner {
 	}
 
 	validateSpawn(spawn: Position) {
-		if (!AppleSpawner.isInitialized) return;
-
 		const str = spawn.toString();
-		if (!AppleSpawner.validSpawns.has(str)) AppleSpawner.validSpawns.add(str);
+		if (!this.validSpawns.has(str)) this.validSpawns.add(str);
 	}
 
 	invalidateSpawn(spawn: Position) {
-		if (!AppleSpawner.isInitialized) return;
-
 		const str = spawn.toString();
-		if (AppleSpawner.validSpawns.has(str)) AppleSpawner.validSpawns.delete(str);
+		if (this.validSpawns.has(str)) this.validSpawns.delete(str);
 	}
 }
