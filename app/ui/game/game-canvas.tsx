@@ -4,15 +4,15 @@ import { useEffect, useRef } from "react";
 import SnakeGame from "@/app/lib/game/snake-game";
 
 export default function GameCanvas() {
-	const ref = useRef(null);
-	let renderInterval: NodeJS.Timeout;
-	let game: SnakeGame | null = null;
+	const canvasRef = useRef(null);
+	const renderIntervalRef = useRef<NodeJS.Timeout | null>(null); // TODO move to SnakeGame probably
+	const gameRef = useRef<SnakeGame | null>(null);
 
 	useEffect(() => {
 		const getContext = (): CanvasRenderingContext2D | null => {
-			if (!ref.current) return null;
+			if (!canvasRef.current) return null;
 			const get2dContext = (el: HTMLCanvasElement) => el.getContext('2d');
-			return get2dContext(ref.current);
+			return get2dContext(canvasRef.current);
 		}
 
 		const ctx = getContext();
@@ -22,19 +22,19 @@ export default function GameCanvas() {
 			const ctx = getContext();
 			if (!ctx) return;
 
-			game?.render(ctx);
+			gameRef.current?.render(ctx);
 		}
 
-		game = new SnakeGame(ctx.canvas.width, ctx.canvas.height);
-		renderInterval = setInterval(() => render(), 50);
+		gameRef.current = new SnakeGame(ctx.canvas.width, ctx.canvas.height);
+		renderIntervalRef.current = setInterval(() => render(), 50);
 
 		// render immediately as well
 		render();
 
 		return () => {
-			clearInterval(renderInterval);
+			if (renderIntervalRef.current !== null) clearInterval(renderIntervalRef.current);
 		}
-	}, []);
+	}, [renderIntervalRef]);
 
 	return (
 		<canvas
@@ -42,7 +42,7 @@ export default function GameCanvas() {
 			className="w-full h-full"
 			width="400"
 			height="300"
-			ref={ref}
+			ref={canvasRef}
 		/>
 	);
 }
