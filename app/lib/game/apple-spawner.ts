@@ -32,7 +32,7 @@ export default class AppleSpawner {
 		const x = parseInt(spawn.split(',')[0]);
 		const y = parseInt(spawn.split(',')[1]);
 
-		return new Apple({ x, y });
+		return new Apple(new Position( x, y ));
 	}
 
 	validateSpawn(spawn: Position) {

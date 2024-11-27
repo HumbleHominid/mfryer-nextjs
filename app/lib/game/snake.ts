@@ -50,6 +50,16 @@ export default class Snake implements GameObject {
 		}
 	}
 
+	get head() {
+		return this.segments.length > 0 ? this.segments[0] : null;
+	}
+
+	eatApple() {
+		// Duplicate the tail. It will overlap for 1 tick but it will sort itself out
+		const tail = this.segments.at(-1);
+		if (tail) this.segments.push(new Position(tail.x, tail.y));
+	}
+
 	handleInput(keyCode: string) {
 		// Make sure this is a valid key
 		if (inputSet.has(keyCode)) {

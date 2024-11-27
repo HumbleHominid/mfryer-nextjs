@@ -3,6 +3,7 @@ import { GameObject, Position } from "@/app/lib/game/types";
 import Snake from "@/app/lib/game/snake";
 import { GRID_SIZE } from "@/app/lib/game/consts";
 import AppleSpawner from "@/app/lib/game/apple-spawner";
+import Apple from "@/app/lib/game/apple";
 
 /**
  * The actual snake game
@@ -11,9 +12,9 @@ export default class SnakeGame {
 	width: number;
 	height: number;
 
-	components: Array<GameObject> = [];
-	// This is a prop so we can bind/unbind input
+	starfield: Starfield;
 	snake: Snake;
+	apple: Apple;
 	// Apple spawner
 	appleSpawner: AppleSpawner;
 
@@ -26,7 +27,7 @@ export default class SnakeGame {
 		 * wrong z-level in the canvas and it look bad
 		 */
 		const starfield = new Starfield(width, height);
-		this.components.push(starfield);
+		this.starfield = starfield;
 		// initialize the apple spawner
 		const appleSpawner = new AppleSpawner();
 		this.appleSpawner = appleSpawner;
@@ -42,10 +43,7 @@ export default class SnakeGame {
 
 		// Apple
 		const apple = appleSpawner.spawnApple();
-		this.components.push(apple);
-
-		// Want snake to render after apple
-		this.components.push(snake);
+		this.apple = apple;
 	}
 
 	bindPlayerInput() { this.snake.bindInput(); }
@@ -53,7 +51,17 @@ export default class SnakeGame {
 	unbindPlayerInput() { this.snake.unbindInput(); }
 
 	tick() {
-		this.components.forEach((component) => component.tick());
+		this.starfield.tick();
+		this.snake.tick();
+
+		// After we tick everything do some game logic
+		// Check if the player is on an apple
+		if (this.snake.head?.equals(this.apple.pos)) {
+			this.snake.eatApple();
+			// Do something with the score
+			// Spawn a new apple
+			this.apple = this.appleSpawner.spawnApple();
+		}
 	}
 
 	render(ctx: CanvasRenderingContext2D) {
@@ -68,7 +76,9 @@ export default class SnakeGame {
 		ctx.fillRect(0, 0, width, height);
 
 		// Render all our components
-		this.components.forEach((component) => component.render(ctx));
+		this.starfield.render(ctx);
+		this.apple.render(ctx);
+		this.snake.render(ctx);
 
 		ctx.restore();
 	}
