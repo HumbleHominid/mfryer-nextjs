@@ -15,16 +15,16 @@ export default function GameCanvas() {
 		return get2dContext(canvasRef.current);
 	}
 
-	const render = () => {
-		const ctx = getContext();
-		if (!ctx) return;
-
-		gameRef.current?.render(ctx);
-	}
-
 	useEffect(() => {
 		const ctx = getContext();
 		if (!ctx) return;
+
+		const render = () => {
+			const ctx = getContext();
+			if (!ctx) return;
+
+			gameRef.current?.render(ctx);
+		}
 
 		// Set up the game
 		gameRef.current = new SnakeGame(ctx.canvas.width, ctx.canvas.height);
@@ -44,7 +44,7 @@ export default function GameCanvas() {
 			if (renderIntervalRef.current !== null) clearInterval(renderIntervalRef.current);
 			gameRef.current?.unbindPlayerInput();
 		}
-	}, [renderIntervalRef]);
+	}, []);
 
 	return (
 		<canvas
