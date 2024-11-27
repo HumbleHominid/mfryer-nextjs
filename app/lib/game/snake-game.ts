@@ -18,6 +18,8 @@ export default class SnakeGame {
 	// Apple spawner
 	appleSpawner: AppleSpawner;
 
+	score: number = 0;
+
 	constructor(width: number, height: number) {
 		this.width = width;
 		this.height = height;
@@ -58,6 +60,7 @@ export default class SnakeGame {
 		// Check if the player is on an apple
 		if (this.snake.head?.equals(this.apple.pos)) {
 			this.snake.eatApple();
+			this.score += 1;
 			// Do something with the score
 			// Spawn a new apple
 			this.apple = this.appleSpawner.spawnApple();
@@ -69,16 +72,31 @@ export default class SnakeGame {
 		const height = ctx.canvas.height;
 
 		// Draw background
-		ctx.clearRect(0, 0, width, height);
+		{
+			ctx.clearRect(0, 0, width, height);
 
-		// Draw a dark screen
-		ctx.fillStyle = '#1c1c1c';
-		ctx.fillRect(0, 0, width, height);
+			ctx.fillStyle = '#1c1c1c';
+			ctx.fillRect(0, 0, width, height);
+		}
+
+		// Draw the score
+		{
+			const gap = 5;
+			const fontHeight = 12;
+
+			ctx.font = `${fontHeight}px consolas`;
+			ctx.fillStyle = '#eee';
+			ctx.textAlign = 'start';
+			ctx.textBaseline = 'hanging';
+			ctx.fillText(`Score: ${this.score}`, gap, gap);
+		}
 
 		// Render all our components
-		this.starfield.render(ctx);
-		this.apple.render(ctx);
-		this.snake.render(ctx);
+		{
+			this.starfield.render(ctx);
+			this.apple.render(ctx);
+			this.snake.render(ctx);
+		}
 
 		ctx.restore();
 	}
