@@ -1,5 +1,5 @@
 import Starfield from "@/app/lib/game/starfield";
-import { GameObject, Position } from "@/app/lib/game/types";
+import { GameObject, Position, Renderable, Tickable } from "@/app/lib/game/types";
 import Snake from "@/app/lib/game/snake";
 import { GRID_SIZE } from "@/app/lib/game/consts";
 import AppleSpawner from "@/app/lib/game/apple-spawner";
@@ -18,7 +18,13 @@ export default class SnakeGame {
 	// Apple spawner
 	appleSpawner: AppleSpawner;
 
+	ticking: Set<Tickable> = new Set<Tickable>();
+	rendering: Set<Renderable> = new Set<Renderable>();
+
 	score: number = 0;
+
+	// TODO make state
+	isGameOver: boolean = false;
 
 	constructor(width: number, height: number) {
 		this.width = width;
@@ -30,6 +36,8 @@ export default class SnakeGame {
 		 */
 		const starfield = new Starfield(width, height);
 		this.starfield = starfield;
+		this.ticking.add(starfield);
+		this.rendering.add(starfield);
 		// initialize the apple spawner
 		const appleSpawner = new AppleSpawner();
 		this.appleSpawner = appleSpawner;
@@ -39,13 +47,22 @@ export default class SnakeGame {
 		const snake = new Snake(
 			new Position(playerX, playerY),
 			appleSpawner.invalidateSpawn,
-			appleSpawner.validateSpawn
+			appleSpawner.validateSpawn,
+			this.handleGameover.bind(this)
 		);
 		this.snake = snake;
+		this.ticking.add(snake);
+		this.rendering.add(snake);
 
 		// Apple
 		const apple = appleSpawner.spawnApple();
 		this.apple = apple;
+		this.rendering.add(apple);
+	}
+
+	handleGameover() {
+		this.ticking.delete(this.snake);
+		this.isGameOver = true;
 	}
 
 	bindPlayerInput() { this.snake.bindInput(); }
@@ -53,8 +70,7 @@ export default class SnakeGame {
 	unbindPlayerInput() { this.snake.unbindInput(); }
 
 	tick() {
-		this.starfield.tick();
-		this.snake.tick();
+		this.ticking.forEach((tickable) => tickable.tick());
 
 		// After we tick everything do some game logic
 		// Check if the player is on an apple
@@ -63,7 +79,9 @@ export default class SnakeGame {
 			this.score += 1;
 			// Do something with the score
 			// Spawn a new apple
+			this.rendering.delete(this.apple);
 			this.apple = this.appleSpawner.spawnApple();
+			this.rendering.add(this.apple);
 		}
 	}
 
@@ -93,9 +111,23 @@ export default class SnakeGame {
 
 		// Render all our components
 		{
-			this.starfield.render(ctx);
-			this.apple.render(ctx);
-			this.snake.render(ctx);
+			this.rendering.forEach((rendering) => rendering.render(ctx));
+		}
+
+		// Render game over screen
+		if (this.isGameOver) {
+			const centerX = Math.floor(ctx.canvas.width / 2);
+			// Heading
+			const headingSize = 72;
+			const subHeadingSize = 20;
+			const gap = 30;
+			ctx.font = `${headingSize}px consolas`;
+			ctx.textAlign = 'center';
+			ctx.textBaseline = 'hanging';
+			ctx.fillText('Game Over', centerX, gap);
+
+			ctx.font = `${subHeadingSize}px consolas`;
+			ctx.fillText(`Final Score: ${this.score}`, centerX, gap + headingSize, 300);
 		}
 
 		ctx.restore();

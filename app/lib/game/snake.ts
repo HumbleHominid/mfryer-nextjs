@@ -32,14 +32,22 @@ export default class Snake implements GameObject {
 	// Looks bad but this is the code from the key event
 	inputState: string = "ArrowUp";
 
-	moveIn: (pos: Position) => void = (pos: Position) => {};
-	moveOut: (pos: Position) => void = (pos: Position) => {};
+	moveIn: (pos: Position) => void;
+	moveOut: (pos: Position) => void;
+
+	handleDies: () => void;
 
 	// Starting pos
-	constructor(pos: Position, moveIn: (pos: Position) => void, moveOut: (pos: Position) => void) {
+	constructor(
+		pos: Position,
+		moveIn: (pos: Position) => void,
+		moveOut: (pos: Position) => void,
+		handleDies: () => void
+	) {
 		const {x, y} = pos;
 		this.moveIn = moveIn;
 		this.moveOut = moveOut;
+		this.handleDies = handleDies;
 
 		// Create a snake that is three segments long
 		for (let i = 0; i < 3; ++i) {
@@ -83,14 +91,10 @@ export default class Snake implements GameObject {
 		const tail = this.segments.at(-1);
 		if (tail) this.moveOut(tail);
 
-		// Iterate from the back to the front copying down the next node. Skip head
-		for (let i = this.segments.length - 1; i > 0; --i) {
-			this.segments[i].x = this.segments[i-1].x;
-			this.segments[i].y = this.segments[i-1].y;
-		}
-		// update the head and handle wrapping
+		// Make a temp new head first so that we can check it against the rest of our
+		// segments while we are updating them
 		// TODO if you hit the wall you should die but implementing wrapping is easier for now
-		const head = this.segments[0];
+		const head = new Position(this.segments[0].x, this.segments[0].y);
 		const gridWidth = (GRID_WIDTH / GRID_SIZE)
 		const gridHeight = (GRID_HEIGHT / GRID_SIZE);
 
@@ -113,7 +117,22 @@ export default class Snake implements GameObject {
 				break;
 		}
 
+		// Track if we have looped on ourself at some point
+		let didLoop = false;
+		// Iterate from the back to the front copying down the next node. Skip head
+		for (let i = this.segments.length - 1; i > 0; --i) {
+			this.segments[i].x = this.segments[i-1].x;
+			this.segments[i].y = this.segments[i-1].y;
+
+			if (head.x === this.segments[i].x && head.y === this.segments[i].y) didLoop = true;
+		}
+
+		// Update the head
+		this.segments[0] = head;
 		this.moveIn(head);
+
+		// Call game over if we should
+		if (didLoop) this.handleDies();
 	}
 
 	render(ctx: CanvasRenderingContext2D) {
