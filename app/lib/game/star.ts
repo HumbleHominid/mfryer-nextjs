@@ -1,16 +1,17 @@
+import { Position } from "@/app/lib/game/types";
+
 export default class Star {
-	x: number;
-	y: number;
+	pos: Position;
 	isAlive: boolean = false;
 	timeout: NodeJS.Timeout | null = null;
 
-	constructor(x: number, y: number) {
-		this.x = x;
-		this.y = y;
+	constructor(pos: Position) {
+		this.pos = pos;
 	}
 
 	toString() : string {
-		return `${this.x},${this.y}`;
+		const { x, y } = this.pos;
+		return `${x},${y}`;
 	}
 
 	init() {

@@ -1,4 +1,5 @@
 import Starfield from "@/app/lib/game/starfield";
+import { GameObject } from "./types";
 
 /**
  * The actual snake game
@@ -7,16 +8,22 @@ export default class SnakeGame {
 	width: number;
 	height: number;
 
-	starfield: Starfield;
+	components: Array<GameObject> = [];
 
 	constructor(width: number, height: number, ) {
 		this.width = width;
 		this.height = height;
-		this.starfield = new Starfield(width, height);
+		/**
+		 * Since we are using a component array, it's very important that we push things
+		 * into the array in the correct order otherwise stuff will render on the
+		 * wrong z-level in the canvas and it look bad
+		 */
+		const starfield = new Starfield(width, height);
+		this.components.push(starfield);
 	}
 
-	tick() {
-		this.starfield.tick();
+	tick(dt:number) {
+		this.components.forEach((component) => component.tick(dt));
 	}
 
 	render(ctx: CanvasRenderingContext2D) {
@@ -30,8 +37,8 @@ export default class SnakeGame {
 		ctx.fillStyle = '#1c1c1c';
 		ctx.fillRect(0, 0, width, height);
 
-		// Draw stars
-		this.starfield.render(ctx);
+		// Render all our components
+		this.components.forEach((component) => component.render(ctx));
 
 		ctx.restore();
 	}

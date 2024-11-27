@@ -1,6 +1,7 @@
 import Star from "@/app/lib/game/star";
+import { GameObject } from "@/app/lib/game/types";
 
-export default class Starfield {
+export default class Starfield implements GameObject {
 	ctxWidth : number;
 	ctxHeight : number;
 	/**
@@ -20,7 +21,7 @@ export default class Starfield {
 		this.litStars = new Set<string>();
 	}
 
-	tick() {
+	tick(dt: number) {
 		// filter the stars array so we only have the alive ones. Also update
 		// the litStars set if we have to
 		this.stars = this.stars.filter((star) => {
@@ -28,15 +29,17 @@ export default class Starfield {
 			return star.isAlive;
 		});
 
-		// we will attempt to create between [0,maxNewStars)
+		// we will attempt to create between [0, maxNewStars)
 		const maxNewStars = 2;
-		const numStars = Math.floor(Math.random()*(maxNewStars+1));
+		// We don't care about the dt here but this is strictly for the linter....
+		const dtFactor = 1 + (0 * dt);
+		const numStars = Math.floor(Math.random()*((maxNewStars*dtFactor)+1));
 
 		// Create the new stars if possible and add them to the data structures
 		for (let i = 0; i < numStars; ++i) {
 			const x = Math.floor(Math.random()*this.ctxWidth);
 			const y = Math.floor(Math.random()*this.ctxHeight);
-			const star = new Star(x, y);
+			const star = new Star({x, y});
 
 			if (this.litStars.has(star.toString())) continue;
 
@@ -48,13 +51,14 @@ export default class Starfield {
 
 	render(ctx: CanvasRenderingContext2D) {
 		// TODO We should be ticking this from the outside but that's not set up yet so here we are
-		this.tick();
+		this.tick(0);
 
 		ctx.save();
 		ctx.fillStyle = '#eee';
 
 		this.stars.forEach((star) => {
-			ctx.fillRect(star.x, star.y, 1, 1);
+			const { x, y } = star.pos;
+			ctx.fillRect(x, y, 1, 1);
 		});
 
 		ctx.restore();
