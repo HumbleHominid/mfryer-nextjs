@@ -1,4 +1,4 @@
-import Starfield from "@/app/lib/game/snake-game";
+import Starfield from "@/app/lib/game/starfield";
 
 /**
  * The actual snake game
