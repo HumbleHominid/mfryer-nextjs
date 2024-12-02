@@ -91,13 +91,19 @@ export default class SnakeGame {
 	render(ctx: CanvasRenderingContext2D) {
 		const width = ctx.canvas.width;
 		const height = ctx.canvas.height;
+		const canvasColor = '#1c1c1c';
 
 		// Draw background
 		{
 			ctx.clearRect(0, 0, width, height);
 
-			ctx.fillStyle = '#1c1c1c';
+			ctx.fillStyle = canvasColor;
 			ctx.fillRect(0, 0, width, height);
+		}
+
+		// Render all our components
+		{
+			this.rendering.forEach((rendering) => rendering.render(ctx));
 		}
 
 		// Draw the score
@@ -105,16 +111,19 @@ export default class SnakeGame {
 			const gap = 5;
 			const fontHeight = 12;
 
+			// Shadow text
 			ctx.font = `${fontHeight}px consolas`;
-			ctx.fillStyle = '#eee';
+			ctx.fillStyle = canvasColor;
+			ctx.textAlign = 'start';
+			ctx.textBaseline = 'hanging';
+			ctx.fillText(`Score: ${this.score}`, gap+1, gap+1);
+
+			// Main text
+			ctx.font = `${fontHeight}px consolas`;
+			ctx.fillStyle = '#f00';
 			ctx.textAlign = 'start';
 			ctx.textBaseline = 'hanging';
 			ctx.fillText(`Score: ${this.score}`, gap, gap);
-		}
-
-		// Render all our components
-		{
-			this.rendering.forEach((rendering) => rendering.render(ctx));
 		}
 
 		// Render game over screen
