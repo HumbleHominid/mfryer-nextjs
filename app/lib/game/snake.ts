@@ -136,14 +136,15 @@ export default class Snake implements GameObject {
 	render(ctx: CanvasRenderingContext2D) {
 		ctx.save();
 		ctx.fillStyle = '#fff';
+		const size = GRID_SIZE-(2*BORDER_SIZE);
 
 		this.segments.forEach((segment) => {
 			const { x, y } = segment;
 			ctx.fillRect(
-				x*GRID_SIZE,
-				y*GRID_SIZE,
-				GRID_SIZE-BORDER_SIZE,
-				GRID_SIZE-BORDER_SIZE
+				x*GRID_SIZE+BORDER_SIZE,
+				y*GRID_SIZE+BORDER_SIZE,
+				size,
+				size
 			);
 		});
 
