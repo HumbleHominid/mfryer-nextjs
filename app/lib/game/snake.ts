@@ -50,7 +50,8 @@ export default class Snake implements GameObject {
 		this.handleDies = handleDies;
 
 		// Create a snake that is three segments long
-		for (let i = 0; i < 3; ++i) {
+		const initialLength = 3;
+		for (let i = 0; i < initialLength; ++i) {
 			const segment = new Position(x, y+i);
 			// Invalidate the new segment in the apple spawner
 			this.moveIn(segment);
