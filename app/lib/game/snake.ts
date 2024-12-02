@@ -69,12 +69,9 @@ export default class Snake implements GameObject {
 	}
 
 	handleInput(keyCode: string) {
-		// Make sure this is a valid key
-		if (inputSet.has(keyCode)) {
-			// Make sure they player isn't trying to do a 180
-			if (keyCode !== opposites.get(this.inputState)) {
-				this.inputState = keyCode;
-			}
+		// Make sure this is a valid key and isn't trying to do a 180
+		if (inputSet.has(keyCode) && keyCode !== opposites.get(this.inputState)) {
+			this.inputState = keyCode;
 		}
 	}
 
