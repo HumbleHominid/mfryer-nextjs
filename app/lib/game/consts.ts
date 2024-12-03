@@ -7,3 +7,7 @@ export const GRID_SIZE = 10;
 // Size of the canvas
 export const GRID_WIDTH	= 400;
 export const GRID_HEIGHT = 300;
+
+// Colors
+export const CANVAS_COLOR = "#1c1c1c";
+export const DEFAULT_TEXT_COLOR = "#eee";

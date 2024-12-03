@@ -1,0 +1,42 @@
+import { UI, ClickHandler } from "@/app/lib/game/types";
+import { ButtonConfig, drawButton } from "@/app/lib/game/ui/ui-helpers";
+
+// A collection of buttons that knows how to render themselves and elicit callbacks when clicked
+export default class Buttons implements UI {
+	buttons: Map<ButtonConfig, () => void> = new Map<ButtonConfig, () => void>;
+
+	add(config: ButtonConfig, callback: ClickHandler) {
+		this.buttons.set(config, callback);
+	}
+
+	handleClick(e: MouseEvent) {
+		const clickX = e.offsetX;
+		const clickY = e.offsetY;
+
+		this.buttons.keys().forEach((key: ButtonConfig) => {
+			const top = key.center.y - (key.height/2);
+			const right = key.center.x + (key.width/2);
+			const bottom = key.center.y + (key.height/2);
+			const left = key.center.x - (key.width/2);
+
+			// Check if our click is inside the button and if it is do the callbacks
+			if (
+				clickX <= right &&
+				clickX >= left &&
+				clickY <= bottom &&
+				clickY >= top
+			) {
+				const callback = this.buttons.get(key);
+				if (callback) callback();
+			}
+		});
+	}
+
+	render(ctx: CanvasRenderingContext2D) {
+		ctx.save();
+
+		this.buttons.keys().forEach((config) => drawButton(ctx, config));
+
+		ctx.restore();
+	}
+}

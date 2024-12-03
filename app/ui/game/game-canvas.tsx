@@ -37,8 +37,8 @@ export default function GameCanvas() {
 		// render immediately
 		render();
 
-		// Bind player listeners
-		gameRef.current?.bindPlayerInput();
+		// Bind event listeners
+		ctx.canvas.onclick = gameRef.current?.handleClick.bind(gameRef.current);
 
 		return () => {
 			if (renderIntervalRef.current !== null) clearInterval(renderIntervalRef.current);
