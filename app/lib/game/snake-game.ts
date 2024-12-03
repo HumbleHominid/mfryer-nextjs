@@ -146,6 +146,10 @@ export default class SnakeGame {
 				const pausedUI = newUI as UIPaused;
 				pausedUI.bindScoreGetter(() => this.score);
 				break;
+			case GameState.CONTROLS:
+				// Catches the case of user navigating directly to /game and the browser prevents autoplaying music
+				if (this.isInitialized) AudioHandler.playSong(AudioSongRef.TitleMusic);
+				break;
 		}
 
 		this.ui = newUI;
