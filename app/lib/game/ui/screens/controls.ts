@@ -1,6 +1,6 @@
 import { Position, UI, ClickHandler } from "@/app/lib/game/types";
 import { drawText } from "@/app/lib/game/ui/ui-helpers";
-import { CANVAS_COLOR, DEFAULT_TEXT_COLOR, GRID_HEIGHT, GRID_WIDTH, INPUT_MAP } from "@/app/lib/game/consts";
+import { CANVAS_COLOR, DEFAULT_TEXT_COLOR, GRID_HEIGHT, GRID_WIDTH } from "@/app/lib/game/consts";
 import Buttons from "@/app/lib/game/ui/buttons";
 
 export type ScoreGetterHandler = () => number;
