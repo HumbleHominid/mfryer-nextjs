@@ -1,36 +1,29 @@
 'use client';
 
 import { GameObject, Position } from "@/app/lib/game/types";
-import { BORDER_SIZE, GRID_WIDTH, GRID_HEIGHT, GRID_SIZE } from "@/app/lib/game/consts";
-
-// Valid input keys. These are KeyboardEvent.code values
-enum InputMap {
-	Up ="ArrowUp",
-	Down = "ArrowDown",
-	Right = "ArrowRight",
-	Left = "ArrowLeft"
-};
+import { BORDER_SIZE, GRID_WIDTH, GRID_HEIGHT, GRID_SIZE, INPUT_MAP } from "@/app/lib/game/consts";
+import AudioHandler, { AudioSfxRef } from "@/app/lib/game/audio-handle";
 
 // For O(1) indexing
 const inputSet = new Set<string>([
-	InputMap.Up,
-	InputMap.Down,
-	InputMap.Left,
-	InputMap.Right
+	INPUT_MAP.Up,
+	INPUT_MAP.Down,
+	INPUT_MAP.Left,
+	INPUT_MAP.Right
 ]);
 
 // For checking opposites
 const opposites = new Map<string, string>([
-	[InputMap.Up, InputMap.Down],
-	[InputMap.Down, InputMap.Up],
-	[InputMap.Left, InputMap.Right],
-	[InputMap.Right, InputMap.Left],
+	[INPUT_MAP.Up, INPUT_MAP.Down],
+	[INPUT_MAP.Down, INPUT_MAP.Up],
+	[INPUT_MAP.Left, INPUT_MAP.Right],
+	[INPUT_MAP.Right, INPUT_MAP.Left],
 ]);
 
 export default class Snake implements GameObject {
 	segments: Array<Position> = [];
 	// Looks bad but this is the code from the key event
-	inputState: string = "ArrowUp";
+	inputState: string = INPUT_MAP.Up;
 
 	moveIn: (pos: Position) => void;
 	moveOut: (pos: Position) => void;
@@ -50,7 +43,8 @@ export default class Snake implements GameObject {
 		this.handleDies = handleDies;
 
 		// Create a snake that is three segments long
-		for (let i = 0; i < 3; ++i) {
+		const initialLength = 3;
+		for (let i = 0; i < initialLength; ++i) {
 			const segment = new Position(x, y+i);
 			// Invalidate the new segment in the apple spawner
 			this.moveIn(segment);
@@ -66,15 +60,13 @@ export default class Snake implements GameObject {
 		// Duplicate the tail. It will overlap for 1 tick but it will sort itself out
 		const tail = this.segments.at(-1);
 		if (tail) this.segments.push(new Position(tail.x, tail.y));
+		AudioHandler.playSfx(AudioSfxRef.AppleEat);
 	}
 
 	handleInput(keyCode: string) {
-		// Make sure this is a valid key
-		if (inputSet.has(keyCode)) {
-			// Make sure they player isn't trying to do a 180
-			if (keyCode !== opposites.get(this.inputState)) {
-				this.inputState = keyCode;
-			}
+		// Make sure this is a valid key and isn't trying to do a 180
+		if (inputSet.has(keyCode) && keyCode !== opposites.get(this.inputState)) {
+			this.inputState = keyCode;
 		}
 	}
 
@@ -99,19 +91,19 @@ export default class Snake implements GameObject {
 		const gridHeight = (GRID_HEIGHT / GRID_SIZE);
 
 		switch (this.inputState) {
-			case InputMap.Up:
+			case INPUT_MAP.Up:
 				head.y -= 1;
 				if (head.y < 0) head.y += gridHeight;
 				break;
-			case InputMap.Down:
+			case INPUT_MAP.Down:
 				head.y += 1;
 				if (head.y >= gridHeight) head.y -= gridHeight;
 				break;
-			case InputMap.Left:
+			case INPUT_MAP.Left:
 				head.x -= 1;
 				if (head.x < 0) head.x += gridWidth;
 				break;
-			case InputMap.Right:
+			case INPUT_MAP.Right:
 				head.x += 1;
 				if (head.x >= gridWidth) head.x -= gridWidth;
 				break;
@@ -138,14 +130,15 @@ export default class Snake implements GameObject {
 	render(ctx: CanvasRenderingContext2D) {
 		ctx.save();
 		ctx.fillStyle = '#fff';
+		const size = GRID_SIZE-(2*BORDER_SIZE);
 
 		this.segments.forEach((segment) => {
 			const { x, y } = segment;
 			ctx.fillRect(
-				x*GRID_SIZE,
-				y*GRID_SIZE,
-				GRID_SIZE-BORDER_SIZE,
-				GRID_SIZE-BORDER_SIZE
+				x*GRID_SIZE+BORDER_SIZE,
+				y*GRID_SIZE+BORDER_SIZE,
+				size,
+				size
 			);
 		});
 

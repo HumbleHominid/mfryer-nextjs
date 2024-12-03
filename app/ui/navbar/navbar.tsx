@@ -10,6 +10,21 @@ import NavSocials from "@/app/ui/navbar/nav-socials";
 
 export default function Navbar() {
 	const [ isNavExpanded, setNavExpanded ] = useState(false);
+	const [ showSubNav, setShowSubNav ] = useState(false);
+
+	let showNavTimeout: NodeJS.Timeout;
+
+	function handleClick(showNav: boolean) {
+		if (showNav) {
+			if (showNavTimeout) clearTimeout(showNavTimeout);
+			setNavExpanded(true);
+			setShowSubNav(true);
+		}
+		else {
+			setNavExpanded(false);
+			showNavTimeout = setTimeout(() => {setShowSubNav(false);}, 1000);
+		}
+	}
 
 	const routeLinks = [
 		{ href: "/", routeName: "Home", text: "Back to home"},
@@ -28,7 +43,7 @@ export default function Navbar() {
 					{/* Menu Toggle */}
 					<NavExpansionWidget
 						isNavExpanded={isNavExpanded}
-						clickCallback={() => setNavExpanded(!isNavExpanded)}
+						clickCallback={() => handleClick(!isNavExpanded)}
 					/>
 				</div>
 				<NavMail />
@@ -42,7 +57,11 @@ export default function Navbar() {
 				)}
 			/>
 			{/* Sub-Menu Components */}
-			<div className="relative z-50 flex flex-col gap-16 m-20 mr-0 overflow-hidden"
+			<div
+				className={clsx(
+ 					"relative z-50 flex flex-col gap-16 m-20 mr-0 overflow-hidden",
+					showSubNav ? "h-auto" : "h-0"
+				)}
 			>
 				{/* Socials */}
 				<NavSocials isNavExpanded={isNavExpanded} />
@@ -54,7 +73,7 @@ export default function Navbar() {
 							data={link}
 							index={index}
 							isNavExpanded={isNavExpanded}
-							routeClickCallback={() => setNavExpanded(false)}
+							routeClickCallback={() => handleClick(false)}
 						/>
 					)
 				})}

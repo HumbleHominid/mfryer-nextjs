@@ -14,4 +14,12 @@ export interface Renderable {
 	render(ctx: CanvasRenderingContext2D): void;
 };
 
+export type UI = Renderable & {
+	handleClick(e?: MouseEvent): void;
+}
+
 export type GameObject = Tickable & Renderable;
+
+export enum GameState { TITLE, CONTROLS, RECORDS, PLAYING, PAUSED, GAMEOVER };
+
+export type ClickHandler = () => void;
