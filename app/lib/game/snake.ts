@@ -1,36 +1,28 @@
 'use client';
 
 import { GameObject, Position } from "@/app/lib/game/types";
-import { BORDER_SIZE, GRID_WIDTH, GRID_HEIGHT, GRID_SIZE } from "@/app/lib/game/consts";
-
-// Valid input keys. These are KeyboardEvent.code values
-enum InputMap {
-	Up ="ArrowUp",
-	Down = "ArrowDown",
-	Right = "ArrowRight",
-	Left = "ArrowLeft"
-};
+import { BORDER_SIZE, GRID_WIDTH, GRID_HEIGHT, GRID_SIZE, INPUT_MAP } from "@/app/lib/game/consts";
 
 // For O(1) indexing
 const inputSet = new Set<string>([
-	InputMap.Up,
-	InputMap.Down,
-	InputMap.Left,
-	InputMap.Right
+	INPUT_MAP.Up,
+	INPUT_MAP.Down,
+	INPUT_MAP.Left,
+	INPUT_MAP.Right
 ]);
 
 // For checking opposites
 const opposites = new Map<string, string>([
-	[InputMap.Up, InputMap.Down],
-	[InputMap.Down, InputMap.Up],
-	[InputMap.Left, InputMap.Right],
-	[InputMap.Right, InputMap.Left],
+	[INPUT_MAP.Up, INPUT_MAP.Down],
+	[INPUT_MAP.Down, INPUT_MAP.Up],
+	[INPUT_MAP.Left, INPUT_MAP.Right],
+	[INPUT_MAP.Right, INPUT_MAP.Left],
 ]);
 
 export default class Snake implements GameObject {
 	segments: Array<Position> = [];
 	// Looks bad but this is the code from the key event
-	inputState: string = "ArrowUp";
+	inputState: string = INPUT_MAP.Up;
 
 	moveIn: (pos: Position) => void;
 	moveOut: (pos: Position) => void;
@@ -97,19 +89,19 @@ export default class Snake implements GameObject {
 		const gridHeight = (GRID_HEIGHT / GRID_SIZE);
 
 		switch (this.inputState) {
-			case InputMap.Up:
+			case INPUT_MAP.Up:
 				head.y -= 1;
 				if (head.y < 0) head.y += gridHeight;
 				break;
-			case InputMap.Down:
+			case INPUT_MAP.Down:
 				head.y += 1;
 				if (head.y >= gridHeight) head.y -= gridHeight;
 				break;
-			case InputMap.Left:
+			case INPUT_MAP.Left:
 				head.x -= 1;
 				if (head.x < 0) head.x += gridWidth;
 				break;
-			case InputMap.Right:
+			case INPUT_MAP.Right:
 				head.x += 1;
 				if (head.x >= gridWidth) head.x -= gridWidth;
 				break;
