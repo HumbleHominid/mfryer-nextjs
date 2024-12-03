@@ -24,28 +24,29 @@ const audioSfxMap: Map<AudioSfxRef, string> = new Map<AudioSfxRef, string>([
 ]);
 
 export default class AudioHandler {
-	private static curSong: HTMLAudioElement = new Audio();
+	// Have to do this typeof checking since this is a static property. Should probably make this not static but having the AudioHandler be a static class is super handy.
+	private static curSong: HTMLAudioElement | null = (typeof Audio === "undefined") ? null : new Audio();
 
 	private static audioMap: Map<string, HTMLAudioElement> = new Map<string, HTMLAudioElement>();
 
 	static isSameSong(audioRef: AudioSongRef): boolean {
 		const src = audioSongMap.get(audioRef);
 		if (src === undefined) return false;
-		return this.curSong.src.endsWith(src);
+		return this.curSong ? this.curSong.src.endsWith(src) : false;
 	}
 
 	static playSong(audioRef: AudioSongRef) {
 		// early-out if same song
 		if (this.isSameSong(audioRef)) {
 			// If it's paused for some reason start it
-			if (this.curSong.paused) this.curSong.play();
+			if (this.curSong?.paused) this.curSong.play();
 			return;
 		}
 		// early-out if we don't have it mapped
 		const src = audioSongMap.get(audioRef);
 		if (src === undefined) return;
 
-		this.curSong.pause();
+		this.curSong?.pause();
 		// If we have already fetched the song before, just restart it
 		if (this.audioMap.has(src)) {
 			const audio = this.audioMap.get(src);
@@ -55,7 +56,7 @@ export default class AudioHandler {
 				this.curSong = audio;
 			}
 			else {
-				this.curSong.play();
+				this.curSong?.play();
 			}
 		}
 		// Otherwise make a new element and add it to the map
@@ -94,6 +95,6 @@ export default class AudioHandler {
 	}
 
 	static stopSong() {
-		this.curSong.pause();
+		this.curSong?.pause();
 	}
 }
