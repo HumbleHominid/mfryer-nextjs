@@ -11,8 +11,10 @@ export default class Buttons implements UI {
 	}
 
 	handleClick(e: MouseEvent) {
-		const clickX = e.offsetX;
-		const clickY = e.offsetY;
+		const canvas = e.target as HTMLCanvasElement;
+
+		const clickX = e.offsetX / canvas.clientWidth * canvas.width;
+		const clickY = e.offsetY / canvas.clientHeight * canvas.height;
 
 		this.buttons.keys().forEach((key: ButtonConfig) => {
 			const top = key.center.y - (key.height/2);

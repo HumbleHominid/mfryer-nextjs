@@ -19,7 +19,7 @@ export default function Page() {
 		<>
 			<h1 className="text-6xl mb-6">Snake Game</h1>
 			<div className="hidden sm:flex justify-center w-full bg-gradient-to-r from-transparent via-slate-900 to-transparent">
-				<div>
+				<div className="w-1/2 lg:w-2/3">
 					<GameCanvas />
 				</div>
 			</div>
