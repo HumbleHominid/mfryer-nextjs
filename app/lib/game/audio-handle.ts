@@ -51,7 +51,7 @@ export default class AudioHandler {
 			const audio = this.audioMap.get(src);
 			if (audio !== undefined) {
 				audio.currentTime = 0;
-				audio.autoplay = true;
+				audio.play();
 				this.curSong = audio;
 			}
 			else {
