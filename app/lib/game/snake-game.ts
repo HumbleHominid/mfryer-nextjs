@@ -18,6 +18,7 @@ import AudioHandler, { AudioSfxRef, AudioSongRef } from "./audio-handle";
 export default class SnakeGame {
 	width: number;
 	height: number;
+	isInitialized: boolean = false;
 
 	// Game Objects
 	snake: Snake = new Snake(new Position(0, 0), () => {}, () => {}, () => {} );
@@ -42,6 +43,7 @@ export default class SnakeGame {
 	}
 
 	init() {
+		this.isInitialized = true;
 		/**
 		 * Since we are using a component array, it's very important that we push things
 		 * into the array in the correct order otherwise stuff will render on the
@@ -53,14 +55,17 @@ export default class SnakeGame {
 
 		// Bind UI
 		this.stateHandler.bindOnStateChange(this.handleStateChange.bind(this));
-		this.handleStateChange(this.stateHandler.state, GameState.TITLE); // HACK
+		this.handleStateChange(GameState.TITLE, GameState.TITLE); // HACK
 	}
 
 	forceStop() {
+		this.isInitialized = false;
+		this.stateHandler.setState(GameState.TITLE);
 		this.unbindPlayerInput();
 		this.ticking.clear();
 		this.rendering.clear();
 		AudioHandler.stopSong();
+		this.stateHandler.unbindOnStateChange(this.handleStateChange.bind(this));
 	}
 
 	handleStateChange(newState: GameState, oldState: GameState) {
@@ -81,7 +86,7 @@ export default class SnakeGame {
 				if (this.rendering.has(this.apple)) this.rendering.delete(this.apple);
 				if (this.ticking.has(this.snake)) this.ticking.delete(this.snake);
 				// Music
-				AudioHandler.playSong(AudioSongRef.TitleMusic);
+				if (this.isInitialized) AudioHandler.playSong(AudioSongRef.TitleMusic);
 				break;
 			case GameState.PLAYING:
 				// If we have dangling references in the render pipeline, remove them
@@ -121,7 +126,7 @@ export default class SnakeGame {
 
 				this.snake.bindInput();
 				// Music
-				AudioHandler.playSong(AudioSongRef.GameMusic);
+				if (this.isInitialized) AudioHandler.playSong(AudioSongRef.GameMusic);
 				break;
 			case GameState.GAMEOVER:
 				this.snake.unbindInput();
@@ -130,7 +135,9 @@ export default class SnakeGame {
 				const GameOverUI = newUI as UIGameOver;
 				GameOverUI.bindScoreGetter(() => this.score);
 				// Music
-				setTimeout(() => AudioHandler.playSong(AudioSongRef.TitleMusic), 50);
+				setTimeout(() => {
+					if (this.isInitialized) AudioHandler.playSong(AudioSongRef.TitleMusic);
+				}, 50);
 				break;
 			case GameState.PAUSED:
 				this.snake.unbindInput();
