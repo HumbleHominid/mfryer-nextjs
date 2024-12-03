@@ -2,7 +2,6 @@ import { Position, UI, ClickHandler } from "@/app/lib/game/types";
 import { drawText } from "@/app/lib/game/ui/ui-helpers";
 import { CANVAS_COLOR, DEFAULT_TEXT_COLOR, GRID_HEIGHT, GRID_WIDTH, INPUT_MAP } from "@/app/lib/game/consts";
 import Buttons from "@/app/lib/game/ui/buttons";
-import { Rock_3D } from "next/font/google";
 
 export type ScoreGetterHandler = () => number;
 
