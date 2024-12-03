@@ -22,7 +22,7 @@ export default function Navbar() {
 		}
 		else {
 			setNavExpanded(false);
-			showNavTimeout = setTimeout(() => {setShowSubNav(false); console.log(showSubNav)}, 1000);
+			showNavTimeout = setTimeout(() => {setShowSubNav(false);}, 1000);
 		}
 	}
 
