@@ -30,7 +30,7 @@ export default class Starfield implements GameObject {
 		});
 
 		// we will attempt to create between [0, maxNewStars)
-		const maxNewStars = 2;
+		const maxNewStars = 4;
 		const numStars = Math.floor(Math.random()*(maxNewStars+1));
 
 		// Create the new stars if possible and add them to the data structures

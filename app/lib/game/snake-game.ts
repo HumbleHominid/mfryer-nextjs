@@ -29,6 +29,7 @@ export default class SnakeGame {
 
 	ticking: Set<Tickable> = new Set<Tickable>();
 	rendering: Set<Renderable> = new Set<Renderable>();
+	tickInterval: NodeJS.Timeout | null = null;
 
 	_score: number = 0;
 
@@ -52,6 +53,11 @@ export default class SnakeGame {
 		const starfield = new Starfield(this.width, this.height);
 		this.ticking.add(starfield);
 		this.rendering.add(starfield);
+		// make a new ticking interval
+		if (this.tickInterval !== null) clearInterval(this.tickInterval);
+		this.tickInterval = setInterval(() => {
+			this.tick();
+		}, 75);
 
 		// Bind UI
 		this.stateHandler.bindOnStateChange(this.handleStateChange.bind(this));
@@ -64,6 +70,8 @@ export default class SnakeGame {
 		this.unbindPlayerInput();
 		this.ticking.clear();
 		this.rendering.clear();
+		// stop the ticking interval completely
+		if (this.tickInterval !== null) clearInterval(this.tickInterval);
 		AudioHandler.stopSong();
 		this.stateHandler.unbindOnStateChange(this.handleStateChange.bind(this));
 	}
