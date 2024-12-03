@@ -1,13 +1,14 @@
 import Starfield from "@/app/lib/game/starfield";
 import { GameState, Position, Renderable, Tickable, UI } from "@/app/lib/game/types";
 import Snake from "@/app/lib/game/snake";
-import { CANVAS_COLOR, GRID_SIZE } from "@/app/lib/game/consts";
+import { CANVAS_COLOR, GRID_SIZE, INPUT_MAP } from "@/app/lib/game/consts";
 import AppleSpawner from "@/app/lib/game/apple-spawner";
 import Apple from "@/app/lib/game/apple";
 import StateHandler from "@/app/lib/game/state-handler";
 import UIFactory from "@/app/lib/game/ui/ui-factory";
 import UIGame from "@/app/lib/game/ui/screens/game";
 import UIGameOver from "@/app/lib/game/ui/screens/game-over";
+import UIPaused from "@/app/lib/game/ui/screens/paused";
 import { makeMockUI } from "@/app/lib/game/ui/ui-helpers";
 
 /**
@@ -61,7 +62,7 @@ export default class SnakeGame {
 		// Cleanup stuff from the old state if we have to
 		switch (oldState) {
 			case GameState.PLAYING:
-				this.unbindPlayerInput();
+				this.snake.unbindInput();
 				break;
 		}
 
@@ -94,22 +95,30 @@ export default class SnakeGame {
 						() => this.stateHandler.setState(GameState.GAMEOVER)
 					);
 					this.snake = snake;
-					this.ticking.add(snake);
-					this.rendering.add(snake);
 
 					// Apple
 					const apple = appleSpawner.spawnApple();
 					this.apple = apple;
-					this.rendering.add(apple);
 				}
 
-				this.bindPlayerInput();
+				// Always add the snake back to ticking. (Reenables after pause and from other menus)
+				this.ticking.add(this.snake);
+				// Always add apple and snake back to rendering. same as above
+				this.rendering.add(this.snake);
+				this.rendering.add(this.apple);
+
+				this.snake.bindInput();
 				break;
 			case GameState.GAMEOVER:
 				// Stop ticking the snake so it "freezes" on screen. keep the stars ticking
 				if (this.ticking.has(this.snake)) this.ticking.delete(this.snake);
 				const GameOverUI = newUI as UIGameOver;
 				GameOverUI.bindScoreGetter(() => this.score);
+				break;
+			case GameState.PAUSED:
+				if (this.ticking.has(this.snake)) this.ticking.delete(this.snake);
+				const pausedUI = newUI as UIPaused;
+				pausedUI.bindScoreGetter(() => this.score);
 				break;
 		}
 
@@ -125,9 +134,27 @@ export default class SnakeGame {
 		this.ticking.delete(this.snake);
 	}
 
-	bindPlayerInput() { this.snake.bindInput(); }
+	handleInput(e: KeyboardEvent) {
+		if (e.code === INPUT_MAP.Pause) {
+			switch (this.stateHandler.state) {
+				case GameState.PLAYING:
+					this.stateHandler.setState(GameState.PAUSED);
+					break;
+				case GameState.PAUSED:
+					this.stateHandler.setState(GameState.PLAYING);
+					break;
+			}
+		}
+	}
 
-	unbindPlayerInput() { this.snake.unbindInput(); }
+	bindPlayerInput() {
+		document.addEventListener("keydown", this.handleInput.bind(this));
+	}
+
+	unbindPlayerInput() {
+		document.removeEventListener("keydown", this.handleInput.bind(this));
+		this.snake.unbindInput();
+	}
 
 	handleClick(e: MouseEvent) {
 		this.ui?.handleClick(e);

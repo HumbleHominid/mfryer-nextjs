@@ -15,8 +15,9 @@ export const DEFAULT_TEXT_COLOR = "#eee";
 // Inputs
 // Valid input keys. These are KeyboardEvent.code values
 export const enum INPUT_MAP {
-	Up ="KeyUp",
-	Down = "KeyDown",
-	Right = "KeyRight",
-	Left = "KeyLeft"
+	Up ="ArrowUp",
+	Down = "ArrowDown",
+	Right = "ArrowRight",
+	Left = "ArrowLeft",
+	Pause = "Escape"
 };

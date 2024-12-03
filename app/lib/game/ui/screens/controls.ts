@@ -66,10 +66,11 @@ export default class UIControls implements UI {
 		// Controls
 		{
 			const controls = [
-				{ key: "↑", text: "Up"},
-				{ key: "↓", text: "Down"},
-				{ key: "←", text: "Left"},
-				{ key: "→", text: "Right"},
+				{ key: "↑", action: "Up"},
+				{ key: "↓", action: "Down"},
+				{ key: "←", action: "Left"},
+				{ key: "→", action: "Right"},
+				{ key: "Esc", action: "Pause"}
 			];
 			const controlTextSize = 20;
 			// offset the top of the list by the heading and then a larger space
@@ -79,7 +80,7 @@ export default class UIControls implements UI {
 				// We use individual left/right renders here so it looks nice and centered on what we want
 				// Text
 				{
-					const text = `${mapping.text}`;
+					const text = `${mapping.action}`;
 					// shadow text
 					drawText(ctx, {
 						color: CANVAS_COLOR,
