@@ -6,17 +6,32 @@ import Buttons from "@/app/lib/game/ui/buttons";
 export default class UITitle implements UI {
 	buttons: Buttons = new Buttons();
 	onPlayClicked: Set<ClickHandler> = new Set<ClickHandler>;
+	onControlsClicked: Set<ClickHandler> = new Set<ClickHandler>;
 
 	constructor() {
+		let topOffset = 175;
+		const buttonHeight = 50;
+		const buttonGap = 0.25 * buttonHeight;
 		// Make play button
 		this.buttons.add({
 				width: 150,
-				height: 50,
-				center: new Position(GRID_WIDTH/2, 175),
+				height: buttonHeight,
+				center: new Position(GRID_WIDTH/2, topOffset),
 				text: 'PLAY'
 			},
 			() => this.onPlayClicked.forEach((callback) => callback(), this)
 		);
+		topOffset += buttonHeight + buttonGap;
+		// Make controls button
+		this.buttons.add({
+			width: 150,
+			height: buttonHeight,
+			scale: 0.75,
+			center: new Position(GRID_WIDTH/2, topOffset),
+			text: 'CONTROLS'
+		},
+		() => this.onControlsClicked.forEach((callback) => callback(), this)
+	);
 	}
 
 	handleClick(e: MouseEvent) { this.buttons.handleClick(e); }
@@ -27,6 +42,14 @@ export default class UITitle implements UI {
 
 	unbindOnPlayClick(e: ClickHandler) {
 		if (this.onPlayClicked.has(e)) this.onPlayClicked.delete(e);
+	}
+
+	bindOnControlsClick(e: ClickHandler) {
+		if (!this.onControlsClicked.has(e)) this.onControlsClicked.add(e);
+	}
+
+	unbindOnControlsClick(e: ClickHandler) {
+		if (this.onControlsClicked.has(e)) this.onControlsClicked.delete(e);
 	}
 
 	render(ctx: CanvasRenderingContext2D) {
