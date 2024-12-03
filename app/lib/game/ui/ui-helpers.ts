@@ -30,7 +30,7 @@ export function drawText(ctx: CanvasRenderingContext2D, config: TextConfig) {
 	// do the actual text
 	ctx.save();
 
-	ctx.font = `${config.fontHeight}px consolas`;
+	ctx.font = `${config.fontHeight}px silkscreen`;
 	ctx.fillStyle = config.color;
 	ctx.textAlign = align;
 	ctx.textBaseline = baseline;

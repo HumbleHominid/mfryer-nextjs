@@ -59,7 +59,7 @@ export default class UITitle implements UI {
 		// Title
 		{
 			const titleText = 'Snake Game';
-			const fontSize = 60;
+			const fontSize = 50;
 			// shadow text
 			drawText(ctx, {
 				color: CANVAS_COLOR,
@@ -84,7 +84,7 @@ export default class UITitle implements UI {
 		// Sub title
 		{
 			const subTitleText = 'Definitely an original game';
-			const fontSize = 20;
+			const fontSize = 15;
 			// shadow text
 			drawText(ctx, {
 				color: CANVAS_COLOR,
@@ -112,7 +112,7 @@ export default class UITitle implements UI {
 				'Programmed by: Michael Fryer',
 				'Music by: JCD',
 			];
-			const fontSize = 12;
+			const fontSize = 10;
 			let bottomOffset = 5;
 
 			credits.reverse().forEach((text) => {

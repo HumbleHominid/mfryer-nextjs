@@ -74,7 +74,7 @@ export default class UIControls implements UI {
 			];
 			const controlTextSize = 20;
 			// offset the top of the list by the heading and then a larger space
-			let offset = gap + headingSize + (3*gap);
+			let offset = gap + headingSize + (2*gap);
 
 			controls.forEach((mapping) => {
 				// We use individual left/right renders here so it looks nice and centered on what we want
