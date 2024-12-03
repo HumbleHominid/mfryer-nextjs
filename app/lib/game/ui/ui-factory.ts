@@ -21,6 +21,7 @@ export default class UIFactory {
 			case GameState.GAMEOVER:
 				const gameOverUI = new UIGameOver() as UIGameOver;
 				gameOverUI.bindOnPlayAgainClick(() => stateHandler.setState(GameState.PLAYING));
+				gameOverUI.bindOnTitleClick(() => stateHandler.setState(GameState.TITLE));
 				return gameOverUI;
 			case GameState.CONTROLS:
 				const controlsUI = new UIControls() as UIControls;

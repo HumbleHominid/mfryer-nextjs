@@ -59,18 +59,17 @@ export default class SnakeGame {
 			if (this.rendering.has(this.ui)) this.rendering.delete(this.ui);
 		}
 
-		// Cleanup stuff from the old state if we have to
-		switch (oldState) {
-			case GameState.PLAYING:
-				this.snake.unbindInput();
-				break;
-		}
-
 		// Create new UI and update the references
 		const newUI = UIFactory.makeUI(newState, this.stateHandler);
 
 		// Any additional setup we need to do here that can't be done in the factory for whatever reason
 		switch (this.stateHandler.state) {
+			case GameState.TITLE:
+				// Clean up the tick/render queue for safety
+				if (this.rendering.has(this.snake)) this.rendering.delete(this.snake);
+				if (this.rendering.has(this.apple)) this.rendering.delete(this.apple);
+				if (this.ticking.has(this.snake)) this.ticking.delete(this.snake);
+				break;
 			case GameState.PLAYING:
 				// If we have dangling references in the render pipeline, remove them
 				[this.snake, this.apple].forEach((item) => {
@@ -110,12 +109,15 @@ export default class SnakeGame {
 				this.snake.bindInput();
 				break;
 			case GameState.GAMEOVER:
+				this.snake.unbindInput();
 				// Stop ticking the snake so it "freezes" on screen. keep the stars ticking
 				if (this.ticking.has(this.snake)) this.ticking.delete(this.snake);
 				const GameOverUI = newUI as UIGameOver;
 				GameOverUI.bindScoreGetter(() => this.score);
 				break;
 			case GameState.PAUSED:
+				this.snake.unbindInput();
+				// Stop ticking the snake so it "freezes" on screen. keep the stars ticking
 				if (this.ticking.has(this.snake)) this.ticking.delete(this.snake);
 				const pausedUI = newUI as UIPaused;
 				pausedUI.bindScoreGetter(() => this.score);
@@ -142,6 +144,9 @@ export default class SnakeGame {
 					break;
 				case GameState.PAUSED:
 					this.stateHandler.setState(GameState.PLAYING);
+					break;
+				case GameState.GAMEOVER:
+					this.stateHandler.setState(GameState.TITLE);
 					break;
 			}
 		}

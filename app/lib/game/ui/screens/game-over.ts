@@ -10,20 +10,38 @@ export default class UIGameOver implements UI {
 
 	buttons: Buttons = new Buttons();
 	onPlayAgainClicked: Set<ClickHandler> = new Set<ClickHandler>;
+	onTitleClicked: Set<ClickHandler> = new Set<ClickHandler>;
 
 	constructor() {
+		const buttonWidth = 150;
+		const buttonHeight = 50;
+		const buttonScale = 0.60;
+		const buttonY = GRID_HEIGHT - (buttonHeight * buttonScale);
+		const centerX = GRID_WIDTH / 2;
+		const offset = ((buttonWidth * buttonScale) / 2) * 1.1;
+		// Placed side-by-side
 		// Make play again button
 		{
-			const buttonHeight = 50;
-			const buttonScale = 0.75;
 			this.buttons.add({
-					width: 150,
+					width: buttonWidth,
 					height: buttonHeight,
 					scale: buttonScale,
-					center: new Position(GRID_WIDTH / 2, GRID_HEIGHT - (buttonHeight * buttonScale) ),
+					center: new Position(centerX - offset, buttonY),
 					text: 'PLAY AGAIN'
 				},
 				() => this.onPlayAgainClicked.forEach((callback) => callback(), this)
+			);
+		}
+		// Make title button
+		{
+			this.buttons.add({
+					width: buttonWidth,
+					height: buttonHeight,
+					scale: buttonScale,
+					center: new Position(centerX + offset, buttonY),
+					text: 'TITLE'
+				},
+				() => this.onTitleClicked.forEach((callback) => callback(), this)
 			);
 		}
 	}
@@ -42,6 +60,14 @@ export default class UIGameOver implements UI {
 
 	unbindOnPlayAgainClick(e: ClickHandler) {
 		if (this.onPlayAgainClicked.has(e)) this.onPlayAgainClicked.delete(e);
+	}
+
+	bindOnTitleClick(e: ClickHandler) {
+		if (!this.onTitleClicked.has(e)) this.onTitleClicked.add(e);
+	}
+
+	unbindOnTitleClick(e: ClickHandler) {
+		if (this.onTitleClicked.has(e)) this.onTitleClicked.delete(e);
 	}
 
 	render(ctx: CanvasRenderingContext2D) {
