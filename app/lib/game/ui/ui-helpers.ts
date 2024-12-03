@@ -1,4 +1,4 @@
-import { Position } from "@/app/lib/game/types";
+import { Position, UI } from "@/app/lib/game/types";
 
 export type ButtonConfig = {
 	center: Position;
@@ -15,6 +15,11 @@ export type TextConfig = {
 	text: string;
 	pos: Position;
 	fontHeight: number;
+}
+
+class UIMock implements UI {
+	render(ctx: CanvasRenderingContext2D) { ctx.save(); ctx.restore(); }
+	handleClick() {}
 }
 
 export function drawText(ctx: CanvasRenderingContext2D, config: TextConfig) {
@@ -63,3 +68,5 @@ export function drawButton(ctx: CanvasRenderingContext2D, config: ButtonConfig) 
 
   ctx.restore();
 }
+
+export function makeMockUI(): UI { return new UIMock(); }

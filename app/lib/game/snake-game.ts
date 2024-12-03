@@ -8,6 +8,7 @@ import StateHandler from "@/app/lib/game/state-handler";
 import UIFactory from "@/app/lib/game/ui/ui-factory";
 import UIGame from "@/app/lib/game/ui/screens/game";
 import UIGameOver from "@/app/lib/game/ui/screens/game-over";
+import { makeMockUI } from "@/app/lib/game/ui/ui-helpers";
 
 /**
  * The actual snake game
@@ -22,7 +23,7 @@ export default class SnakeGame {
 	apple: Apple = new Apple(new Position(0, 0));
 	appleSpawner: AppleSpawner = new AppleSpawner();
 
-	ui: UI | null = null;
+	ui: UI = makeMockUI();
 
 	ticking: Set<Tickable> = new Set<Tickable>();
 	rendering: Set<Renderable> = new Set<Renderable>();
@@ -146,7 +147,10 @@ export default class SnakeGame {
 				// Spawn a new apple
 				this.rendering.delete(this.apple);
 				this.apple = this.appleSpawner.spawnApple();
+				// HACK Make sure the UI is always rendered last
+				if (this.rendering.has(this.ui)) this.rendering.delete(this.ui);
 				this.rendering.add(this.apple);
+				this.rendering.add(this.ui);
 			}
 		}
 	}

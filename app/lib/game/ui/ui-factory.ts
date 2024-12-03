@@ -3,11 +3,7 @@ import StateHandler from "@/app/lib/game/state-handler";
 import UITitle from "@/app/lib/game/ui/screens/title";
 import UIGame from "@/app/lib/game/ui/screens/game";
 import UIGameOver from "@/app/lib/game/ui/screens/game-over";
-
-class UIMock implements UI {
-	render(ctx: CanvasRenderingContext2D) { ctx.save(); ctx.restore(); }
-	handleClick() {}
-}
+import { makeMockUI } from "@/app/lib/game/ui/ui-helpers";
 
 export default class UIFactory {
 	static makeUI(state: GameState, stateHandler: StateHandler): UI {
@@ -24,7 +20,7 @@ export default class UIFactory {
 				gameOverUI.bindOnPlayAgainClick(() => stateHandler.setState(GameState.PLAYING));
 				return gameOverUI;
 			default:
-				return new UIMock();
+				return makeMockUI();
 		}
 	}
 }
