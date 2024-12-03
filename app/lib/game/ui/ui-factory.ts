@@ -14,7 +14,7 @@ export default class UIFactory {
 		switch (state) {
 			case GameState.TITLE:
 				const titleUI = new UITitle() as UITitle;
-				titleUI.bindOnPlayClick(() => stateHandler.setState(GameState.GAMEOVER));
+				titleUI.bindOnPlayClick(() => stateHandler.setState(GameState.PLAYING));
 				return titleUI;
 			case GameState.PLAYING:
 				const gameUI = new UIGame() as UIGame;
