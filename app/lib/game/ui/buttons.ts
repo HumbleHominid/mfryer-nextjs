@@ -1,5 +1,6 @@
 import { UI, ClickHandler } from "@/app/lib/game/types";
 import { ButtonConfig, drawButton } from "@/app/lib/game/ui/ui-helpers";
+import AudioHandler, { AudioSfxRef } from "@/app/lib/game/audio-handle";
 
 // A collection of buttons that knows how to render themselves and elicit callbacks when clicked
 export default class Buttons implements UI {
@@ -27,6 +28,7 @@ export default class Buttons implements UI {
 				clickY >= top
 			) {
 				const callback = this.buttons.get(key);
+				AudioHandler.playSfx(AudioSfxRef.ButtonClick);
 				if (callback) callback();
 			}
 		});

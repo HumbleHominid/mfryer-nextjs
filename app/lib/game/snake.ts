@@ -2,6 +2,7 @@
 
 import { GameObject, Position } from "@/app/lib/game/types";
 import { BORDER_SIZE, GRID_WIDTH, GRID_HEIGHT, GRID_SIZE, INPUT_MAP } from "@/app/lib/game/consts";
+import AudioHandler, { AudioSfxRef } from "@/app/lib/game/audio-handle";
 
 // For O(1) indexing
 const inputSet = new Set<string>([
@@ -59,6 +60,7 @@ export default class Snake implements GameObject {
 		// Duplicate the tail. It will overlap for 1 tick but it will sort itself out
 		const tail = this.segments.at(-1);
 		if (tail) this.segments.push(new Position(tail.x, tail.y));
+		AudioHandler.playSfx(AudioSfxRef.AppleEat);
 	}
 
 	handleInput(keyCode: string) {

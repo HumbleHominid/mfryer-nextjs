@@ -110,7 +110,7 @@ export default class UITitle implements UI {
 		{
 			const credits = [
 				'Programmed by: Michael Fryer',
-				// 'Music by: JCD' TODO enable after music is added
+				'Music by: JCD',
 			];
 			const fontSize = 12;
 			let bottomOffset = 5;

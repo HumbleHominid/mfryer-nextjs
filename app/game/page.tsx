@@ -1,6 +1,8 @@
 'use client';
 
 import GameCanvas from "@/app/ui/game/game-canvas";
+import { useEffect } from "react";
+import AudioHandler from "@/app/lib/game/audio-handle";
 
 /**
  * This game is snake. We will have high scores saved in both local storage
@@ -8,9 +10,14 @@ import GameCanvas from "@/app/ui/game/game-canvas";
  * scores. Global high scores can use IP address.
  */
 export default function Page() {
+	useEffect(() => {
+		return () => {
+			AudioHandler.stopSong();
+		}
+	})
 	return (
 		<>
-			<h1 className="text-6xl mb-6">Snake Game - WIP</h1>
+			<h1 className="text-6xl mb-6">Snake Game</h1>
 			<div className="hidden sm:flex justify-center w-full bg-gradient-to-r from-transparent via-slate-900 to-transparent">
 				<div>
 					<GameCanvas />

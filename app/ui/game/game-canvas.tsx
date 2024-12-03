@@ -3,11 +3,13 @@
 import { useEffect, useRef } from "react";
 import SnakeGame from "@/app/lib/game/snake-game";
 import { GRID_WIDTH, GRID_HEIGHT } from "@/app/lib/game/consts";
+import { useClientMediaQuery } from "@/app/lib/hooks/use-client-media-query";
 
 export default function GameCanvas() {
 	const canvasRef = useRef(null);
 	const renderIntervalRef = useRef<NodeJS.Timeout | null>(null);
 	const gameRef = useRef<SnakeGame | null>(null);
+	const isMobile = useClientMediaQuery('(max-width: 640px)');
 
 	const getContext = (): CanvasRenderingContext2D | null => {
 		if (!canvasRef.current) return null;
@@ -16,6 +18,13 @@ export default function GameCanvas() {
 	}
 
 	useEffect(() => {
+		// Early-out if we are on mobile.
+		if (isMobile) {
+			gameRef.current?.forceStop();
+			if (renderIntervalRef.current !== null) clearInterval(renderIntervalRef.current);
+			return () => {};
+		}
+
 		const ctx = getContext();
 		if (!ctx) return;
 
@@ -26,8 +35,9 @@ export default function GameCanvas() {
 			gameRef.current?.render(ctx);
 		}
 
-		// Set up the game
-		gameRef.current = new SnakeGame(ctx.canvas.width, ctx.canvas.height);
+		// if we have a game already for some reason, just init it again
+		if (gameRef.current) gameRef.current.init();
+		else gameRef.current = new SnakeGame(ctx.canvas.width, ctx.canvas.height);
 		// Set up the game tick
 		renderIntervalRef.current = setInterval(() => {
 			gameRef.current?.tick();
@@ -45,7 +55,7 @@ export default function GameCanvas() {
 			if (renderIntervalRef.current !== null) clearInterval(renderIntervalRef.current);
 			gameRef.current?.unbindPlayerInput();
 		}
-	}, []);
+	}, [isMobile]);
 
 	return (
 		<canvas

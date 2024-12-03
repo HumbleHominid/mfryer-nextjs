@@ -10,6 +10,7 @@ import UIGame from "@/app/lib/game/ui/screens/game";
 import UIGameOver from "@/app/lib/game/ui/screens/game-over";
 import UIPaused from "@/app/lib/game/ui/screens/paused";
 import { makeMockUI } from "@/app/lib/game/ui/ui-helpers";
+import AudioHandler, { AudioSfxRef, AudioSongRef } from "./audio-handle";
 
 /**
  * The actual snake game
@@ -18,7 +19,6 @@ export default class SnakeGame {
 	width: number;
 	height: number;
 
-	starfield: Starfield;
 	// Game Objects
 	snake: Snake = new Snake(new Position(0, 0), () => {}, () => {}, () => {} );
 	apple: Apple = new Apple(new Position(0, 0));
@@ -37,19 +37,30 @@ export default class SnakeGame {
 	constructor(width: number, height: number) {
 		this.width = width;
 		this.height = height;
+
+		this.init();
+	}
+
+	init() {
 		/**
 		 * Since we are using a component array, it's very important that we push things
 		 * into the array in the correct order otherwise stuff will render on the
 		 * wrong z-level in the canvas and it look bad
 		 */
 		const starfield = new Starfield(this.width, this.height);
-		this.starfield = starfield;
 		this.ticking.add(starfield);
 		this.rendering.add(starfield);
 
 		// Bind UI
 		this.stateHandler.bindOnStateChange(this.handleStateChange.bind(this));
 		this.handleStateChange(this.stateHandler.state, GameState.TITLE); // HACK
+	}
+
+	forceStop() {
+		this.unbindPlayerInput();
+		this.ticking.clear();
+		this.rendering.clear();
+		AudioHandler.stopSong();
 	}
 
 	handleStateChange(newState: GameState, oldState: GameState) {
@@ -69,6 +80,8 @@ export default class SnakeGame {
 				if (this.rendering.has(this.snake)) this.rendering.delete(this.snake);
 				if (this.rendering.has(this.apple)) this.rendering.delete(this.apple);
 				if (this.ticking.has(this.snake)) this.ticking.delete(this.snake);
+				// Music
+				AudioHandler.playSong(AudioSongRef.TitleMusic);
 				break;
 			case GameState.PLAYING:
 				// If we have dangling references in the render pipeline, remove them
@@ -107,6 +120,8 @@ export default class SnakeGame {
 				this.rendering.add(this.apple);
 
 				this.snake.bindInput();
+				// Music
+				AudioHandler.playSong(AudioSongRef.GameMusic);
 				break;
 			case GameState.GAMEOVER:
 				this.snake.unbindInput();
@@ -114,6 +129,8 @@ export default class SnakeGame {
 				if (this.ticking.has(this.snake)) this.ticking.delete(this.snake);
 				const GameOverUI = newUI as UIGameOver;
 				GameOverUI.bindScoreGetter(() => this.score);
+				// Music
+				setTimeout(() => AudioHandler.playSong(AudioSongRef.TitleMusic), 50);
 				break;
 			case GameState.PAUSED:
 				this.snake.unbindInput();
@@ -141,12 +158,15 @@ export default class SnakeGame {
 			switch (this.stateHandler.state) {
 				case GameState.PLAYING:
 					this.stateHandler.setState(GameState.PAUSED);
+					AudioHandler.playSfx(AudioSfxRef.ButtonClick);
 					break;
 				case GameState.PAUSED:
 					this.stateHandler.setState(GameState.PLAYING);
+					AudioHandler.playSfx(AudioSfxRef.ButtonClick);
 					break;
 				case GameState.GAMEOVER:
 					this.stateHandler.setState(GameState.TITLE);
+					AudioHandler.playSfx(AudioSfxRef.ButtonClick);
 					break;
 			}
 		}
