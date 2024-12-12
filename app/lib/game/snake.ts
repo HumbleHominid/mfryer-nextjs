@@ -30,6 +30,9 @@ export default class Snake implements GameObject {
 
 	handleDies: () => void;
 
+	// ref to the input handler so we can remove it later
+	playerInputHandler: ((e: KeyboardEvent) => void) | null = null;
+
 	// Starting pos
 	constructor(
 		pos: Position,
@@ -63,19 +66,28 @@ export default class Snake implements GameObject {
 		AudioHandler.playSfx(AudioSfxRef.AppleEat);
 	}
 
-	handleInput(keyCode: string) {
+	handleInput(e: KeyboardEvent) {
+		const keyCode = e.code;
 		// Make sure this is a valid key and isn't trying to do a 180
 		if (inputSet.has(keyCode) && keyCode !== opposites.get(this.inputState)) {
 			this.inputState = keyCode;
+
+			// Prevent default if we are not trying to pause. This is so the player doesn't
+			// scroll the screen all over the place while playing
+			if (keyCode !== INPUT_MAP.Pause) e.preventDefault();
 		}
 	}
 
 	bindInput() {
-		document.addEventListener("keydown", (e) => this.handleInput(e.code));
+		this.playerInputHandler = this.handleInput.bind(this);
+		document.addEventListener("keydown", this.playerInputHandler);
 	}
 
 	unbindInput() {
-		document.removeEventListener("keydown", (e) => this.handleInput(e.code));
+		if (this.playerInputHandler) {
+			document.removeEventListener("keydown", this.playerInputHandler);
+			this.playerInputHandler = null;
+		}
 	}
 
 	tick() {

@@ -20,6 +20,11 @@ export default class SnakeGame {
 	height: number;
 	isInitialized: boolean = false;
 
+	// ref to the input handler so we can remove it later
+	playerInputHandler: ((e: KeyboardEvent) => void) | null = null;
+	// ref to the state change handlers so we can remove it later
+	stateChangedHandler: ((oldState: GameState, newState: GameState) => void) | null = null;
+
 	// Game Objects
 	snake: Snake = new Snake(new Position(0, 0), () => {}, () => {}, () => {} );
 	apple: Apple = new Apple(new Position(0, 0));
@@ -44,6 +49,7 @@ export default class SnakeGame {
 	}
 
 	init() {
+		if (this.isInitialized) return;
 		this.isInitialized = true;
 		/**
 		 * Since we are using a component array, it's very important that we push things
@@ -58,10 +64,12 @@ export default class SnakeGame {
 		this.tickInterval = setInterval(() => {
 			this.tick();
 		}, 75);
+		this.bindPlayerInput();
 
 		// Bind UI
-		this.stateHandler.bindOnStateChange(this.handleStateChange.bind(this));
-		this.handleStateChange(GameState.TITLE, GameState.TITLE); // HACK
+		this.stateChangedHandler = this.handleStateChange.bind(this);
+		this.stateHandler.bindOnStateChange(this.stateChangedHandler);
+		this.stateChangedHandler(GameState.TITLE, GameState.TITLE); // HACK
 	}
 
 	forceStop() {
@@ -73,7 +81,10 @@ export default class SnakeGame {
 		// stop the ticking interval completely
 		if (this.tickInterval !== null) clearInterval(this.tickInterval);
 		AudioHandler.stopSong();
-		this.stateHandler.unbindOnStateChange(this.handleStateChange.bind(this));
+		if (this.stateChangedHandler) {
+			this.stateHandler.unbindOnStateChange(this.handleStateChange);
+			this.stateChangedHandler = null;
+		}
 	}
 
 	handleStateChange(newState: GameState, oldState: GameState) {
@@ -192,11 +203,15 @@ export default class SnakeGame {
 	}
 
 	bindPlayerInput() {
-		document.addEventListener("keydown", this.handleInput.bind(this));
+		this.playerInputHandler = this.handleInput.bind(this);
+		document.addEventListener("keydown", this.playerInputHandler);
 	}
 
 	unbindPlayerInput() {
-		document.removeEventListener("keydown", this.handleInput.bind(this));
+		if (this.playerInputHandler) {
+			document.removeEventListener("keydown", this.playerInputHandler);
+			this.playerInputHandler = null;
+		}
 		this.snake.unbindInput();
 	}
 

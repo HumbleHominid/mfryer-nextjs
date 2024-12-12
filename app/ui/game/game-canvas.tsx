@@ -48,11 +48,10 @@ export default function GameCanvas() {
 
 		// Bind event listeners
 		ctx.canvas.onclick = gameRef.current?.handleClick.bind(gameRef.current);
-		gameRef.current?.bindPlayerInput();
 
 		return () => {
 			if (renderIntervalRef.current !== null) clearInterval(renderIntervalRef.current);
-			gameRef.current?.unbindPlayerInput();
+			gameRef.current?.forceStop();
 		}
 	}, [isMobile]);
 
