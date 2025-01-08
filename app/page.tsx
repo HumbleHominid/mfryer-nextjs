@@ -7,7 +7,7 @@ import { YouTube, Email } from "@/app/lib/ref-links";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-6 font-normal text-lg">
+    <main className="flex flex-col gap-6 font-normal text-lg bg-blobs">
       <div className="relative min-h-lvh grid grid-rows-layout xl:mt-32">
         {/* Title Section */}
         <h1 className="text-7xl sm:text-8xl lg:text-9xl font-thin mb-8 w-3/4">

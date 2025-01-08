@@ -6,12 +6,89 @@
   --background: #fff5e6;
   --foreground: #171717;
   --ytRed: #ff0000;
+
+  --secondary-glow: conic-gradient(
+    from 100deg at 50% 50%,
+    #178b51 0deg,
+    #831ac8 55deg,
+    #97b5da 120deg,
+    #0099ca 160deg,
+    transparent 360deg
+  );
+  --tertiary-glow: conic-gradient(
+    from 90deg at 50% 50%,
+    #ff8b7e 0deg,
+    #e24e6b 160deg,
+    #7ed2da 120deg,
+    #8bdce0 55deg,
+    transparent 360deg
+  );
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Only do the blobs if we are on medium screens and above */
+@media (min-width: 767px) {
+  .bg-blobs::before,
+  .bg-blobs::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    opacity:0.8
+  }
+
+  .bg-blobs::before {
+    background: var(--tertiary-glow);
+    border-radius: 50%;
+    width: 25lvw;
+    height: 25lvw;
+    margin-left: 10lvw;
+    filter: blur(90px);
+    top: calc(50lvh - 50lvw/2);
+    left: calc(50lvw);
+    animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+  }
+
+  .bg-blobs::after {
+    background: var(--secondary-glow);
+    border-radius: 50%;
+    margin-top: 35lvh;
+    margin-left: 20vh;
+    width: 25lvw;
+    height: 30lvw;
+    filter: blur(90px);
+    top: calc(50lvh - 50lvw/2);
+    left: calc(75lvw - 75lvw/2);
+    animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+  }
+
+  @keyframes animateBefore {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10vw) scale(0.8);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes animateAfter {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-10vw) scale(1.2);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 }
 
 .text-red  {
