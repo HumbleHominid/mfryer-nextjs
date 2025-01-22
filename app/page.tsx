@@ -23,9 +23,7 @@ export default function Home() {
       {/* Info Section */}
       <div className="flex flex-col justify-stretch divide-y divide-slate-400 mb-32">
         {/* Lily */}
-        <HomeItem
-          dir="left"
-        >
+        <HomeItem>
           <Image
             src="/irl.jpg"
             alt="Me IRL"
@@ -41,9 +39,7 @@ export default function Home() {
           </p>
         </HomeItem>
         {/* Montana Tech */}
-        <HomeItem
-          dir="right"
-        >
+        <HomeItem>
           <Image
             src="/diplomas_edit.jpg"
             alt="Diplomas"
@@ -63,9 +59,7 @@ export default function Home() {
           </p>
         </HomeItem>
         {/* Fish */}
-        <HomeItem
-          dir="left"
-        >
+        <HomeItem>
           <Image
             src="/fish.jpeg"
             alt="Feesh"
@@ -81,9 +75,7 @@ export default function Home() {
           </p>
         </HomeItem>
         {/* YouTube */}
-        <HomeItem
-          dir="right"
-        >
+        <HomeItem>
           <div className="lg:float-right w-full lg:w-1/2 mb-2 lg:mb-0 lg:ml-4">
             <ArcadiaVideo
               width={1280/3}
@@ -110,9 +102,7 @@ export default function Home() {
           </p>
         </HomeItem>
         {/* Tech Stack */}
-        <HomeItem
-          dir="left"
-        >
+        <HomeItem>
           <Image
             src="/tech-stack.png"
             alt="Tech Stack"
@@ -133,9 +123,7 @@ export default function Home() {
           </p>
         </HomeItem>
         {/* Work */}
-        <HomeItem
-          dir="right"
-        >
+        <HomeItem>
           <div className="h-32 w-32 float-right ml-4 mb-2">
             <EnvelopeIcon
               width={96}

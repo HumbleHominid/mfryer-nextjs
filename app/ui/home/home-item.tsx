@@ -5,10 +5,8 @@ import clsx from "clsx";
 
 export default function HomeItem({
 	children,
-	dir,
 } : {
 	children: React.ReactNode;
-	dir: 'left' | 'right';
 }) {
 	const ref = useRef(null);
 	const [ show, doShow ] = useState(false);
@@ -31,11 +29,10 @@ export default function HomeItem({
 		<div
 		ref={ref}
 			className={clsx(
-				"mb-8 p-8 transition-all duration-700 ease-in-out",
-				show ? "opacity-100 translate-x-0" : "opacity-0",
+				"mb-8 p-8 transition-all duration-300 ease-in-out",
 				{
-					"-translate-x-lvw" : !show && dir === "left",
-					"translate-x-lvw" : !show && dir === "right",
+					"opacity-100 translate-y-0" : show,
+					"opacity-0 translate-y-32" : !show,
 				}
 			)}
 		>
