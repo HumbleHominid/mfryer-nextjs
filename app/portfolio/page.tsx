@@ -18,9 +18,9 @@ export default function Page() {
 	]
 	return (
 		<main className="flex flex-col w-full">
-			<h1 className="text-9xl font-thin mb-10">Portfolio</h1>
+			<h1 className="text-8xl md:text-9xl font-thin mb-10">Portfolio</h1>
 			<div
-				className="flex flex-col lg:w-1/2 self-center divide-y divide-slate-400"
+				className="flex flex-col md:w-9/12 xl:w-1/2 self-center divide-y divide-slate-400"
 			>
 				{portfolioItems.map((item) => {
 					return (
