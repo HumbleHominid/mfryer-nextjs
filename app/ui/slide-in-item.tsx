@@ -3,10 +3,12 @@
 import { useRef, useState, useEffect } from "react";
 import clsx from "clsx";
 
-export default function HomeItem({
+export default function SlideInItem({
 	children,
+	className = '',
 } : {
 	children: React.ReactNode;
+	className?: string;
 }) {
 	const ref = useRef(null);
 	const [ show, doShow ] = useState(false);
@@ -16,7 +18,7 @@ export default function HomeItem({
 			const topPos = (el: HTMLElement) => el.getBoundingClientRect().top;
 			const divPos = ref.current ? topPos(ref.current) : 0;
 
-			if (divPos < 0.80 * window.innerHeight) doShow(true);
+			if (divPos < 0.95 * window.innerHeight) doShow(true);
 		}
 
 		onScroll();
@@ -29,7 +31,7 @@ export default function HomeItem({
 		<div
 		ref={ref}
 			className={clsx(
-				"mb-8 p-8 transition-all duration-300 ease-in-out",
+				`${className} transition-all duration-300 ease-in-out`,
 				{
 					"opacity-100 translate-y-0" : show,
 					"opacity-0 translate-y-32" : !show,

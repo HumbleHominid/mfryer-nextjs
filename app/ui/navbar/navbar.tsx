@@ -29,6 +29,7 @@ export default function Navbar() {
 	const routeLinks = [
 		{ href: "/", routeName: "Home", text: "Back to home"},
 		{ href: "/about", routeName: "About", text: "More about me" },
+		{ href: "/portfolio", routeName: "Portfolio", text: "Other projects"}
 	];
 
 	return (

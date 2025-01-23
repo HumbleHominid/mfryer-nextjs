@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowDownIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
-import HomeItem from "@/app/ui/home/home-item";
+import SlideInItem from "@/app/ui/slide-in-item";
 import ArcadiaVideo from "@/app/ui/video/ArcadiaVideo";
 import Link from "next/link";
 import { YouTube, Email } from "@/app/lib/ref-links";
@@ -23,7 +23,7 @@ export default function Home() {
       {/* Info Section */}
       <div className="flex flex-col justify-stretch divide-y divide-slate-400 mb-32">
         {/* Lily */}
-        <HomeItem>
+        <SlideInItem className="mb-8 p-8">
           <Image
             src="/irl.jpg"
             alt="Me IRL"
@@ -37,9 +37,9 @@ export default function Home() {
             <span className="font-black text-purple-950">Lily</span>
             <span className="font-bold text-indigo-900">.</span>
           </p>
-        </HomeItem>
+        </SlideInItem>
         {/* Montana Tech */}
-        <HomeItem>
+        <SlideInItem className="mb-8 p-8">
           <Image
             src="/diplomas_edit.jpg"
             alt="Diplomas"
@@ -57,9 +57,9 @@ export default function Home() {
             <span className="font-extrabold text-indigo-800">Computer Science</span>
             <span>.</span>
           </p>
-        </HomeItem>
+        </SlideInItem>
         {/* Fish */}
-        <HomeItem>
+        <SlideInItem className="mb-8 p-8">
           <Image
             src="/fish.jpeg"
             alt="Feesh"
@@ -73,9 +73,9 @@ export default function Home() {
             <span className="font-bold text-green-950">fish</span>
             <span> when I&apos;m not programming.</span>
           </p>
-        </HomeItem>
+        </SlideInItem>
         {/* YouTube */}
-        <HomeItem>
+        <SlideInItem className="mb-8 p-8">
           <div className="lg:float-right w-full lg:w-1/2 mb-2 lg:mb-0 lg:ml-4">
             <ArcadiaVideo
               width={1280/3}
@@ -100,9 +100,9 @@ export default function Home() {
             <span className="font-extrabold text-indigo-800">Arcadia SMP</span>
             <span> in 2023.</span>
           </p>
-        </HomeItem>
+        </SlideInItem>
         {/* Tech Stack */}
-        <HomeItem>
+        <SlideInItem className="mb-8 p-8">
           <Image
             src="/tech-stack.png"
             alt="Tech Stack"
@@ -121,9 +121,9 @@ export default function Home() {
             <span className="font-bold">Vercel</span>
             <span>.</span>
           </p>
-        </HomeItem>
+        </SlideInItem>
         {/* Work */}
-        <HomeItem>
+        <SlideInItem className="mb-8 p-8">
           <div className="h-32 w-32 float-right ml-4 mb-2">
             <EnvelopeIcon
               width={96}
@@ -145,7 +145,7 @@ export default function Home() {
             </Link>
             <span>!</span>
           </p>
-        </HomeItem>
+        </SlideInItem>
       </div>
     </main>
   );
