@@ -11,6 +11,50 @@ export const metadata: Metadata = {
     default: 'M. Fryer',
   },
   description: 'The official Michael Fryer website. Created by Michael Fryer.',
+  keywords: ['michael', 'fryer', 'portfolio', 'mfryer', 'personal'],
+  authors: [{name: 'Michael Fryer', url: 'https://github.com/HumbleHominid'}],
+  creator: 'Michael Fryer',
+  publisher: 'Michael Fryer',
+  applicationName: 'Michael Fryer Portfolio',
+  alternates: {
+    canonical: '/'
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    }
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Michael Fryer',
+    description: 'Portfolio website for Michael Fryer.',
+    images: ['/michael.png']
+  },
+  openGraph: {
+    title: 'Michael Fryer',
+    description: 'Portfolio website for Michael Fryer.',
+    siteName: 'Michael Fryer Portfolio',
+    url: '/',
+    images: [
+      {
+        url: '/michael.png',
+        secureUrl: '/michael.png',
+        type: 'image/png',
+        width: 1200,
+        height: 630
+      }
+    ],
+    locale: 'en_US',
+    type: 'website'
+  },
 };
 
 export default function RootLayout({
