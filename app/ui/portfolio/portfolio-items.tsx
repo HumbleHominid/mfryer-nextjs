@@ -16,7 +16,7 @@ export default function PortfolioItem({
 		<div>
 			<Link
 				href={data.link}
-				about="_blank"
+				target="_blank"
 				rel="noreferrer noopener"
 				className="font-light text-5xl hover:underline underline-offset-2 decoration-1"
 			>
