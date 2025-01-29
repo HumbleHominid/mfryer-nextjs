@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Michael Fryer',
     description: 'Portfolio website for Michael Fryer.',
-    images: ['/michael.png']
+    images: ['/twitter.png']
   },
   openGraph: {
     title: 'Michael Fryer',
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     url: '/',
     images: [
       {
-        url: '/michael.png',
-        secureUrl: '/michael.png',
+        url: '/twitter.png',
+        secureUrl: '/twitter.png',
         type: 'image/png',
         width: 1200,
         height: 630
