@@ -8,7 +8,7 @@ export const metadata : Metadata = {
 
 export default function Page() {
 	const portfolioItems = [
-		{title: 'ArcadiaSMP Website', link: 'https://arcadia.humblehominid.us', description: 'Website for Arcadia SMP. Publishes new member uploads and displays member\'s social media information. Pulls upload information from the youtube api.'},
+		{title: 'ArcadiaSMP Website', link: 'https://arcadia.yt', description: 'Website for Arcadia SMP. Publishes new member uploads and displays member\'s social media information. Pulls upload information from the youtube api.'},
 		{title: 'Personal Website', link: 'https://mfryer.us', description: 'Personal portfolio website built in NextJS and Tailwind. Resume and contact information available from here.'},
 		{title: 'Hangman', link: 'https://hangman.mfryer.us', description: 'A "daily game" where the hangman word is pulled from Merriam-Webster\'s Word of the day. Built with NextJS and Tailwind.'},
 		{title: 'Snake', link: 'https://snake.mfryer.us', description: 'The game Snake built in NextJS.'},
