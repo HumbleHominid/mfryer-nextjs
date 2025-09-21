@@ -4,3 +4,4 @@ export const Resume =
   "https://mfryer-public-docs.s3.us-west-2.amazonaws.com/resume.pdf";
 export const YouTube = "https://www.youtube.com/@humblehominid";
 export const Bluesky = "https://bsky.app/profile/mfrys.bsky.social";
+export const LinkedIn = "https://www.linkedin.com/in/michael-d-fryer/";

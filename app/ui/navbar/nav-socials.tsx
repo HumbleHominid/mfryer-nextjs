@@ -1,6 +1,7 @@
-import { GitHub, Resume, Bluesky, Email } from "@/app/lib/ref-links";
+import { GitHub, Resume, Bluesky, Email, LinkedIn } from "@/app/lib/ref-links";
 import { DocumentIcon } from "@heroicons/react/24/solid";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
+import { LinkIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import NavSocial from "@/app/ui/navbar/nav-social";
 import NavSocialWrapper from "@/app/ui/navbar/nav-social-wrapper";
@@ -22,6 +23,19 @@ export default function NavSocials({
       {/* Front decorator */}
       <NavSocialWrapper visible={isNavExpanded} delayFactor={++count}>
         <div className="h-1 w-16 rounded-sm bg-purple-800 sm:w-32" />
+      </NavSocialWrapper>
+      {/* LinkedIn */}
+      <NavSocialWrapper visible={isNavExpanded} delayFactor={++count}>
+        <NavSocial href={LinkedIn}>
+          <Image
+            src="/icons/linked-in.png"
+            alt="LinkedIn Icon"
+            title="LinkedIn"
+            width={635}
+            height={540}
+            className="m:w-10 h-auto w-8"
+          />
+        </NavSocial>
       </NavSocialWrapper>
       {/* GitHub */}
       <NavSocialWrapper visible={isNavExpanded} delayFactor={++count}>
