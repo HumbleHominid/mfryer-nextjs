@@ -33,10 +33,10 @@ body {
 @media (min-width: 767px) {
   .bg-blobs::before,
   .bg-blobs::after {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
-    opacity:0.8
+    opacity: 0.8;
   }
 
   .bg-blobs::before {
@@ -46,7 +46,7 @@ body {
     height: 25lvw;
     margin-left: 10lvw;
     filter: blur(90px);
-    top: calc(50lvh - 50lvw/2);
+    top: calc(50lvh - 50lvw / 2);
     left: calc(50lvw);
     animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
   }
@@ -59,8 +59,8 @@ body {
     width: 25lvw;
     height: 30lvw;
     filter: blur(90px);
-    top: calc(50lvh - 50lvw/2);
-    left: calc(75lvw - 75lvw/2);
+    top: calc(50lvh - 50lvw / 2);
+    left: calc(75lvw - 75lvw / 2);
     animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
   }
 
@@ -89,6 +89,6 @@ body {
   }
 }
 
-.text-red  {
+.text-red {
   color: var(--ytRed);
 }

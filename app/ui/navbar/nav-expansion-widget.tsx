@@ -1,26 +1,27 @@
-import clsx from "clsx"
+import clsx from "clsx";
 
 export default function NavExpansionWidget({
-	isNavExpanded,
-	clickCallback,
-} : {
-	isNavExpanded: boolean;
-	clickCallback: () => void;
+  isNavExpanded,
+  clickCallback,
+}: {
+  isNavExpanded: boolean;
+  clickCallback: () => void;
 }) {
-	return (
-		<div
-			className="flex flex-col w-16 h-4 gap-8 hover:cursor-pointer overflow-hidden"
-			onClick={() => clickCallback()}
-		>
-			<div
-				className={clsx(
-					"top-0 transition-all transform duration-150 text-center hover:tracking-megaWide text-purple-900 font-sans font-semibold leading-4 tracking-wider ",
-					isNavExpanded ? "-translate-y-4" : "translate-y-0",
-				)}
-			>
-				MENU<br/>
-				BACK
-			</div>
-		</div>
-	)
+  return (
+    <div
+      className="flex h-4 w-16 flex-col gap-8 overflow-hidden hover:cursor-pointer"
+      onClick={() => clickCallback()}
+    >
+      <div
+        className={clsx(
+          "top-0 transform text-center font-sans font-semibold leading-4 tracking-wider text-purple-900 transition-all duration-150 hover:tracking-megaWide",
+          isNavExpanded ? "-translate-y-4" : "translate-y-0",
+        )}
+      >
+        MENU
+        <br />
+        BACK
+      </div>
+    </div>
+  );
 }

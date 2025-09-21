@@ -8,20 +8,20 @@ import Title from "@/app/ui/home/title";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-6 font-normal text-lg bg-blobs">
-      <div className="relative min-h-lvh grid grid-rows-layout xl:mt-32">
+    <main className="bg-blobs flex flex-col gap-6 text-lg font-normal">
+      <div className="relative grid min-h-lvh grid-rows-layout xl:mt-32">
         {/* Title Section */}
         <Title />
         {/* Scroll Indicator */}
-        <div className="mt-auto place-self-center row-start-4 flex flex-col gap-6 items-center h-96">
+        <div className="row-start-4 mt-auto flex h-96 flex-col items-center gap-6 place-self-center">
           {/* Arrow */}
           <ArrowDownIcon width={48} height={48} className="animate-bounce" />
           {/* Line */}
-          <div className="border h-full border-gray-600 rounded-lg" />
+          <div className="h-full rounded-lg border border-gray-600" />
         </div>
       </div>
       {/* Info Section */}
-      <div className="flex flex-col justify-stretch divide-y divide-slate-400 mb-32">
+      <div className="mb-32 flex flex-col justify-stretch divide-y divide-slate-400">
         {/* Lily */}
         <SlideInItem className="mb-8 p-8">
           <Image
@@ -30,7 +30,7 @@ export default function Home() {
             width={612}
             height={816}
             loading="eager"
-            className="rounded-lg shadow-xl float-left w-1/2 md:w-1/4 h-auto mr-4 md:mr-12"
+            className="float-left mr-4 h-auto w-1/2 rounded-lg shadow-xl md:mr-12 md:w-1/4"
           />
           <p className="p-4 text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
             <span>And this is my cat, </span>
@@ -46,15 +46,19 @@ export default function Home() {
             width={612}
             height={816}
             loading="eager"
-            className="rounded-lg shadow-xl float-right w-full sm:w-1/2 lg:w-1/2 h-auto ml-4 mb-2"
+            className="float-right mb-2 ml-4 h-auto w-full rounded-lg shadow-xl sm:w-1/2 lg:w-1/2"
           />
-          <p className="p-4 text-3xl sm:text-4txl md:text-5xl">
+          <p className="sm:text-4txl p-4 text-3xl md:text-5xl">
             <span>I graduated from </span>
             <span className="font-bold text-purple-950">Montana Tech</span>
             <span> with a Bachelor&apos;s of Science in </span>
-            <span className="font-extrabold text-indigo-800">Software Engineering</span>
+            <span className="font-extrabold text-indigo-800">
+              Software Engineering
+            </span>
             <span> and </span>
-            <span className="font-extrabold text-indigo-800">Computer Science</span>
+            <span className="font-extrabold text-indigo-800">
+              Computer Science
+            </span>
             <span>.</span>
           </p>
         </SlideInItem>
@@ -66,7 +70,7 @@ export default function Home() {
             width={612}
             height={816}
             loading="eager"
-            className="rounded-lg shadow-xl float-left w-full sm:w-1/3 md:w-1/3 xl:w-5/12 h-auto mr-4 md:mr-12 mb-2 sm:mb-0"
+            className="float-left mb-2 mr-4 h-auto w-full rounded-lg shadow-xl sm:mb-0 sm:w-1/3 md:mr-12 md:w-1/3 xl:w-5/12"
           />
           <p className="p-4 text-3xl md:text-5xl xl:text-6xl">
             <span>I love to </span>
@@ -76,17 +80,14 @@ export default function Home() {
         </SlideInItem>
         {/* YouTube */}
         <SlideInItem className="mb-8 p-8">
-          <div className="lg:float-right w-full lg:w-1/2 mb-2 lg:mb-0 lg:ml-4">
-            <ArcadiaVideo
-              width={1280/3}
-              height={720/3}
-            />
+          <div className="mb-2 w-full lg:float-right lg:mb-0 lg:ml-4 lg:w-1/2">
+            <ArcadiaVideo width={1280 / 3} height={720 / 3} />
           </div>
-          <p className="p-4 text-3xl sm:text-4txl md:text-5xl">
+          <p className="sm:text-4txl p-4 text-3xl md:text-5xl">
             <span>In 2022 I started making </span>
             <span className="font-bold text-green-950">Minecraft</span>
             <span> content on </span>
-            <span className="font-bold text-red">
+            <span className="text-red font-bold">
               <Link
                 href={YouTube}
                 target="_blank"
@@ -109,7 +110,7 @@ export default function Home() {
             width={612}
             height={816}
             loading="eager"
-            className="rounded-lg float-left w-full sm:w-1/2 h-auto mr-4 mb-2"
+            className="float-left mb-2 mr-4 h-auto w-full rounded-lg sm:w-1/2"
           />
           <p className="p-4 text-3xl md:text-5xl xl:text-6xl">
             <span>This application was built using </span>
@@ -124,14 +125,10 @@ export default function Home() {
         </SlideInItem>
         {/* Work */}
         <SlideInItem className="mb-8 p-8">
-          <div className="h-32 w-32 float-right ml-4 mb-2">
-            <EnvelopeIcon
-              width={96}
-              height={96}
-              className="w-full h-auto"
-            />
+          <div className="float-right mb-2 ml-4 h-32 w-32">
+            <EnvelopeIcon width={96} height={96} className="h-auto w-full" />
           </div>
-          <p className="p-4 text-3xl sm:text-4txl md:text-5xl">
+          <p className="sm:text-4txl p-4 text-3xl md:text-5xl">
             <span>Want to </span>
             <span className="font-extrabold text-green-600">hire</span>
             <span> me? Send me an </span>
@@ -141,7 +138,9 @@ export default function Home() {
               target="_blank"
               title="Hire me!"
             >
-              <span className="font-extrabold text-indigo-800 hover:underline hover:underline-offset-4">Email</span>
+              <span className="font-extrabold text-indigo-800 hover:underline hover:underline-offset-4">
+                Email
+              </span>
             </Link>
             <span>!</span>
           </p>

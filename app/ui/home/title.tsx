@@ -34,8 +34,8 @@ export default function Title() {
             lerp(
               0,
               maxRotate,
-              (newCursorPos.x - centerX) / (screenWidth - centerX)
-            )
+              (newCursorPos.x - centerX) / (screenWidth - centerX),
+            ),
           );
         }
         // Calculate the skew relative to cursor x and y in range [-10, 10]
@@ -48,7 +48,7 @@ export default function Title() {
           const newSkewAng = lerp(
             0,
             maxAng,
-            (newCursorPos.y - centerY) / (screenHeight - centerY)
+            (newCursorPos.y - centerY) / (screenHeight - centerY),
           );
           setSkewAng(newSkewAng * (rotateAng / maxRotate));
         }
@@ -67,20 +67,20 @@ export default function Title() {
 
   return (
     <div
-      className="transform w-min"
+      className="w-min transform"
       style={{ transform: `skewY(${skewAng}deg) rotateX(${rotateAng}deg)` }}
       ref={titleRef}
     >
-      <h1 className="text-7xl sm:text-8xl lg:text-9xl font-thin mb-8">
+      <h1 className="mb-8 text-7xl font-thin sm:text-8xl lg:text-9xl">
         <span>Hi, I&apos;m </span>
         <span className="font-semibold text-green-950">Michael</span>
         <span className="font-light text-blue-900">.</span>
       </h1>
-      <p className="pl-8 leading-5 sm:leading-6 lg:leading-8 tracking-wide text-slate-700 font-light text-xl sm:text-2xl lg:text-4xl">
+      <p className="pl-8 text-xl font-light leading-5 tracking-wide text-slate-700 sm:text-2xl sm:leading-6 lg:text-4xl lg:leading-8">
         Software Engineer
         <br />
         Data Scientist
-        <span className="text-sm font-extralight text-slate-600 tracking-tight sm:text-base lg:text-xl sm:align-middle">
+        <span className="text-sm font-extralight tracking-tight text-slate-600 sm:align-middle sm:text-base lg:text-xl">
           {isMobile ? <br /> : <span> | </span>}
           Master's Candidate
         </span>

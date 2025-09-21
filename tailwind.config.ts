@@ -22,7 +22,7 @@ export default {
         foreground: "var(--foreground)",
       },
       gridTemplateRows: {
-        layout: "auto auto 1fr auto"
+        layout: "auto auto 1fr auto",
       },
       transitionDuration: {
         "2000": "2000ms",
@@ -31,8 +31,8 @@ export default {
         "200": "200ms",
       },
       translate: {
-        'lvw': '100lvw'
-      }
+        lvw: "100lvw",
+      },
     },
   },
   plugins: [],
