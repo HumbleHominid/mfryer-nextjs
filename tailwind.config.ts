@@ -17,10 +17,6 @@ export default {
       megaWide: "0.25em",
     },
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
       gridTemplateRows: {
         layout: "auto auto 1fr auto",
       },

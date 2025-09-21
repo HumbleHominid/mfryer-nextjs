@@ -73,9 +73,9 @@ export default function RootLayout({
           {/* Navbar */}
           <div className="sticky top-0 z-50 w-full">
             {/* Fader thing for mobile */}
-            <div className="absolute left-0 right-0 top-0 flex flex-col lg:hidden">
+            <div className="visible absolute left-0 right-0 top-0 flex flex-col lg:invisible">
               {/* Full nav-height color */}
-              <div className={`w-100 ${navHeight} bg-background`} />
+              <div className={`w-full ${navHeight} bg-background`} />
               {/* Gradient for nice fadeout */}
               <div className="h-4 bg-gradient-to-b from-background" />
             </div>
