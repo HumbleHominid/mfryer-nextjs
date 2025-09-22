@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { LinkIcon } from "@heroicons/react/24/outline";
 
-export type PortfolioData = {
+export type Repo = {
   title: string;
-  description: string;
+  description: string | null;
   link: string;
+  pinned: boolean;
+  lastUpdated: Date;
 };
 
-export default function PortfolioItem({ data }: { data: PortfolioData }) {
+export default function PortfolioItem({ data }: { data: Repo }) {
   return (
     <div>
       <Link
