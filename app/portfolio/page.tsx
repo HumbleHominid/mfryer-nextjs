@@ -22,7 +22,9 @@ async function getRepos() {
   }
   const data = await res.json();
   const repos: Repo[] = data
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .filter((repo: any) => !repo.private)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .map((repo: any) => ({
       title: repo.name,
       description: repo.description,

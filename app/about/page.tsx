@@ -28,7 +28,7 @@ export default function Page() {
         </Link>{" "}
         in 2019 with a Bachelor of Science in Software Engineering and a
         Bachelor of Science in Computer Science with emphasis in Game Design. I
-        am now pursuing a Master's in Applied Data Science at{" "}
+        am now pursuing a Master&apos;s in Applied Data Science at{" "}
         <Link
           target="_blank"
           rel="noopener noreferrer"

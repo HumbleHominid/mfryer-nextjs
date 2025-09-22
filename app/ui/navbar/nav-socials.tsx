@@ -1,7 +1,6 @@
 import { GitHub, Resume, Bluesky, Email, LinkedIn } from "@/app/lib/ref-links";
 import { DocumentIcon } from "@heroicons/react/24/solid";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
-import { LinkIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import NavSocial from "@/app/ui/navbar/nav-social";
 import NavSocialWrapper from "@/app/ui/navbar/nav-social-wrapper";

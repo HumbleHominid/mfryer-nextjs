@@ -82,7 +82,7 @@ export default function Title() {
         Data Scientist
         <span className="text-sm font-extralight tracking-tight text-slate-600 sm:align-middle sm:text-base lg:text-xl">
           {isMobile ? <br /> : <span> | </span>}
-          Master's Candidate
+          Master&apos;s Candidate
         </span>
       </p>
     </div>
