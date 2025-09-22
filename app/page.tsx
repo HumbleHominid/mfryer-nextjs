@@ -62,6 +62,48 @@ export default function Home() {
             <span>.</span>
           </p>
         </SlideInItem>
+        {/* Frankfurt School */}
+        <SlideInItem className="mb-8 p-8">
+          <Image
+            src="/frankfurt-school.jpg"
+            alt="Frankfurt School"
+            width={612}
+            height={816}
+            loading="eager"
+            className="float-left mb-2 mr-4 h-auto w-full rounded-lg shadow-xl sm:mb-0 sm:w-1/2 md:mr-12 md:w-1/2 xl:w-7/12"
+          />
+          <p className="p-4 text-3xl md:text-5xl xl:text-6xl">
+            {"In 2025 I began pursuing a "}
+            <span className="font-bold text-purple-950">
+              Master&apos;s in Applied Data Science
+            </span>
+            {" at "}
+            <span className="font-extrabold text-indigo-800">
+              Frankfurt School of Finance & Management
+            </span>
+            {"."}
+          </p>
+        </SlideInItem>
+        {/* Beethoven */}
+        <SlideInItem className="mb-8 p-8">
+          <Image
+            src="/beethoven.jpeg"
+            alt="Beethoven"
+            width={612}
+            height={816}
+            loading="eager"
+            className="float-right ml-4 h-auto w-1/2 rounded-lg shadow-xl md:ml-12 md:w-1/4"
+          />
+          <p className="sm:text-4txl p-4 text-3xl md:text-5xl">
+            {"I was able to to meet "}
+            <span className="font-bold text-purple-950">Mr. Beets</span>
+            {" at his home in "}
+            <span className="font-extrabold text-indigo-800">
+              Bonn, Germany
+            </span>
+            {"."}
+          </p>
+        </SlideInItem>
         {/* Fish */}
         <SlideInItem className="mb-8 p-8">
           <Image
