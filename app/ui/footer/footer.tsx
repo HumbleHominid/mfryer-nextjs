@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Email, GitHub, Resume } from "@/app/lib/ref-links";
+import { Email, GitHub, CV } from "@/app/lib/ref-links";
 import { DocumentIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import FooterLink from "@/app/ui/footer/footer-link";
 
@@ -22,10 +22,10 @@ export default function Footer() {
         />
         <span>GitHub</span>
       </FooterLink>
-      {/* Resume */}
-      <FooterLink href={Resume} className={footerLinkClass}>
+      {/* CV */}
+      <FooterLink href={CV} className={footerLinkClass}>
         <DocumentIcon className="w-5" />
-        <span>Resume</span>
+        <span>CV</span>
       </FooterLink>
       {/* Email */}
       <div className={`${footerLinkClass} hover:cursor-pointer`}>

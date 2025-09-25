@@ -1,4 +1,4 @@
-import { GitHub, Resume, Bluesky, Email, LinkedIn } from "@/app/lib/ref-links";
+import { GitHub, CV, Bluesky, Email, LinkedIn } from "@/app/lib/ref-links";
 import { DocumentIcon } from "@heroicons/react/24/solid";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -62,11 +62,11 @@ export default function NavSocials({
           />
         </NavSocial>
       </NavSocialWrapper>
-      {/* Resume */}
+      {/* CV */}
       <NavSocialWrapper visible={isNavExpanded} delayFactor={++count}>
-        <NavSocial href={Resume}>
+        <NavSocial href={CV}>
           <DocumentIcon
-            title="View Resume"
+            title="View CV"
             fill="black"
             width={96}
             height={96}

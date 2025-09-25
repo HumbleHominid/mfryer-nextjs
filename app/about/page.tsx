@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
-import { YouTube, GitHub, Resume } from "@/app/lib/ref-links";
+import { YouTube, GitHub, CV } from "@/app/lib/ref-links";
 import ArcadiaVideo from "@/app/ui/video/ArcadiaVideo";
 
 export const metadata: Metadata = {
@@ -219,9 +219,9 @@ export default function Page() {
           className="hover:underline hover:underline-offset-4"
           target="_blank"
           rel="noopener noreferrer"
-          href={Resume}
+          href={CV}
         >
-          resume
+          CV
         </Link>{" "}
         here as well as in the footer.
       </p>

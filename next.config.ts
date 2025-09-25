@@ -1,13 +1,13 @@
 import type { NextConfig } from "next";
-import { Resume } from "@/app/lib/ref-links";
+import { CV } from "@/app/lib/ref-links";
 
 const nextConfig: NextConfig = {
   /* config options here */
   async redirects() {
     return [
       {
-        source: "/resume",
-        destination: Resume,
+        source: "/cv",
+        destination: CV,
         permanent: true,
       },
     ];
