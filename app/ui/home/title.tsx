@@ -76,7 +76,7 @@ export default function Title() {
         <span className="font-semibold text-green-950">Michael</span>
         <span className="font-light text-blue-900">.</span>
       </h1>
-      <p className="pl-8 text-xl font-light leading-5 tracking-wide text-slate-700 sm:text-2xl sm:leading-6 lg:text-4xl lg:leading-8">
+      <p className="pl-8 text-3xl font-light leading-7 tracking-wide text-slate-700 lg:text-4xl lg:leading-8">
         Software Engineer
         <br />
         Data Scientist
