@@ -54,7 +54,7 @@ export default async function Page() {
   return (
     <main className="flex w-full flex-col">
       <h1 className="mb-10 text-8xl font-thin md:text-9xl">Portfolio</h1>
-      <div className="flex flex-col divide-y divide-slate-400 self-center md:w-9/12 xl:w-1/2">
+      <div className="flex w-full flex-col divide-y divide-slate-400 self-center md:w-9/12 xl:w-1/2">
         {repos.map((item) => {
           return (
             <SlideInItem key={item.title} className="p-8">
