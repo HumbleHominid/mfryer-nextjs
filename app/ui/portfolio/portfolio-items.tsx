@@ -1,13 +1,6 @@
 import Link from "next/link";
 import { LinkIcon } from "@heroicons/react/24/outline";
-
-export type Repo = {
-  title: string;
-  description: string | null;
-  link: string;
-  pinned: boolean;
-  lastUpdated: Date;
-};
+import type { Repo } from "@/app/lib/portfolio";
 
 export default function PortfolioItem({ data }: { data: Repo }) {
   return (

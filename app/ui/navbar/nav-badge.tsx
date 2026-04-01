@@ -2,34 +2,25 @@
 
 import Image from "next/image";
 import clsx from "clsx";
-import { useState } from "react";
+import { useHoverEffect } from "@/app/lib/hooks/use-hover-effect";
 
 export default function NavBadge() {
-  const [hasHovered, setHasHovered] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-
-  let resetHoveredTimeout: NodeJS.Timeout;
-
-  function handleHover() {
-    setHasHovered(true);
-    setIsHovered(true);
-
-    if (resetHoveredTimeout) clearTimeout(resetHoveredTimeout);
-    resetHoveredTimeout = setTimeout(() => setHasHovered(false), 69 * 1000);
-  }
+  const { hasHovered, isHovered, onMouseEnter, onMouseLeave } = useHoverEffect(
+    69 * 1000,
+  );
 
   return (
     <div className="relative">
       <Image
         src="/michael.png"
-        alt="Michel logo"
+        alt="Michael logo"
         width={48}
         height={48}
         className={clsx("rounded-full drop-shadow-lg", {
           "hover:cursor-pointer": !hasHovered,
         })}
-        onMouseEnter={handleHover}
-        onMouseLeave={() => setIsHovered(() => false)}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
       />
       <div
         className={clsx(

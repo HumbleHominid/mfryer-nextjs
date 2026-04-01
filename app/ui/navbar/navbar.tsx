@@ -2,32 +2,31 @@
 
 import NavBadge from "@/app/ui/navbar/nav-badge";
 import NavMail from "@/app/ui/navbar/nav-mail";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import clsx from "clsx";
-import NavLink from "@/app/ui/navbar/nav-link";
+import NavLink, { NavLinkData } from "@/app/ui/navbar/nav-link";
 import NavExpansionWidget from "@/app/ui/navbar/nav-expansion-widget";
 import NavSocials from "@/app/ui/navbar/nav-socials";
 
 export default function Navbar() {
   const [isNavExpanded, setNavExpanded] = useState(false);
   const [showSubNav, setShowSubNav] = useState(false);
-
-  let showNavTimeout: NodeJS.Timeout;
+  const showNavTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function handleClick(showNav: boolean) {
     if (showNav) {
-      if (showNavTimeout) clearTimeout(showNavTimeout);
+      if (showNavTimeoutRef.current) clearTimeout(showNavTimeoutRef.current);
       setNavExpanded(true);
       setShowSubNav(true);
     } else {
       setNavExpanded(false);
-      showNavTimeout = setTimeout(() => {
+      showNavTimeoutRef.current = setTimeout(() => {
         setShowSubNav(false);
       }, 1000);
     }
   }
 
-  const routeLinks = [
+  const routeLinks: NavLinkData[] = [
     { href: "/", routeName: "Home", text: "Back to home" },
     { href: "/about", routeName: "About", text: "More about me" },
     { href: "/portfolio", routeName: "Portfolio", text: "Other projects" },

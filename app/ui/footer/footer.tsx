@@ -28,10 +28,10 @@ export default function Footer() {
         <span>CV</span>
       </FooterLink>
       {/* Email */}
-      <div className={`${footerLinkClass} hover:cursor-pointer`}>
+      <FooterLink href={`mailto:${Email}`} className={footerLinkClass}>
         <EnvelopeIcon className="w-5" />
-        <span className="select-all">{Email}</span>
-      </div>
+        <span>{Email}</span>
+      </FooterLink>
     </footer>
   );
 }

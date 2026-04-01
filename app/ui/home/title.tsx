@@ -8,6 +8,7 @@ export default function Title() {
   const titleRef = useRef<HTMLDivElement | null>(null);
   const [skewAng, setSkewAng] = useState(0);
   const [rotateAng, setRotateAng] = useState(0);
+  const rotateAngRef = useRef(0);
   const isMobile = useClientMediaQuery("(max-width: 640px)");
 
   useEffect(() => {
@@ -27,22 +28,24 @@ export default function Title() {
         // Calculate the rotation relative to cursor x in range [-5, 5]
         const maxRotate = 30;
         if (newCursorPos.x < centerX) {
-          setRotateAng(lerp(-maxRotate, 0, newCursorPos.x / centerX));
+          const newRotate = lerp(-maxRotate, 0, newCursorPos.x / centerX);
+          setRotateAng(newRotate);
+          rotateAngRef.current = newRotate;
         } else {
           const screenWidth = screen.availWidth;
-          setRotateAng(
-            lerp(
-              0,
-              maxRotate,
-              (newCursorPos.x - centerX) / (screenWidth - centerX),
-            ),
+          const newRotate = lerp(
+            0,
+            maxRotate,
+            (newCursorPos.x - centerX) / (screenWidth - centerX),
           );
+          setRotateAng(newRotate);
+          rotateAngRef.current = newRotate;
         }
         // Calculate the skew relative to cursor x and y in range [-10, 10]
         const maxAng = 10;
         if (newCursorPos.y < centerY) {
           const newSkewAng = lerp(-maxAng, 0, newCursorPos.y / centerY);
-          setSkewAng(newSkewAng * (rotateAng / maxRotate));
+          setSkewAng(newSkewAng * (rotateAngRef.current / maxRotate));
         } else {
           const screenHeight = screen.availHeight;
           const newSkewAng = lerp(
@@ -50,7 +53,7 @@ export default function Title() {
             maxAng,
             (newCursorPos.y - centerY) / (screenHeight - centerY),
           );
-          setSkewAng(newSkewAng * (rotateAng / maxRotate));
+          setSkewAng(newSkewAng * (rotateAngRef.current / maxRotate));
         }
       }
     };
@@ -59,11 +62,9 @@ export default function Title() {
     }
 
     return () => {
-      if (!isMobile) {
-        removeEventListener("mousemove", handleMouseMove);
-      }
+      removeEventListener("mousemove", handleMouseMove);
     };
-  });
+  }, [isMobile]);
 
   return (
     <div

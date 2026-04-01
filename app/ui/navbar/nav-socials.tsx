@@ -32,7 +32,7 @@ export default function NavSocials({
             title="LinkedIn"
             width={635}
             height={540}
-            className="m:w-10 h-auto w-8"
+            className="md:w-10 h-auto w-8"
           />
         </NavSocial>
       </NavSocialWrapper>
@@ -45,7 +45,7 @@ export default function NavSocials({
             title="GitHub"
             width={98}
             height={96}
-            className="m:w-10 h-auto w-8"
+            className="md:w-10 h-auto w-8"
           />
         </NavSocial>
       </NavSocialWrapper>
@@ -58,7 +58,7 @@ export default function NavSocials({
             title="Bluesky"
             width={600}
             height={530}
-            className="m:w-10 h-auto w-8"
+            className="md:w-10 h-auto w-8"
           />
         </NavSocial>
       </NavSocialWrapper>

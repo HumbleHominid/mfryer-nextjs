@@ -9,9 +9,10 @@ export const metadata: Metadata = {
   title: "About",
 };
 
-export default function Page() {
-  let incVal = 0;
+const alternateFloat = (i: number) =>
+  i % 2 === 0 ? "float-left sm:mr-4" : "float-right sm:ml-4";
 
+export default function Page() {
   return (
     <main className="flex flex-col gap-6 text-lg font-normal">
       <h1 className="text-9xl font-thin">About Me</h1>
@@ -68,7 +69,7 @@ export default function Page() {
           height={459}
           className={clsx(
             "mb-4 h-auto w-full rounded-sm shadow-xl sm:mb-2 sm:w-7/12 md:w-1/2",
-            ++incVal % 2 === 0 ? "float-right sm:ml-4" : "float-left sm:mr-4",
+            alternateFloat(0),
           )}
         />
         <p className="sm:text-justify">
@@ -93,12 +94,7 @@ export default function Page() {
       {/* YouTube Paragraph */}
       <div>
         <div
-          className={clsx(
-            "mb-4 w-full md:mb-2 md:w-1/2",
-            ++incVal % 2 === 0
-              ? "md:float-right md:ml-4"
-              : "md:float-left md:mr-4",
-          )}
+          className="mb-4 w-full md:float-right md:mb-2 md:ml-4 md:w-1/2"
         >
           <ArcadiaVideo width={1280 / 3} height={720 / 3} />
         </div>
@@ -137,7 +133,7 @@ export default function Page() {
           height={771}
           className={clsx(
             "mb-4 h-auto w-full rounded-sm shadow-xl sm:mb-2 sm:w-7/12 md:w-1/2 lg:w-7/12",
-            ++incVal % 2 === 0 ? "float-right sm:ml-4" : "float-left sm:mr-4",
+            alternateFloat(2),
           )}
         />
         <p className="sm:text-justify">

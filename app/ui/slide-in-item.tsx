@@ -23,9 +23,9 @@ export default function SlideInItem({
 
     onScroll();
 
-    window.addEventListener("scroll", () => onScroll());
-    window.removeEventListener("scroll", () => onScroll());
-  });
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div
