@@ -57,7 +57,7 @@ export default function CvModal({
     >
       <div
         className={clsx(
-          "flex h-[90vh] w-[90vw] flex-col overflow-hidden rounded-lg bg-white shadow-2xl transition-all duration-200",
+          "bg-background flex h-[90vh] w-[90vw] flex-col overflow-hidden rounded-lg shadow-2xl transition-all duration-200",
           isAnimating ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
         )}
         onClick={(e) => e.stopPropagation()}
