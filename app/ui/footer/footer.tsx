@@ -13,7 +13,7 @@ export default function Footer() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const isMobile = useClientMediaQuery("(max-width: 640px)");
   const footerLinkClass =
-    "flex items-center gap-2 hover:underline hover:underline-offset-4";
+    "flex items-center gap-2 hover:underline hover:underline-offset-4 hover:cursor-pointer";
 
   return (
     <>
@@ -32,10 +32,10 @@ export default function Footer() {
         </FooterLink>
         {/* CV */}
         {isMobile ? (
-          <Link href={CV} className={footerLinkClass}>
+          <FooterLink href={CV} className={footerLinkClass}>
             <DocumentIcon className="w-5" />
             <span>CV</span>
-          </Link>
+          </FooterLink>
         ) : (
           <button
             onClick={() => setIsModalOpen(true)}
