@@ -94,12 +94,32 @@ export default function Home() {
             loading="eager"
             className="float-right ml-4 h-auto w-1/2 rounded-lg shadow-xl md:ml-12 md:w-1/4"
           />
-          <p className="sm:text-4txl p-4 text-3xl md:text-5xl">
+          <p className="p-4 text-3xl sm:text-4xl md:text-5xl">
             {"I was able to to meet "}
             <span className="font-bold text-purple-950">Mr. Beets</span>
             {" at his home in "}
             <span className="font-extrabold text-indigo-800">
               Bonn, Germany
+            </span>
+            {"."}
+          </p>
+        </SlideInItem>
+        {/* Karneval */}
+        <SlideInItem className="mb-8 p-8">
+          <Image
+            src="/karneval.jpeg"
+            alt="Karneval in Cologne"
+            width={612}
+            height={816}
+            loading="eager"
+            className="float-left mb-2 mr-4 h-auto w-full rounded-lg shadow-xl sm:mb-0 sm:w-1/2 md:mr-12 md:w-1/2 xl:w-7/12"
+          />
+          <p className="p-4 text-3xl md:text-5xl xl:text-6xl">
+            {"I got to experience "}
+            <span className="font-bold text-purple-950">Karneval</span>
+            {" in "}
+            <span className="font-extrabold text-indigo-800">
+              Köln, Germany
             </span>
             {"."}
           </p>
@@ -112,7 +132,7 @@ export default function Home() {
             width={612}
             height={816}
             loading="eager"
-            className="float-left mb-2 mr-4 h-auto w-full rounded-lg shadow-xl sm:mb-0 sm:w-1/3 md:mr-12 md:w-1/3 xl:w-5/12"
+            className="float-right mb-2 ml-4 h-auto w-full rounded-lg shadow-xl sm:mb-0 sm:w-1/3 md:mr-12 md:w-1/3 xl:w-5/12"
           />
           <p className="p-4 text-3xl md:text-5xl xl:text-6xl">
             <span>I love to </span>
@@ -122,11 +142,11 @@ export default function Home() {
         </SlideInItem>
         {/* YouTube */}
         <SlideInItem className="mb-8 p-8">
-          <div className="mb-2 w-full lg:float-right lg:mb-0 lg:ml-4 lg:w-1/2">
+          <div className="mb-2 lg:float-left lg:mb-0 lg:mr-4 lg:h-full lg:w-1/2">
             <ArcadiaVideo width={1280 / 3} height={720 / 3} />
           </div>
-          <p className="sm:text-4txl p-4 text-3xl md:text-5xl">
-            <span>In 2022 I started making </span>
+          <p className="p-4 text-3xl sm:text-4xl md:text-5xl">
+            <span>I also make </span>
             <span className="font-bold text-green-950">Minecraft</span>
             <span> content on </span>
             <span className="text-red font-bold">
@@ -152,7 +172,7 @@ export default function Home() {
             width={612}
             height={816}
             loading="eager"
-            className="float-left mb-2 mr-4 h-auto w-full rounded-lg sm:w-1/2"
+            className="float-right mb-2 ml-4 h-auto w-full rounded-lg sm:w-1/2"
           />
           <p className="p-4 text-3xl md:text-5xl xl:text-6xl">
             <span>This application was built using </span>
@@ -167,10 +187,10 @@ export default function Home() {
         </SlideInItem>
         {/* Work */}
         <SlideInItem className="mb-8 p-8">
-          <div className="float-right mb-2 ml-4 h-32 w-32">
+          <div className="float-left mb-2 mr-4 h-32 w-32">
             <EnvelopeIcon width={96} height={96} className="h-auto w-full" />
           </div>
-          <p className="sm:text-4txl p-4 text-3xl md:text-5xl">
+          <p className="p-4 text-3xl sm:text-4xl md:text-5xl">
             <span>Want to </span>
             <span className="font-extrabold text-green-600">hire</span>
             <span> me? Send me an </span>

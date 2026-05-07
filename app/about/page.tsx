@@ -18,7 +18,8 @@ export default function Page() {
       <h1 className="text-9xl font-thin">About Me</h1>
       {/* Lead Paragraph */}
       <p className="text-2xl font-extralight leading-8 tracking-wide text-slate-700">
-        Hello there! I am Michael Fryer, a Software Engineer that graduated from{" "}
+        Hello there! I am Michael Fryer, a Data Scientist &amp; Software
+        Engineer. I graduated from{" "}
         <Link
           target="_blank"
           rel="noopener noreferrer"
@@ -28,8 +29,8 @@ export default function Page() {
           Montana Technological University
         </Link>{" "}
         in 2019 with a Bachelor of Science in Software Engineering and a
-        Bachelor of Science in Computer Science with emphasis in Game Design. I
-        am now pursuing a Master&apos;s in Applied Data Science at{" "}
+        Bachelor of Science in Computer Science. I am currently pursuing a
+        Master&apos;s in Applied Data Science at{" "}
         <Link
           target="_blank"
           rel="noopener noreferrer"
@@ -38,14 +39,16 @@ export default function Page() {
         >
           Frankfurt School of Finance &amp; Management
         </Link>
-        .
+        , where I also work as a Machine Learning Teaching Assistant.
       </p>
       {/* Background Paragraph */}
       <p className="sm:text-justify">
-        I have previously worked at Heavy Iron Studios in LA as an Associate
-        Game Developer. During my tenure at Heavy Iron, I was the lead UI
-        developer on PacMan: Mega Tunnel Battle. Our game was built in UE4 and
-        delivered to Bandai Namco in the fall of 2020. In addition to my
+        While at Montana Tech, I worked as a Software Engineer at the Butte Food
+        Bank, where I designed and built FRED, a full-stack inventory and
+        reporting system. After graduating, I joined Heavy Iron Studios in LA as
+        an Associate Game Programmer. During my tenure at Heavy Iron, I was the
+        lead UI developer on PacMan: Mega Tunnel Battle. Our game was built in
+        UE4 and delivered to Bandai Namco in the fall of 2020. In addition to my
         responsibilities on the game UI, I also created the Live Ops portal that
         Bandai Namco would use once the game was shipped. For that project, I
         chose to use Django as my front-end framework of choice. After our
@@ -58,7 +61,11 @@ export default function Page() {
         collaboratively with other members to create entertaining content. This
         journey has let me develop many skills I wouldn&apos;t have otherwise.
         This includes video editing, image editing, project management, and
-        leadership.
+        leadership. Since starting my Master&apos;s at Frankfurt School in 2025,
+        I have also been working as a Machine Learning Teaching Assistant,
+        designing exercises for a bachelor-level course covering supervised
+        learning, neural networks, and model evaluation, and supporting students
+        with Python-based ML implementations.
       </p>
       {/* Education Paragraph */}
       <div>
