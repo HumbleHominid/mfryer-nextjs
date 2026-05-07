@@ -1,37 +1,57 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Email, GitHub, CV } from "@/app/lib/ref-links";
 import { DocumentIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import FooterLink from "@/app/ui/footer/footer-link";
+import CvModal from "@/app/ui/cv/cv-modal";
+import { useClientMediaQuery } from "@/app/lib/hooks/use-client-media-query";
 
 export default function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const isMobile = useClientMediaQuery("(max-width: 640px)");
   const footerLinkClass =
     "flex items-center gap-2 hover:underline hover:underline-offset-4";
 
   return (
-    <footer className="row-start-3 flex flex-col flex-wrap items-center justify-center gap-6 px-8 sm:flex-row">
-      {/* GitHub */}
-      <FooterLink href={GitHub} className={footerLinkClass}>
-        {/* Light-mode Icon */}
-        <Image
-          aria-hidden
-          src="/icons/github-mark-dark.svg"
-          alt="GitHub icon"
-          width={16}
-          height={16}
-          className="inline"
-        />
-        <span>GitHub</span>
-      </FooterLink>
-      {/* CV */}
-      <FooterLink href={CV} className={footerLinkClass}>
-        <DocumentIcon className="w-5" />
-        <span>CV</span>
-      </FooterLink>
-      {/* Email */}
-      <FooterLink href={`mailto:${Email}`} className={footerLinkClass}>
-        <EnvelopeIcon className="w-5" />
-        <span>{Email}</span>
-      </FooterLink>
-    </footer>
+    <>
+      <footer className="row-start-3 flex flex-col flex-wrap items-center justify-center gap-6 px-8 sm:flex-row">
+        {/* GitHub */}
+        <FooterLink href={GitHub} className={footerLinkClass}>
+          <Image
+            aria-hidden
+            src="/icons/github-mark-dark.svg"
+            alt="GitHub icon"
+            width={16}
+            height={16}
+            className="inline"
+          />
+          <span>GitHub</span>
+        </FooterLink>
+        {/* CV */}
+        {isMobile ? (
+          <Link href={CV} className={footerLinkClass}>
+            <DocumentIcon className="w-5" />
+            <span>CV</span>
+          </Link>
+        ) : (
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className={footerLinkClass}
+          >
+            <DocumentIcon className="w-5" />
+            <span>CV</span>
+          </button>
+        )}
+        {/* Email */}
+        <FooterLink href={`mailto:${Email}`} className={footerLinkClass}>
+          <EnvelopeIcon className="w-5" />
+          <span>{Email}</span>
+        </FooterLink>
+      </footer>
+      <CvModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 }

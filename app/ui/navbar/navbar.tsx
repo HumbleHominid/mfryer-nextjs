@@ -64,7 +64,10 @@ export default function Navbar() {
         )}
       >
         {/* Socials */}
-        <NavSocials isNavExpanded={isNavExpanded} />
+        <NavSocials
+          isNavExpanded={isNavExpanded}
+          collapseCallback={() => handleClick(false)}
+        />
         {/* Page Links */}
         {routeLinks.map((link, index) => {
           return (
