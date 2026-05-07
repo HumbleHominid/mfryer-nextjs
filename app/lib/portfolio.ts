@@ -6,6 +6,8 @@ export type Repo = {
   link: string;
   pinned: boolean;
   lastUpdated: Date;
+  language: string | null;
+  t;
 };
 
 type GitHubRepo = {
@@ -14,13 +16,16 @@ type GitHubRepo = {
   html_url: string;
   private: boolean;
   updated_at: string;
+  language: string | null;
 };
 
 const favoriteRepos = [
+  "urban-mobility-risk-analysis",
+  "battleship_rl",
   "arcadia-website",
   "mfryer-nextjs",
-  "entity-component-system",
-  "snake-nextjs",
+  // "entity-component-system",
+  // "snake-nextjs",
 ];
 
 async function fetchRepos(): Promise<Repo[]> {
@@ -39,6 +44,7 @@ async function fetchRepos(): Promise<Repo[]> {
       link: repo.html_url,
       pinned: favoriteRepos.includes(repo.name),
       lastUpdated: new Date(repo.updated_at),
+      language: repo.language,
     }));
 
   repos.sort((a, b) => {
@@ -52,6 +58,6 @@ async function fetchRepos(): Promise<Repo[]> {
 }
 
 export const getRepos = unstable_cache(fetchRepos, ["repos"], {
-  revalidate: 7 * 24 * 60 * 60,
+  revalidate: 60, //7 * 24 * 60 * 60,
   tags: ["repos"],
 });
