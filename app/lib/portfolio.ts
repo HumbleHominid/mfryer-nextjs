@@ -7,7 +7,6 @@ export type Repo = {
   pinned: boolean;
   lastUpdated: Date;
   language: string | null;
-  t;
 };
 
 type GitHubRepo = {
@@ -58,6 +57,6 @@ async function fetchRepos(): Promise<Repo[]> {
 }
 
 export const getRepos = unstable_cache(fetchRepos, ["repos"], {
-  revalidate: 60, //7 * 24 * 60 * 60,
+  revalidate: 7 * 24 * 60 * 60,
   tags: ["repos"],
 });
