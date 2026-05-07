@@ -5,8 +5,6 @@ import { createPortal } from "react-dom";
 import clsx from "clsx";
 import CvViewer from "@/app/ui/cv/cv-viewer";
 
-const TRANSITION_MS = 400;
-
 export default function CvModal({
   isOpen,
   onClose,
@@ -31,7 +29,7 @@ export default function CvModal({
       return () => cancelAnimationFrame(raf);
     } else {
       setIsAnimating(false);
-      const timer = setTimeout(() => setIsVisible(false), TRANSITION_MS);
+      const timer = setTimeout(() => setIsVisible(false), 200);
       return () => clearTimeout(timer);
     }
   }, [isOpen]);
@@ -50,7 +48,7 @@ export default function CvModal({
   return createPortal(
     <div
       className={clsx(
-        "fixed inset-0 z-50 flex items-center justify-center bg-black/60 transition-opacity duration-200",
+        "fixed inset-0 z-50 flex items-center justify-center bg-black/60 transition-opacity duration-500",
         isAnimating ? "opacity-100" : "opacity-0",
       )}
       onClick={onClose}
