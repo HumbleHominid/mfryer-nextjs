@@ -4,6 +4,7 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 import { XMarkIcon, ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import { CV_PDF } from "@/app/lib/ref-links";
+import clsx from "clsx";
 
 const CvPdfRenderer = dynamic(() => import("@/app/ui/cv/cv-pdf-renderer"), {
   ssr: false,
@@ -15,17 +16,30 @@ const CvPdfRenderer = dynamic(() => import("@/app/ui/cv/cv-pdf-renderer"), {
 export default function CvViewer({
   onClose,
   scrollClassName = "flex-1 overflow-y-auto",
+  showTitle = true,
 }: {
   onClose?: () => void;
   scrollClassName?: string;
+  showTitle?: boolean;
 }) {
   const [hasScrolled, setHasScrolled] = useState(false);
 
   return (
     <>
-      <div className="flex items-center justify-between px-4 py-3">
-        <span className="text-lg font-semibold">Michael Fryer &mdash; CV</span>
-        <div className="flex items-center gap-3">
+      <div
+        className={clsx(
+          "flex items-center px-4 py-3",
+          showTitle ? "justify-between" : "justify-end",
+        )}
+      >
+        {showTitle ? (
+          <span className="text-lg font-semibold">
+            Michael Fryer &mdash; CV
+          </span>
+        ) : (
+          <></>
+        )}
+        <div className="flex items-center gap-3 place-self-end">
           <a
             href={CV_PDF}
             download="Michael_Fryer_CV.pdf"
