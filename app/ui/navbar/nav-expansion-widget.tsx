@@ -12,18 +12,20 @@ export default function NavExpansionWidget({
       type="button"
       aria-label="Toggle navigation menu"
       aria-expanded={isNavExpanded}
-      className="flex h-4 w-16 cursor-pointer flex-col gap-8 overflow-hidden border-0 bg-transparent p-0"
+      className="cursor-pointer border-0 bg-transparent px-2 py-3"
       onClick={() => clickCallback()}
     >
-      <div
-        className={clsx(
-          "top-0 transform text-center font-sans font-semibold leading-4 tracking-wider text-purple-900 transition-all duration-150 hover:tracking-megaWide",
-          isNavExpanded ? "-translate-y-4" : "translate-y-0",
-        )}
-      >
-        MENU
-        <br />
-        BACK
+      <div className="h-4 w-16 overflow-hidden">
+        <div
+          className={clsx(
+            "transform text-center font-sans font-semibold leading-4 tracking-wider text-purple-900 transition-all duration-150 hover:tracking-megaWide",
+            isNavExpanded ? "-translate-y-4" : "translate-y-0",
+          )}
+        >
+          MENU
+          <br />
+          BACK
+        </div>
       </div>
     </button>
   );
