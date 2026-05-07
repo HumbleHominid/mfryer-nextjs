@@ -32,7 +32,7 @@ export default function Footer() {
         </FooterLink>
         {/* CV */}
         {isMobile ? (
-          <FooterLink href={CV} className={footerLinkClass}>
+          <FooterLink href={CV} className={footerLinkClass} target="_self">
             <DocumentIcon className="w-5" />
             <span>CV</span>
           </FooterLink>
