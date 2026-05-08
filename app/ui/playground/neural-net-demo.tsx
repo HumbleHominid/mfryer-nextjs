@@ -275,8 +275,8 @@ export default function NeuralNetDemo() {
           <strong>XOR is not linearly separable.</strong> A single layer is
           equivalent to a linear classifier &mdash; it can only draw one
           straight boundary through the input space. XOR requires two
-          boundaries, so the loss will fail to converge to 0. Increase to 2
-          hidden layers to see the difference.
+          boundaries, so the loss will fail to converge to 0. Increase to at
+          least one hidden layer to see the difference.
         </div>
       )}
       {(gate === "XOR" || gate === "XNOR") && numLayers >= 1 && (
