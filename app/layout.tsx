@@ -6,18 +6,20 @@ import Navbar from "@/app/ui/navbar/navbar";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mfryer.us"),
   title: {
     template: "%s | M. Fryer",
     default: "M. Fryer",
   },
-  description: "The official Michael Fryer website. Created by Michael Fryer.",
-  keywords: ["michael", "fryer", "portfolio", "mfryer", "personal"],
+  description:
+    "Personal portfolio of Michael Fryer — software engineer and data science student.",
+  keywords: ["michael", "fryer", "portfolio", "software engineer", "mfryer"],
   authors: [{ name: "Michael Fryer", url: "https://github.com/HumbleHominid" }],
   creator: "Michael Fryer",
   publisher: "Michael Fryer",
   applicationName: "Michael Fryer Portfolio",
   alternates: {
-    canonical: "/",
+    canonical: "https://mfryer.us",
   },
   robots: {
     index: true,
@@ -35,21 +37,23 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Michael Fryer",
-    description: "Portfolio website for Michael Fryer.",
+    description:
+      "Personal portfolio of Michael Fryer — software engineer and data science student.",
     images: ["/twitter.png"],
   },
   openGraph: {
     title: "Michael Fryer",
-    description: "Portfolio website for Michael Fryer.",
+    description:
+      "Personal portfolio of Michael Fryer — software engineer and data science student.",
     siteName: "Michael Fryer Portfolio",
-    url: "/",
+    url: "https://mfryer.us",
     images: [
       {
         url: "/twitter.png",
-        secureUrl: "/twitter.png",
         type: "image/png",
         width: 1200,
         height: 630,
+        alt: "Michael Fryer Portfolio",
       },
     ],
     locale: "en_US",
