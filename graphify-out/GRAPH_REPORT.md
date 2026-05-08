@@ -1,63 +1,97 @@
-# Graph Report - app  (2026-05-08)
+# Graph Report - mfryer-nextjs  (2026-05-08)
 
 ## Corpus Check
-- Corpus is ~5,720 words - fits in a single context window. You may not need a graph.
+- 39 files · ~8,651 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 63 nodes · 74 edges · 9 communities detected
+- 175 nodes · 232 edges · 14 communities (12 shown, 2 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
+## Graph Freshness
+- Built from commit: `54e7592f`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
+
+## Community Hubs (Navigation)
+- [[_COMMUNITY_Community 1|Community 1]]
+- [[_COMMUNITY_Community 2|Community 2]]
+- [[_COMMUNITY_Community 3|Community 3]]
+- [[_COMMUNITY_Community 4|Community 4]]
+- [[_COMMUNITY_Community 5|Community 5]]
+- [[_COMMUNITY_Community 6|Community 6]]
+- [[_COMMUNITY_Community 7|Community 7]]
+- [[_COMMUNITY_Community 8|Community 8]]
+- [[_COMMUNITY_Community 9|Community 9]]
+
 ## God Nodes (most connected - your core abstractions)
-1. `estimateHeight()` - 2 edges
-2. `splitColumns()` - 2 edges
+1. `useCvModal()` - 8 edges
+2. `NeuralNetwork` - 7 edges
+3. `useEscapeKey()` - 5 edges
+4. `useClientMediaQuery()` - 5 edges
+5. `useHoverEffect()` - 5 edges
+6. `PortfolioItem()` - 3 edges
+7. `Repo` - 3 edges
+8. `getRepos` - 3 edges
+9. `sigmoid()` - 3 edges
+10. `sigmoidPrime()` - 3 edges
 
 ## Surprising Connections (you probably didn't know these)
-- None detected - all connections are within the same source files.
+- `Title()` --calls--> `useClientMediaQuery()`  [EXTRACTED]
+  ui/home/title.tsx → lib/hooks/use-client-media-query.ts
+- `Navbar()` --calls--> `useEscapeKey()`  [EXTRACTED]
+  ui/navbar/navbar.tsx → lib/hooks/use-escape-key.ts
+- `NavBadge()` --calls--> `useHoverEffect()`  [EXTRACTED]
+  ui/navbar/nav-badge.tsx → lib/hooks/use-hover-effect.ts
+- `NavMail()` --calls--> `useHoverEffect()`  [EXTRACTED]
+  ui/navbar/nav-mail.tsx → lib/hooks/use-hover-effect.ts
+- `NavSocials()` --calls--> `useCvModal()`  [EXTRACTED]
+  ui/navbar/nav-socials.tsx → lib/hooks/use-cv-modal.ts
 
-## Communities
+## Communities (14 total, 2 thin omitted)
 
-### Community 0 - "Home Page & Info Slides"
-Cohesion: 0.2
-Nodes (2): estimateHeight(), splitColumns()
+### Community 2 - "Community 2"
+Cohesion: 0.15
+Nodes (6): CvModal(), useEscapeKey(), NavLinkData, socials, Navbar(), routeLinks
 
-### Community 1 - "Navbar Controls"
-Cohesion: 0.18
-Nodes (0): 
+### Community 3 - "Community 3"
+Cohesion: 0.19
+Nodes (7): NeuralNetwork, sigmoid(), sigmoidPrime(), buildNetwork(), Gate, GATE_DATA, NeuralNetDemo()
 
-### Community 2 - "CV PDF & Social Icons"
+### Community 4 - "Community 4"
+Cohesion: 0.16
+Nodes (4): CvPdfRenderer, useHoverEffect(), NavBadge(), NavMail()
+
+### Community 5 - "Community 5"
+Cohesion: 0.15
+Nodes (4): alternateFloat(), metadata, Page(), SIDE_CLASSES
+
+### Community 6 - "Community 6"
 Cohesion: 0.22
-Nodes (0): 
+Nodes (11): favoriteRepos, getRepos, GitHubRepo, Repo, estimateHeight(), metadata, Page(), splitColumns() (+3 more)
 
-### Community 3 - "CV Modal & Viewer"
-Cohesion: 0.29
-Nodes (0): 
+### Community 7 - "Community 7"
+Cohesion: 0.26
+Nodes (6): CvLink(), Footer(), Title(), useClientMediaQuery(), useCvModal(), NavSocials()
 
-### Community 4 - "Title & Media Query Hook"
-Cohesion: 0.29
-Nodes (0): 
-
-### Community 5 - "Portfolio Section"
-Cohesion: 0.33
-Nodes (0): 
-
-### Community 6 - "Footer & Layout"
-Cohesion: 0.33
-Nodes (0): 
-
-### Community 7 - "Logo Component"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 8 - "Video Component"
-Cohesion: 1.0
-Nodes (0): 
+### Community 8 - "Community 8"
+Cohesion: 0.2
+Nodes (3): metadata, GatePlot, GATES
 
 ## Knowledge Gaps
-- **Thin community `Logo Component`** (2 nodes): `MFLogo.tsx`, `MFLogo()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Video Component`** (2 nodes): `VideoComponent.tsx`, `VideoComponent()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **14 isolated node(s):** `metadata`, `SIDE_CLASSES`, `routeLinks`, `socials`, `Gate` (+9 more)
+  These have ≤1 connection - possible missing edges or undocumented components.
+- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
-_Not enough signal to generate questions. This usually means the corpus has no AMBIGUOUS edges, no bridge nodes, no INFERRED relationships, and all communities are tightly cohesive. Add more files or run with --mode deep to extract richer edges._
+_Questions this graph is uniquely positioned to answer:_
+
+- **Why does `useCvModal()` connect `Community 7` to `Community 2`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **What connects `metadata`, `SIDE_CLASSES`, `routeLinks` to the rest of the system?**
+  _14 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Community 0` be split into smaller, more focused modules?**
+  _Cohesion score 0.07 - nodes in this community are weakly interconnected._
+- **Should `Community 1` be split into smaller, more focused modules?**
+  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
