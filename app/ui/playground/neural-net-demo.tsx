@@ -186,11 +186,11 @@ export default function NeuralNetDemo() {
   return (
     <div className="flex flex-col gap-6 rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-md">
       {/* Controls */}
-      <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:gap-6">
+      <div className="flex flex-col gap-4 md:flex-row md:flex-wrap md:items-end md:gap-6">
         {/* Mobile row 1: gate + buttons. xs+: contents flows children into parent row */}
-        <div className="flex items-end justify-between gap-4 sm:contents">
+        <div className="flex items-end justify-between gap-4 md:contents">
           {/* Gate selector */}
-          <div className="flex flex-col gap-1 sm:order-1">
+          <div className="flex flex-col gap-1 md:order-1">
             <label className="text-xs font-semibold uppercase tracking-widest text-slate-500">
               Logic Gate
             </label>
@@ -208,7 +208,7 @@ export default function NeuralNetDemo() {
             </select>
           </div>
           {/* Buttons */}
-          <div className="flex gap-2 sm:order-4">
+          <div className="flex gap-2 md:order-4">
             <button
               onClick={() => {
                 if (!isTraining) {
@@ -236,9 +236,9 @@ export default function NeuralNetDemo() {
           </div>
         </div>
         {/* Mobile row 2: sliders */}
-        <div className="flex items-end gap-6 sm:contents">
+        <div className="flex items-end gap-6 md:contents">
           {/* Hidden layers slider */}
-          <div className="flex w-1/2 flex-col gap-1 sm:order-2 sm:w-32">
+          <div className="flex w-1/2 flex-col gap-1 md:order-2 md:w-36">
             <label className="text-xs font-semibold uppercase tracking-widest text-slate-500">
               Hidden Layers: {numLayers}
             </label>
@@ -253,7 +253,7 @@ export default function NeuralNetDemo() {
             />
           </div>
           {/* Nodes per layer slider */}
-          <div className="flex w-1/2 flex-col gap-1 sm:order-3 sm:w-32">
+          <div className="flex w-1/2 flex-col gap-1 md:order-3 md:w-36">
             <label className="text-xs font-semibold uppercase tracking-widest text-slate-500">
               Nodes / Layer: {nodesPerLayer}
             </label>
