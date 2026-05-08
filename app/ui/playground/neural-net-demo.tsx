@@ -185,84 +185,87 @@ export default function NeuralNetDemo() {
   return (
     <div className="flex flex-col gap-6 rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-md">
       {/* Controls */}
-      <div className="flex flex-wrap items-end gap-6">
-        {/* Gate selector */}
-        <div className="flex flex-col gap-1">
-          <label className="text-xs font-semibold uppercase tracking-widest text-slate-500">
-            Logic Gate
-          </label>
-          <select
-            value={gate}
-            onChange={(e) => setGate(e.target.value as Gate)}
-            disabled={isTraining}
-            className="rounded border border-slate-300 bg-white px-3 py-1.5 font-mono text-sm focus:outline-none disabled:opacity-50"
-          >
-            {(Object.keys(GATE_DATA) as Gate[]).map((g) => (
-              <option key={g} value={g}>
-                {g}
-              </option>
-            ))}
-          </select>
+      <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:gap-6">
+        {/* Mobile row 1: gate + buttons. xs+: contents flows children into parent row */}
+        <div className="flex items-end justify-between gap-4 sm:contents">
+          {/* Gate selector */}
+          <div className="flex flex-col gap-1 sm:order-1">
+            <label className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+              Logic Gate
+            </label>
+            <select
+              value={gate}
+              onChange={(e) => setGate(e.target.value as Gate)}
+              disabled={isTraining}
+              className="rounded border border-slate-300 bg-white px-3 py-1.5 font-mono text-sm focus:outline-none disabled:opacity-50"
+            >
+              {(Object.keys(GATE_DATA) as Gate[]).map((g) => (
+                <option key={g} value={g}>
+                  {g}
+                </option>
+              ))}
+            </select>
+          </div>
+          {/* Buttons */}
+          <div className="flex gap-2 sm:order-4">
+            <button
+              onClick={() => {
+                if (!isTraining) {
+                  resetNetwork();
+                  setIsTraining(true);
+                } else {
+                  setIsTraining(false);
+                }
+              }}
+              className={clsx(
+                "rounded px-4 py-1.5 text-sm font-semibold text-white transition-colors",
+                isTraining
+                  ? "bg-orange-500 hover:bg-orange-600"
+                  : "bg-indigo-600 hover:bg-indigo-700",
+              )}
+            >
+              {isTraining ? "Stop" : "Train"}
+            </button>
+            <button
+              onClick={resetNetwork}
+              className="rounded border border-slate-300 px-4 py-1.5 text-sm font-semibold text-slate-600 transition-colors hover:bg-slate-100"
+            >
+              Reset
+            </button>
+          </div>
         </div>
-
-        {/* Hidden layers slider */}
-        <div className="flex flex-col gap-1">
-          <label className="text-xs font-semibold uppercase tracking-widest text-slate-500">
-            Hidden Layers: {numLayers}
-          </label>
-          <input
-            type="range"
-            min={0}
-            max={2}
-            value={numLayers}
-            onChange={(e) => setNumLayers(Number(e.target.value))}
-            disabled={isTraining}
-            className="w-32 accent-indigo-600 disabled:opacity-50"
-          />
-        </div>
-
-        {/* Nodes per layer slider */}
-        <div className="flex flex-col gap-1">
-          <label className="text-xs font-semibold uppercase tracking-widest text-slate-500">
-            Nodes / Layer: {nodesPerLayer}
-          </label>
-          <input
-            type="range"
-            min={1}
-            max={5}
-            value={nodesPerLayer}
-            onChange={(e) => setNodesPerLayer(Number(e.target.value))}
-            disabled={isTraining}
-            className="w-32 accent-indigo-600 disabled:opacity-50"
-          />
-        </div>
-
-        {/* Buttons */}
-        <div className="flex gap-2">
-          <button
-            onClick={() => {
-              if (!isTraining) {
-                resetNetwork();
-                setIsTraining(true);
-              } else {
-                setIsTraining(false);
-              }
-            }}
-            className={clsx(
-              "rounded px-4 py-1.5 text-sm font-semibold text-white transition-colors",
-              isTraining
-                ? "bg-orange-500 hover:bg-orange-600"
-                : "bg-indigo-600 hover:bg-indigo-700",
-            )}
-          >
-            {isTraining ? "Stop" : "Train"}
-          </button>
-          <button
-            onClick={resetNetwork}
-            className="rounded border border-slate-300 px-4 py-1.5 text-sm font-semibold text-slate-600 transition-colors hover:bg-slate-100"
-          >
-            Reset
-          </button>
+        {/* Mobile row 2: sliders */}
+        <div className="flex items-end gap-6 sm:contents">
+          {/* Hidden layers slider */}
+          <div className="flex w-1/2 flex-col gap-1 sm:order-2 sm:w-32">
+            <label className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+              Hidden Layers: {numLayers}
+            </label>
+            <input
+              type="range"
+              min={0}
+              max={2}
+              value={numLayers}
+              onChange={(e) => setNumLayers(Number(e.target.value))}
+              disabled={isTraining}
+              className="accent-indigo-600 disabled:opacity-50"
+            />
+          </div>
+          {/* Nodes per layer slider */}
+          <div className="flex w-1/2 flex-col gap-1 sm:order-3 sm:w-32">
+            <label className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+              Nodes / Layer: {nodesPerLayer}
+            </label>
+            <input
+              type="range"
+              min={1}
+              max={5}
+              value={nodesPerLayer}
+              onChange={(e) => setNodesPerLayer(Number(e.target.value))}
+              disabled={isTraining}
+              className="accent-indigo-600 disabled:opacity-50"
+            />
+          </div>
         </div>
       </div>
 
@@ -285,9 +288,9 @@ export default function NeuralNetDemo() {
       )}
 
       {/* Chart + Truth table */}
-      <div className="flex flex-wrap gap-8">
+      <div className="grid-rows-min grid gap-8 sm:grid-cols-2">
         {/* Loss curve */}
-        <div className="flex flex-col gap-2">
+        <div className="flex w-full flex-col gap-2">
           <div className="flex items-center gap-3">
             <span className="text-xs font-semibold uppercase tracking-widest text-slate-500">
               Loss curve
@@ -299,9 +302,7 @@ export default function NeuralNetDemo() {
             )}
           </div>
           <svg
-            width={CHART_WIDTH}
-            height={CHART_HEIGHT}
-            className="rounded border border-slate-200 bg-white"
+            className="w-full rounded border border-slate-200 bg-white"
             viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
           >
             {/* Y-axis ticks */}
@@ -335,7 +336,7 @@ export default function NeuralNetDemo() {
         </div>
 
         {/* Truth table */}
-        <div className="flex flex-col gap-2">
+        <div className="flex w-full flex-col gap-2">
           <span className="text-xs font-semibold uppercase tracking-widest text-slate-500">
             Predictions
           </span>
@@ -384,18 +385,18 @@ export default function NeuralNetDemo() {
             <span className="text-red-500">red = wrong</span>
           </div>
         </div>
-      </div>
 
-      {/* Architecture label */}
-      <p className="font-mono text-xs text-slate-400">
-        Architecture: [2
-        {Array(numLayers)
-          .fill(nodesPerLayer)
-          .map((n: number) => `, ${n}`)}
-        , 1] &nbsp;&middot;&nbsp; sigmoid activation &nbsp;&middot;&nbsp; lr ={" "}
-        {LEARNING_RATE} &nbsp;&middot;&nbsp; mini-batch gradient descent (batch
-        = 16)
-      </p>
+        {/* Architecture label */}
+        <p className="col-span-full font-mono text-xs text-slate-400">
+          Architecture: [2
+          {Array(numLayers)
+            .fill(nodesPerLayer)
+            .map((n: number) => `, ${n}`)}
+          , 1] &nbsp;&middot;&nbsp; sigmoid activation &nbsp;&middot;&nbsp; lr ={" "}
+          {LEARNING_RATE} &nbsp;&middot;&nbsp; mini-batch gradient descent
+          (batch = 16)
+        </p>
+      </div>
     </div>
   );
 }
