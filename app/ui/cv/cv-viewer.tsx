@@ -36,14 +36,12 @@ export default function CvViewer({
           <span className="text-lg font-semibold">
             Michael Fryer &mdash; CV
           </span>
-        ) : (
-          <></>
-        )}
+        ) : null}
         <div className="flex items-center gap-3 place-self-end">
           <a
             href={CV_PDF}
             download="Michael_Fryer_CV.pdf"
-            className="rounded p-1.5 hover:cursor-pointer hover:bg-gray-100"
+            className="rounded p-1.5 hover:cursor-pointer hover:bg-yellow-50 hover:shadow"
             aria-label="Download CV"
           >
             <ArrowDownTrayIcon className="w-5" />
@@ -51,7 +49,7 @@ export default function CvViewer({
           {onClose ? (
             <button
               onClick={onClose}
-              className="rounded p-1.5 hover:cursor-pointer hover:bg-gray-100"
+              className="rounded p-1.5 hover:cursor-pointer hover:bg-yellow-50 hover:shadow"
               aria-label="Close CV modal"
             >
               <XMarkIcon className="w-5" />
