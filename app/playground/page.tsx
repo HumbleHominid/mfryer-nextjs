@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function PlaygroundPage() {
   return (
     <main className="flex flex-col gap-10 text-lg font-normal">
-      <h1 className="text-9xl font-thin">Playground</h1>
+      <h1 className="text-7xl font-thin md:text-9xl">Playground</h1>
 
       {/* Section 1: Universal approximation */}
       <section className="flex flex-col gap-4">

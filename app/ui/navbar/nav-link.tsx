@@ -25,7 +25,7 @@ export default function NavLink({
     <div
       style={{ transitionDelay: `${200 * (index + 1)}ms` }}
       className={clsx(
-        "flex items-baseline gap-4 py-2 transition-all duration-1000 ease-in-out",
+        "flex items-center gap-4 py-2 transition-all duration-1000 ease-in-out",
         isNavExpanded
           ? "translate-x-0 opacity-100"
           : "translate-x-full opacity-0",
@@ -47,10 +47,10 @@ export default function NavLink({
       {/* Dash */}
       <div className="translate h-0.5 w-4 translate-y-1 self-center bg-slate-500 md:w-8" />
       {/* Extra Text */}
-      <span className="text-xl font-extralight text-purple-600 md:self-end md:text-3xl">
+      <span className="-translate-y-0.5 text-xl font-extralight leading-none text-purple-600 sm:translate-y-0 md:text-3xl">
         {data.text}
         {/* Neato big period */}
-        <span className="text-4xl font-light text-black">.</span>
+        <span className="text-4xl font-light leading-none text-black">.</span>
       </span>
     </div>
   );
