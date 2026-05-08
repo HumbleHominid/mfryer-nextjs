@@ -3,6 +3,7 @@
 import NavBadge from "@/app/ui/navbar/nav-badge";
 import NavMail from "@/app/ui/navbar/nav-mail";
 import { useState, useRef } from "react";
+import { useEscapeKey } from "@/app/lib/hooks/use-escape-key";
 import clsx from "clsx";
 import NavLink, { NavLinkData } from "@/app/ui/navbar/nav-link";
 import NavExpansionWidget from "@/app/ui/navbar/nav-expansion-widget";
@@ -11,6 +12,7 @@ import NavSocials from "@/app/ui/navbar/nav-socials";
 export default function Navbar() {
   const [isNavExpanded, setNavExpanded] = useState(false);
   const [showSubNav, setShowSubNav] = useState(false);
+  const [isCvModalOpen, setIsCvModalOpen] = useState(false);
   const showNavTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function handleClick(showNav: boolean) {
@@ -25,6 +27,8 @@ export default function Navbar() {
       }, 1000);
     }
   }
+
+  useEscapeKey(() => handleClick(false), isNavExpanded && !isCvModalOpen);
 
   const routeLinks: NavLinkData[] = [
     { href: "/", routeName: "Home", text: "Back to home" },
@@ -67,6 +71,7 @@ export default function Navbar() {
         <NavSocials
           isNavExpanded={isNavExpanded}
           collapseCallback={() => handleClick(false)}
+          onCvModalChange={setIsCvModalOpen}
         />
         {/* Page Links */}
         {routeLinks.map((link, index) => {

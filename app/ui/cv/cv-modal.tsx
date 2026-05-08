@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import clsx from "clsx";
 import CvViewer from "@/app/ui/cv/cv-viewer";
+import { useEscapeKey } from "@/app/lib/hooks/use-escape-key";
 
 export default function CvModal({
   isOpen,
@@ -34,14 +35,7 @@ export default function CvModal({
     }
   }, [isOpen]);
 
-  useEffect(() => {
-    if (!isOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, onClose]);
+  useEscapeKey(onClose, isOpen);
 
   if (!mounted || !isVisible) return null;
 

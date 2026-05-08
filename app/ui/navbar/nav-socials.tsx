@@ -14,11 +14,15 @@ import clsx from "clsx";
 export default function NavSocials({
   isNavExpanded,
   collapseCallback,
+  onCvModalChange,
 }: {
   isNavExpanded: boolean;
   collapseCallback?: () => void;
+  onCvModalChange?: (isOpen: boolean) => void;
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => { setIsModalOpen(true); onCvModalChange?.(true); };
+  const closeModal = () => { setIsModalOpen(false); onCvModalChange?.(false); };
   const isMobile = useClientMediaQuery("(max-width: 640px)");
   let count = 0;
   return (
@@ -88,7 +92,7 @@ export default function NavSocials({
             </div>
           ) : (
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={openModal}
               className="hover:cursor-pointer hover:drop-shadow-md hover:filter"
               aria-label="View CV"
             >
@@ -116,7 +120,7 @@ export default function NavSocials({
           </NavSocial>
         </NavSocialWrapper>
       </div>
-      <CvModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <CvModal isOpen={isModalOpen} onClose={closeModal} />
     </>
   );
 }
