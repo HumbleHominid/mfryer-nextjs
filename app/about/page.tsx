@@ -2,8 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
-import { YouTube, GitHub, CV } from "@/app/lib/ref-links";
+import { YouTube, GitHub } from "@/app/lib/ref-links";
 import ArcadiaVideo from "@/app/ui/video/ArcadiaVideo";
+import CvLink from "@/app/ui/cv/cv-link";
 export const metadata: Metadata = {
   title: "About",
 };
@@ -207,16 +208,7 @@ export default function Page() {
         >
           YouTube
         </Link>
-        , and a download for my{" "}
-        <Link
-          className="hover:underline hover:underline-offset-4"
-          target="_self"
-          rel="noopener noreferrer"
-          href={CV}
-        >
-          CV
-        </Link>{" "}
-        here as well as in the footer.
+        , and a download for my <CvLink /> here as well as in the footer.
       </p>
     </main>
   );
