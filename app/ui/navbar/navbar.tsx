@@ -13,6 +13,7 @@ const routeLinks: NavLinkData[] = [
   { href: "/", routeName: "Home", text: "Back to home" },
   { href: "/about", routeName: "About", text: "More about me" },
   { href: "/portfolio", routeName: "Portfolio", text: "Other projects" },
+  { href: "/playground", routeName: "Playground", text: "Neural net demo" },
 ];
 
 export default function Navbar() {
@@ -63,7 +64,7 @@ export default function Navbar() {
       {/* Sub-Menu Components */}
       <div
         className={clsx(
-          "relative z-50 m-20 mr-0 flex flex-col gap-16 overflow-hidden",
+          "relative z-50 ml-20 mt-20 flex flex-col gap-10 overflow-hidden",
           showSubNav ? "h-auto" : "h-0",
         )}
       >

@@ -25,7 +25,7 @@ export default function NavLink({
     <div
       style={{ transitionDelay: `${200 * (index + 1)}ms` }}
       className={clsx(
-        "flex items-baseline gap-4 transition-all duration-1000 ease-in-out",
+        "flex items-baseline gap-4 py-2 transition-all duration-1000 ease-in-out",
         isNavExpanded
           ? "translate-x-0 opacity-100"
           : "translate-x-full opacity-0",
@@ -38,6 +38,7 @@ export default function NavLink({
         onClick={() => routeClickCallback()}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        className="overflow-visible"
       >
         <span className="text-3xl font-extrabold text-purple-950 filter transition-colors hover:text-white hover:drop-shadow-md md:text-5xl">
           {data.routeName}
