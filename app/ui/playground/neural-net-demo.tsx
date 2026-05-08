@@ -166,7 +166,8 @@ export default function NeuralNetDemo() {
     Math.abs(
       lossHistory[lossHistory.length - 1] -
         lossHistory[lossHistory.length - 20],
-    ) < 0.001;
+    ) < 0.001 &&
+    lossHistory[lossHistory.length - 1] > 0.01;
 
   // Build SVG polyline points
   const polylinePoints = lossHistory
