@@ -18,13 +18,14 @@ export default function Page() {
       <h1 className="text-9xl font-thin">About Me</h1>
       {/* Lead Paragraph */}
       <p className="text-2xl font-extralight leading-8 tracking-wide text-slate-700">
-        Hello there! I am Michael Fryer, a Data Scientist &amp; Software
-        Engineer. I graduated from{" "}
+        Hello there! I am Michael Fryer, a{" "}
+        <span className="font-normal">Data Scientist</span> &amp;{" "}
+        <span className="font-normal">Software Engineer</span>. I graduated from{" "}
         <Link
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.mtech.edu"
-          className="font-normal"
+          className="font-light"
         >
           Montana Technological University
         </Link>{" "}
@@ -35,7 +36,7 @@ export default function Page() {
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.frankfurt-school.de/en/home"
-          className="font-normal"
+          className="font-light"
         >
           Frankfurt School of Finance &amp; Management
         </Link>
@@ -53,19 +54,14 @@ export default function Page() {
         Bandai Namco would use once the game was shipped. For that project, I
         chose to use Django as my front-end framework of choice. After our
         deliverable, I was put on the Rocket League team where I briefly worked
-        on a still unreleased project. After leaving for personal reasons, I
-        have been pursuing my passion for content creation. Over the course of
-        these years, I have grown both my YouTube channel and my Twitch channel.
-        By dedicating myself to working on content creation I was invited to
-        become part of a content creation team where I would work
-        collaboratively with other members to create entertaining content. This
-        journey has let me develop many skills I wouldn&apos;t have otherwise.
-        This includes video editing, image editing, project management, and
-        leadership. Since starting my Master&apos;s at Frankfurt School in 2025,
-        I have also been working as a Machine Learning Teaching Assistant,
-        designing exercises for a bachelor-level course covering supervised
-        learning, neural networks, and model evaluation, and supporting students
-        with Python-based ML implementations.
+        on a still unreleased project. I took a planned career break after Heavy
+        Iron Studios to pursue independent projects and transition into data
+        science. Built and deployed web applications for my content creation
+        work, including the Arcadia site that aggregates and distributes video
+        content for a creator collective. Collaborated with a team on regular
+        content production. Completed self-directed study in Python, statistics,
+        and machine learning, leading to my acceptance to the M.Sc. in Applied
+        Data Science at Frankfurt School of Finance &amp; Management.
       </p>
       {/* Education Paragraph */}
       <div>
@@ -100,9 +96,7 @@ export default function Page() {
       </div>
       {/* YouTube Paragraph */}
       <div>
-        <div
-          className="mb-4 w-full md:float-right md:mb-2 md:ml-4 md:w-1/2"
-        >
+        <div className="mb-4 w-full md:float-right md:mb-2 md:ml-4 md:w-1/2">
           <ArcadiaVideo width={1280 / 3} height={720 / 3} />
         </div>
         <p className="sm:text-justify">
