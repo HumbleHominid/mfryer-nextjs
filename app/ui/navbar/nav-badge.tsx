@@ -3,6 +3,7 @@
 import Image from "next/image";
 import clsx from "clsx";
 import { useHoverEffect } from "@/app/lib/hooks/use-hover-effect";
+import Link from "next/dist/client/link";
 
 export default function NavBadge() {
   const { hasHovered, isHovered, onMouseEnter, onMouseLeave } = useHoverEffect(
@@ -10,7 +11,7 @@ export default function NavBadge() {
   );
 
   return (
-    <div className="relative">
+    <Link href="/" className="relative">
       <Image
         src="/michael.png"
         alt="Michael logo"
@@ -32,6 +33,6 @@ export default function NavBadge() {
           },
         )}
       />
-    </div>
+    </Link>
   );
 }
