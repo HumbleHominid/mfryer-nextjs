@@ -1,59 +1,31 @@
-# mfryer-nextjs
+## Core Principles
 
-Michael Fryer's personal portfolio site. Deployed to https://www.mfryer.us via Vercel.
+- Never use emojis.
 
-## Tech Stack
+## Commit Authorship
 
-- **Framework**: Next.js 16 (App Router) with React 19
-- **Language**: TypeScript (strict mode)
-- **Styling**: Tailwind CSS 4 with PostCSS
-- **Icons**: @heroicons/react
-- **Analytics**: @vercel/analytics
-- **Utilities**: clsx for conditional classnames
+When committing code changes:
+- Never add Claude as a commit author.
+- Always commit as using the default git settings
 
-## Project Structure
+## Documentation Style
 
-```
-app/
-  layout.tsx          # Root layout: navbar + content slot + footer, grid-rows-layout
-  page.tsx            # Home page (server component)
-  about/page.tsx      # About page (server component)
-  portfolio/page.tsx  # Portfolio: fetches GitHub repos with 7-day ISR cache
-  globals.css         # CSS variables, blob animations, base styles
-  lib/
-    ref-links.ts      # All external URLs and contact info as constants
-    hooks/
-      use-client-media-query.ts  # SSR-safe media query hook
-  ui/
-    fonts.ts          # Google Fonts (Inter)
-    slide-in-item.tsx # Scroll-triggered reveal animation (client)
-    navbar/           # Collapsible nav with overlay expansion animation
-    footer/           # Footer with icon links
-    home/title.tsx    # Mouse-tracking skew/rotation effect (client)
-    video/            # YouTube embed with Suspense skeleton
-    portfolio/        # GitHub repo card display
-public/
-  cv.pdf              # Served at /cv (redirected in next.config.ts)
-  icons/              # SVG/PNG social icons
-```
+When creating or updating markdown documentation files:
+- **Never create .md files unless explicitly instructed.**
+- **Be extremely concise** - engineers scan, they don't read novels
+- **Only include essential information** - what they need to know, not what's possible to explain
+- **Prefer examples over prose** - show the pattern, not the theory
+- **Assume technical competence** - skip obvious explanations
+- **Front-load critical info** - put warnings and key concepts first
+- **Delete verbose explanations** - if it takes more than 3 sentences, it's probably too long
 
-## Commands
+Default to 1-2 sentence explanations. Only expand when complexity absolutely requires it.
 
-```bash
-npm run dev      # Dev server with Turbopack
-npm run build    # Production build
-npm run start    # Start production server
-npm run lint     # ESLint
-npm run format   # Prettier (with Tailwind class sorting)
-```
+## graphify
 
-## Key Config
+This project has a graphify knowledge graph at graphify-out/.
 
-- `next.config.ts`: Redirects `/cv` → external PDF link from `lib/ref-links.ts`
-- `tailwind.config.ts`: Custom `grid-rows-layout`, letter-spacing, transition durations
-- `tsconfig.json`: Path alias `@/*` → project root
-- `.prettierrc`: Uses prettier-plugin-tailwindcss; sorts classes against `app/globals.css`
-
-## Additional Documentation
-
-- [Architectural Patterns](.claude/docs/architectural_patterns.md) — server/client split, data fetching, animation conventions, type exports
+Rules:
+- Before answering architecture or codebase questions, read graphify-out/GRAPH_REPORT.md for god nodes and community structure
+- If graphify-out/wiki/index.md exists, navigate it instead of reading raw files
+- After modifying code files in this session, run `python3 -c "from graphify.watch import _rebuild_code; from pathlib import Path; _rebuild_code(Path('.'))"` to keep the graph current

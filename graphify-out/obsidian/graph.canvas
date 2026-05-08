@@ -1,0 +1,1117 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "Arcadia Info Page",
+      "x": 0,
+      "y": 0,
+      "width": 880,
+      "height": 520,
+      "color": "1"
+    },
+    {
+      "id": "n_arcadiavideo",
+      "type": "file",
+      "file": "graphify/obsidian/ArcadiaVideo.tsx.md",
+      "x": 20,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_page_cvpage",
+      "type": "file",
+      "file": "graphify/obsidian/CvPage().md",
+      "x": 220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_info_slide_infoslide",
+      "type": "file",
+      "file": "graphify/obsidian/InfoSlide().md",
+      "x": 420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_slide_in_item_slideinitem",
+      "type": "file",
+      "file": "graphify/obsidian/SlideInItem().md",
+      "x": 20,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_videoskeleton_videoskeleton",
+      "type": "file",
+      "file": "graphify/obsidian/VideoSkeleton().md",
+      "x": 220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_videoskeleton",
+      "type": "file",
+      "file": "graphify/obsidian/VideoSkeleton.tsx.md",
+      "x": 420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_page_alternatefloat",
+      "type": "file",
+      "file": "graphify/obsidian/alternateFloat().md",
+      "x": 20,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_page_estimateheight",
+      "type": "file",
+      "file": "graphify/obsidian/estimateHeight().md",
+      "x": 220,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_info_slide",
+      "type": "file",
+      "file": "graphify/obsidian/info-slide.tsx.md",
+      "x": 420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_page",
+      "type": "file",
+      "file": "graphify/obsidian/page.tsx.md",
+      "x": 20,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_slide_in_item",
+      "type": "file",
+      "file": "graphify/obsidian/slide-in-item.tsx.md",
+      "x": 220,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_page_splitcolumns",
+      "type": "file",
+      "file": "graphify/obsidian/splitColumns().md",
+      "x": 420,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Navigation Components",
+      "x": 960,
+      "y": 0,
+      "width": 880,
+      "height": 520,
+      "color": "2"
+    },
+    {
+      "id": "n_nav_badge_navbadge",
+      "type": "file",
+      "file": "graphify/obsidian/NavBadge().md",
+      "x": 980,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nav_expansion_widget_navexpansionwidget",
+      "type": "file",
+      "file": "graphify/obsidian/NavExpansionWidget().md",
+      "x": 1180,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nav_link_clsx",
+      "type": "file",
+      "file": "graphify/obsidian/clsx()_1.md",
+      "x": 1380,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_navbar_clsx",
+      "type": "file",
+      "file": "graphify/obsidian/clsx().md",
+      "x": 980,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_navbar_handleclick",
+      "type": "file",
+      "file": "graphify/obsidian/handleClick().md",
+      "x": 1180,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nav_badge",
+      "type": "file",
+      "file": "graphify/obsidian/nav-badge.tsx.md",
+      "x": 1380,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nav_expansion_widget",
+      "type": "file",
+      "file": "graphify/obsidian/nav-expansion-widget.tsx.md",
+      "x": 980,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nav_link",
+      "type": "file",
+      "file": "graphify/obsidian/nav-link.tsx.md",
+      "x": 1180,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nav_mail",
+      "type": "file",
+      "file": "graphify/obsidian/nav-mail.tsx.md",
+      "x": 1380,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_navbar",
+      "type": "file",
+      "file": "graphify/obsidian/navbar.tsx.md",
+      "x": 980,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_use_hover_effect",
+      "type": "file",
+      "file": "graphify/obsidian/use-hover-effect.ts.md",
+      "x": 1180,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_use_hover_effect_usehovereffect",
+      "type": "file",
+      "file": "graphify/obsidian/useHoverEffect().md",
+      "x": 1380,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "Title & CV Link",
+      "x": 1920,
+      "y": 0,
+      "width": 660,
+      "height": 420,
+      "color": "3"
+    },
+    {
+      "id": "n_cv_link_cvlink",
+      "type": "file",
+      "file": "graphify/obsidian/CvLink().md",
+      "x": 1940,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_title_animate",
+      "type": "file",
+      "file": "graphify/obsidian/animate().md",
+      "x": 2140,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_cv_link",
+      "type": "file",
+      "file": "graphify/obsidian/cv-link.tsx.md",
+      "x": 2340,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_title_handlemousemove",
+      "type": "file",
+      "file": "graphify/obsidian/handleMouseMove().md",
+      "x": 1940,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_title",
+      "type": "file",
+      "file": "graphify/obsidian/title.tsx.md",
+      "x": 2140,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_use_client_media_query",
+      "type": "file",
+      "file": "graphify/obsidian/use-client-media-query.ts.md",
+      "x": 2340,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_use_client_media_query_useclientmediaquery",
+      "type": "file",
+      "file": "graphify/obsidian/useClientMediaQuery().md",
+      "x": 1940,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "Portfolio Section",
+      "x": 2660,
+      "y": 0,
+      "width": 660,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_portfolio_items_clsx",
+      "type": "file",
+      "file": "graphify/obsidian/clsx()_2.md",
+      "x": 2680,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_portfolio_fetchrepos",
+      "type": "file",
+      "file": "graphify/obsidian/fetchRepos().md",
+      "x": 2880,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_portfolio_items_langchipclass",
+      "type": "file",
+      "file": "graphify/obsidian/langChipClass().md",
+      "x": 3080,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_portfolio_items",
+      "type": "file",
+      "file": "graphify/obsidian/portfolio-items.tsx.md",
+      "x": 2680,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_portfolio",
+      "type": "file",
+      "file": "graphify/obsidian/portfolio.ts.md",
+      "x": 2880,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_portfolio_items_relativetime",
+      "type": "file",
+      "file": "graphify/obsidian/relativeTime().md",
+      "x": 3080,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "Social Nav & Modal",
+      "x": 0,
+      "y": 600,
+      "width": 660,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_nav_social_navsocial",
+      "type": "file",
+      "file": "graphify/obsidian/NavSocial().md",
+      "x": 20,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nav_socials_closemodal",
+      "type": "file",
+      "file": "graphify/obsidian/closeModal().md",
+      "x": 220,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nav_social_wrapper",
+      "type": "file",
+      "file": "graphify/obsidian/nav-social-wrapper.tsx.md",
+      "x": 420,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nav_social",
+      "type": "file",
+      "file": "graphify/obsidian/nav-social.tsx.md",
+      "x": 20,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nav_socials",
+      "type": "file",
+      "file": "graphify/obsidian/nav-socials.tsx.md",
+      "x": 220,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nav_socials_openmodal",
+      "type": "file",
+      "file": "graphify/obsidian/openModal().md",
+      "x": 420,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g5",
+      "type": "group",
+      "label": "App Layout & Footer",
+      "x": 960,
+      "y": 600,
+      "width": 660,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_footer_link_footerlink",
+      "type": "file",
+      "file": "graphify/obsidian/FooterLink().md",
+      "x": 980,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_layout_rootlayout",
+      "type": "file",
+      "file": "graphify/obsidian/RootLayout().md",
+      "x": 1180,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_fonts",
+      "type": "file",
+      "file": "graphify/obsidian/fonts.ts.md",
+      "x": 1380,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_footer_link",
+      "type": "file",
+      "file": "graphify/obsidian/footer-link.tsx.md",
+      "x": 980,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_footer",
+      "type": "file",
+      "file": "graphify/obsidian/footer.tsx.md",
+      "x": 1180,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_layout",
+      "type": "file",
+      "file": "graphify/obsidian/layout.tsx.md",
+      "x": 1380,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "CV PDF & API Route",
+      "x": 1920,
+      "y": 600,
+      "width": 660,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_cv_pdf_renderer_cvpdfrenderer",
+      "type": "file",
+      "file": "graphify/obsidian/CvPdfRenderer().md",
+      "x": 1940,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_route_get",
+      "type": "file",
+      "file": "graphify/obsidian/GET().md",
+      "x": 2140,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_cv_pdf_renderer",
+      "type": "file",
+      "file": "graphify/obsidian/cv-pdf-renderer.tsx.md",
+      "x": 2340,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ref_links",
+      "type": "file",
+      "file": "graphify/obsidian/ref-links.ts.md",
+      "x": 1940,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_route",
+      "type": "file",
+      "file": "graphify/obsidian/route.ts.md",
+      "x": 2140,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g7",
+      "type": "group",
+      "label": "CV Modal Viewer",
+      "x": 2660,
+      "y": 600,
+      "width": 660,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_cv_modal_cvmodal",
+      "type": "file",
+      "file": "graphify/obsidian/CvModal().md",
+      "x": 2680,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_cv_modal",
+      "type": "file",
+      "file": "graphify/obsidian/cv-modal.tsx.md",
+      "x": 2880,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_cv_viewer",
+      "type": "file",
+      "file": "graphify/obsidian/cv-viewer.tsx.md",
+      "x": 3080,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_use_escape_key",
+      "type": "file",
+      "file": "graphify/obsidian/use-escape-key.ts.md",
+      "x": 2680,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_use_escape_key_useescapekey",
+      "type": "file",
+      "file": "graphify/obsidian/useEscapeKey().md",
+      "x": 2880,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g8",
+      "type": "group",
+      "label": "Logo Component",
+      "x": 0,
+      "y": 1080,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_mflogo_mflogo",
+      "type": "file",
+      "file": "graphify/obsidian/MFLogo().md",
+      "x": 20,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mflogo",
+      "type": "file",
+      "file": "graphify/obsidian/MFLogo.tsx.md",
+      "x": 220,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g9",
+      "type": "group",
+      "label": "Video Component",
+      "x": 960,
+      "y": 1080,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_videocomponent_videocomponent",
+      "type": "file",
+      "file": "graphify/obsidian/VideoComponent().md",
+      "x": 980,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_videocomponent",
+      "type": "file",
+      "file": "graphify/obsidian/VideoComponent.tsx.md",
+      "x": 1180,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_layout_fonts",
+      "fromNode": "n_layout",
+      "toNode": "n_fonts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_layout_footer",
+      "fromNode": "n_layout",
+      "toNode": "n_footer",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_layout_navbar",
+      "fromNode": "n_layout",
+      "toNode": "n_navbar",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_layout_layout_rootlayout",
+      "fromNode": "n_layout",
+      "toNode": "n_layout_rootlayout",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_page_slide_in_item",
+      "fromNode": "n_page",
+      "toNode": "n_slide_in_item",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_page_arcadiavideo",
+      "fromNode": "n_page",
+      "toNode": "n_arcadiavideo",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_page_ref_links",
+      "fromNode": "n_page",
+      "toNode": "n_ref_links",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_page_title",
+      "fromNode": "n_page",
+      "toNode": "n_title",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_page_info_slide",
+      "fromNode": "n_page",
+      "toNode": "n_info_slide",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_page_cv_link",
+      "fromNode": "n_page",
+      "toNode": "n_cv_link",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_page_page_alternatefloat",
+      "fromNode": "n_page",
+      "toNode": "n_page_alternatefloat",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_page_portfolio_items",
+      "fromNode": "n_page",
+      "toNode": "n_portfolio_items",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_page_portfolio",
+      "fromNode": "n_page",
+      "toNode": "n_portfolio",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_page_page_estimateheight",
+      "fromNode": "n_page",
+      "toNode": "n_page_estimateheight",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_page_page_splitcolumns",
+      "fromNode": "n_page",
+      "toNode": "n_page_splitcolumns",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_page_cv_viewer",
+      "fromNode": "n_page",
+      "toNode": "n_cv_viewer",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_page_page_cvpage",
+      "fromNode": "n_page",
+      "toNode": "n_page_cvpage",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_mflogo_mflogo_mflogo",
+      "fromNode": "n_mflogo",
+      "toNode": "n_mflogo_mflogo",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_slide_in_item_slide_in_item_slideinitem",
+      "fromNode": "n_slide_in_item",
+      "toNode": "n_slide_in_item_slideinitem",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_slide_in_item_info_slide",
+      "fromNode": "n_slide_in_item",
+      "toNode": "n_info_slide",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_title_use_client_media_query",
+      "fromNode": "n_title",
+      "toNode": "n_use_client_media_query",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_title_title_handlemousemove",
+      "fromNode": "n_title",
+      "toNode": "n_title_handlemousemove",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_title_title_animate",
+      "fromNode": "n_title",
+      "toNode": "n_title_animate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_info_slide_info_slide_infoslide",
+      "fromNode": "n_info_slide",
+      "toNode": "n_info_slide_infoslide",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_social_nav_social_navsocial",
+      "fromNode": "n_nav_social",
+      "toNode": "n_nav_social_navsocial",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_social_nav_socials",
+      "fromNode": "n_nav_social",
+      "toNode": "n_nav_socials",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_navbar_nav_badge",
+      "fromNode": "n_navbar",
+      "toNode": "n_nav_badge",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_navbar_nav_mail",
+      "fromNode": "n_navbar",
+      "toNode": "n_nav_mail",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_navbar_use_escape_key",
+      "fromNode": "n_navbar",
+      "toNode": "n_use_escape_key",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_navbar_nav_link",
+      "fromNode": "n_navbar",
+      "toNode": "n_nav_link",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_navbar_nav_expansion_widget",
+      "fromNode": "n_navbar",
+      "toNode": "n_nav_expansion_widget",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_navbar_nav_socials",
+      "fromNode": "n_navbar",
+      "toNode": "n_nav_socials",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_navbar_navbar_handleclick",
+      "fromNode": "n_navbar",
+      "toNode": "n_navbar_handleclick",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_navbar_navbar_clsx",
+      "fromNode": "n_navbar",
+      "toNode": "n_navbar_clsx",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_badge_use_hover_effect",
+      "fromNode": "n_nav_badge",
+      "toNode": "n_use_hover_effect",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_badge_nav_badge_navbadge",
+      "fromNode": "n_nav_badge",
+      "toNode": "n_nav_badge_navbadge",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_mail_ref_links",
+      "fromNode": "n_nav_mail",
+      "toNode": "n_ref_links",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_mail_use_hover_effect",
+      "fromNode": "n_nav_mail",
+      "toNode": "n_use_hover_effect",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_link_nav_link_clsx",
+      "fromNode": "n_nav_link",
+      "toNode": "n_nav_link_clsx",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_expansion_widget_nav_expansion_widget_navexpansionwidget",
+      "fromNode": "n_nav_expansion_widget",
+      "toNode": "n_nav_expansion_widget_navexpansionwidget",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_socials_ref_links",
+      "fromNode": "n_nav_socials",
+      "toNode": "n_ref_links",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_socials_nav_social_wrapper",
+      "fromNode": "n_nav_socials",
+      "toNode": "n_nav_social_wrapper",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_socials_cv_modal",
+      "fromNode": "n_nav_socials",
+      "toNode": "n_cv_modal",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_socials_use_client_media_query",
+      "fromNode": "n_nav_socials",
+      "toNode": "n_use_client_media_query",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_socials_nav_socials_openmodal",
+      "fromNode": "n_nav_socials",
+      "toNode": "n_nav_socials_openmodal",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_nav_socials_nav_socials_closemodal",
+      "fromNode": "n_nav_socials",
+      "toNode": "n_nav_socials_closemodal",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_footer_link_footer_link_footerlink",
+      "fromNode": "n_footer_link",
+      "toNode": "n_footer_link_footerlink",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_footer_link_footer",
+      "fromNode": "n_footer_link",
+      "toNode": "n_footer",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_footer_ref_links",
+      "fromNode": "n_footer",
+      "toNode": "n_ref_links",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_footer_cv_modal",
+      "fromNode": "n_footer",
+      "toNode": "n_cv_modal",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_footer_use_client_media_query",
+      "fromNode": "n_footer",
+      "toNode": "n_use_client_media_query",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_videoskeleton_videoskeleton_videoskeleton",
+      "fromNode": "n_videoskeleton",
+      "toNode": "n_videoskeleton_videoskeleton",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_videoskeleton_arcadiavideo",
+      "fromNode": "n_videoskeleton",
+      "toNode": "n_arcadiavideo",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_videocomponent_videocomponent_videocomponent",
+      "fromNode": "n_videocomponent",
+      "toNode": "n_videocomponent_videocomponent",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_items_portfolio",
+      "fromNode": "n_portfolio_items",
+      "toNode": "n_portfolio",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_items_portfolio_items_langchipclass",
+      "fromNode": "n_portfolio_items",
+      "toNode": "n_portfolio_items_langchipclass",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_items_portfolio_items_relativetime",
+      "fromNode": "n_portfolio_items",
+      "toNode": "n_portfolio_items_relativetime",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_items_portfolio_items_clsx",
+      "fromNode": "n_portfolio_items",
+      "toNode": "n_portfolio_items_clsx",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_cv_pdf_renderer_ref_links",
+      "fromNode": "n_cv_pdf_renderer",
+      "toNode": "n_ref_links",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_cv_pdf_renderer_cv_pdf_renderer_cvpdfrenderer",
+      "fromNode": "n_cv_pdf_renderer",
+      "toNode": "n_cv_pdf_renderer_cvpdfrenderer",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_cv_modal_cv_viewer",
+      "fromNode": "n_cv_modal",
+      "toNode": "n_cv_viewer",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_cv_modal_use_escape_key",
+      "fromNode": "n_cv_modal",
+      "toNode": "n_use_escape_key",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_cv_modal_cv_modal_cvmodal",
+      "fromNode": "n_cv_modal",
+      "toNode": "n_cv_modal_cvmodal",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_cv_modal_cv_link",
+      "fromNode": "n_cv_modal",
+      "toNode": "n_cv_link",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_cv_link_use_client_media_query",
+      "fromNode": "n_cv_link",
+      "toNode": "n_use_client_media_query",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_cv_link_cv_link_cvlink",
+      "fromNode": "n_cv_link",
+      "toNode": "n_cv_link_cvlink",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_cv_viewer_ref_links",
+      "fromNode": "n_cv_viewer",
+      "toNode": "n_ref_links",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_portfolio_fetchrepos",
+      "fromNode": "n_portfolio",
+      "toNode": "n_portfolio_fetchrepos",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_ref_links_route",
+      "fromNode": "n_ref_links",
+      "toNode": "n_route",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_use_escape_key_use_escape_key_useescapekey",
+      "fromNode": "n_use_escape_key",
+      "toNode": "n_use_escape_key_useescapekey",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_use_client_media_query_use_client_media_query_useclientmediaquery",
+      "fromNode": "n_use_client_media_query",
+      "toNode": "n_use_client_media_query_useclientmediaquery",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_use_hover_effect_use_hover_effect_usehovereffect",
+      "fromNode": "n_use_hover_effect",
+      "toNode": "n_use_hover_effect_usehovereffect",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_page_estimateheight_page_splitcolumns",
+      "fromNode": "n_page_estimateheight",
+      "toNode": "n_page_splitcolumns",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_route_route_get",
+      "fromNode": "n_route",
+      "toNode": "n_route_get",
+      "label": "contains [EXTRACTED]"
+    }
+  ]
+}

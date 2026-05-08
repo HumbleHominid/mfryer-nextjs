@@ -1,0 +1,4 @@
+# Only include app/ in the graph. Everything else is config
+*
+!app/
+!app/**

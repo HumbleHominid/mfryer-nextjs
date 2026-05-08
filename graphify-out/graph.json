@@ -1,0 +1,1402 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/layout.tsx",
+      "source_location": "L1",
+      "id": "layout",
+      "community": 5
+    },
+    {
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "app/layout.tsx",
+      "source_location": "L60",
+      "id": "layout_rootlayout",
+      "community": 5
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/cv/page.tsx",
+      "source_location": "L1",
+      "id": "page",
+      "community": 0
+    },
+    {
+      "label": "fonts.ts",
+      "file_type": "code",
+      "source_file": "app/ui/fonts.ts",
+      "source_location": "L1",
+      "id": "fonts",
+      "community": 5
+    },
+    {
+      "label": "MFLogo.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/MFLogo.tsx",
+      "source_location": "L1",
+      "id": "mflogo",
+      "community": 8
+    },
+    {
+      "label": "MFLogo()",
+      "file_type": "code",
+      "source_file": "app/ui/MFLogo.tsx",
+      "source_location": "L3",
+      "id": "mflogo_mflogo",
+      "community": 8
+    },
+    {
+      "label": "slide-in-item.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/slide-in-item.tsx",
+      "source_location": "L1",
+      "id": "slide_in_item",
+      "community": 0
+    },
+    {
+      "label": "SlideInItem()",
+      "file_type": "code",
+      "source_file": "app/ui/slide-in-item.tsx",
+      "source_location": "L6",
+      "id": "slide_in_item_slideinitem",
+      "community": 0
+    },
+    {
+      "label": "title.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/home/title.tsx",
+      "source_location": "L1",
+      "id": "title",
+      "community": 2
+    },
+    {
+      "label": "handleMouseMove()",
+      "file_type": "code",
+      "source_file": "app/ui/home/title.tsx",
+      "source_location": "L26",
+      "id": "title_handlemousemove",
+      "community": 2
+    },
+    {
+      "label": "animate()",
+      "file_type": "code",
+      "source_file": "app/ui/home/title.tsx",
+      "source_location": "L39",
+      "id": "title_animate",
+      "community": 2
+    },
+    {
+      "label": "info-slide.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/home/info-slide.tsx",
+      "source_location": "L1",
+      "id": "info_slide",
+      "community": 0
+    },
+    {
+      "label": "InfoSlide()",
+      "file_type": "code",
+      "source_file": "app/ui/home/info-slide.tsx",
+      "source_location": "L9",
+      "id": "info_slide_infoslide",
+      "community": 0
+    },
+    {
+      "label": "nav-social.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-social.tsx",
+      "source_location": "L1",
+      "id": "nav_social",
+      "community": 4
+    },
+    {
+      "label": "NavSocial()",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-social.tsx",
+      "source_location": "L3",
+      "id": "nav_social_navsocial",
+      "community": 4
+    },
+    {
+      "label": "navbar.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/navbar.tsx",
+      "source_location": "L1",
+      "id": "navbar",
+      "community": 1
+    },
+    {
+      "label": "handleClick()",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/navbar.tsx",
+      "source_location": "L18",
+      "id": "navbar_handleclick",
+      "community": 1
+    },
+    {
+      "label": "clsx()",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/navbar.tsx",
+      "source_location": "L58",
+      "id": "navbar_clsx",
+      "community": 1
+    },
+    {
+      "label": "nav-badge.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-badge.tsx",
+      "source_location": "L1",
+      "id": "nav_badge",
+      "community": 1
+    },
+    {
+      "label": "NavBadge()",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-badge.tsx",
+      "source_location": "L7",
+      "id": "nav_badge_navbadge",
+      "community": 1
+    },
+    {
+      "label": "nav-mail.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-mail.tsx",
+      "source_location": "L1",
+      "id": "nav_mail",
+      "community": 1
+    },
+    {
+      "label": "nav-link.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-link.tsx",
+      "source_location": "L1",
+      "id": "nav_link",
+      "community": 1
+    },
+    {
+      "label": "clsx()",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-link.tsx",
+      "source_location": "L27",
+      "id": "nav_link_clsx",
+      "community": 1
+    },
+    {
+      "label": "nav-expansion-widget.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-expansion-widget.tsx",
+      "source_location": "L1",
+      "id": "nav_expansion_widget",
+      "community": 1
+    },
+    {
+      "label": "NavExpansionWidget()",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-expansion-widget.tsx",
+      "source_location": "L3",
+      "id": "nav_expansion_widget_navexpansionwidget",
+      "community": 1
+    },
+    {
+      "label": "nav-socials.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-socials.tsx",
+      "source_location": "L1",
+      "id": "nav_socials",
+      "community": 4
+    },
+    {
+      "label": "openModal()",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-socials.tsx",
+      "source_location": "L24",
+      "id": "nav_socials_openmodal",
+      "community": 4
+    },
+    {
+      "label": "closeModal()",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-socials.tsx",
+      "source_location": "L25",
+      "id": "nav_socials_closemodal",
+      "community": 4
+    },
+    {
+      "label": "nav-social-wrapper.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/navbar/nav-social-wrapper.tsx",
+      "source_location": "L1",
+      "id": "nav_social_wrapper",
+      "community": 4
+    },
+    {
+      "label": "footer-link.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/footer/footer-link.tsx",
+      "source_location": "L1",
+      "id": "footer_link",
+      "community": 5
+    },
+    {
+      "label": "FooterLink()",
+      "file_type": "code",
+      "source_file": "app/ui/footer/footer-link.tsx",
+      "source_location": "L3",
+      "id": "footer_link_footerlink",
+      "community": 5
+    },
+    {
+      "label": "footer.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/footer/footer.tsx",
+      "source_location": "L1",
+      "id": "footer",
+      "community": 5
+    },
+    {
+      "label": "VideoSkeleton.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/video/VideoSkeleton.tsx",
+      "source_location": "L1",
+      "id": "videoskeleton",
+      "community": 0
+    },
+    {
+      "label": "VideoSkeleton()",
+      "file_type": "code",
+      "source_file": "app/ui/video/VideoSkeleton.tsx",
+      "source_location": "L3",
+      "id": "videoskeleton_videoskeleton",
+      "community": 0
+    },
+    {
+      "label": "ArcadiaVideo.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/video/ArcadiaVideo.tsx",
+      "source_location": "L1",
+      "id": "arcadiavideo",
+      "community": 0
+    },
+    {
+      "label": "VideoComponent.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/video/VideoComponent.tsx",
+      "source_location": "L1",
+      "id": "videocomponent",
+      "community": 9
+    },
+    {
+      "label": "VideoComponent()",
+      "file_type": "code",
+      "source_file": "app/ui/video/VideoComponent.tsx",
+      "source_location": "L1",
+      "id": "videocomponent_videocomponent",
+      "community": 9
+    },
+    {
+      "label": "portfolio-items.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/portfolio/portfolio-items.tsx",
+      "source_location": "L1",
+      "id": "portfolio_items",
+      "community": 3
+    },
+    {
+      "label": "langChipClass()",
+      "file_type": "code",
+      "source_file": "app/ui/portfolio/portfolio-items.tsx",
+      "source_location": "L9",
+      "id": "portfolio_items_langchipclass",
+      "community": 3
+    },
+    {
+      "label": "relativeTime()",
+      "file_type": "code",
+      "source_file": "app/ui/portfolio/portfolio-items.tsx",
+      "source_location": "L29",
+      "id": "portfolio_items_relativetime",
+      "community": 3
+    },
+    {
+      "label": "clsx()",
+      "file_type": "code",
+      "source_file": "app/ui/portfolio/portfolio-items.tsx",
+      "source_location": "L93",
+      "id": "portfolio_items_clsx",
+      "community": 3
+    },
+    {
+      "label": "cv-pdf-renderer.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/cv/cv-pdf-renderer.tsx",
+      "source_location": "L1",
+      "id": "cv_pdf_renderer",
+      "community": 6
+    },
+    {
+      "label": "CvPdfRenderer()",
+      "file_type": "code",
+      "source_file": "app/ui/cv/cv-pdf-renderer.tsx",
+      "source_location": "L11",
+      "id": "cv_pdf_renderer_cvpdfrenderer",
+      "community": 6
+    },
+    {
+      "label": "cv-modal.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/cv/cv-modal.tsx",
+      "source_location": "L1",
+      "id": "cv_modal",
+      "community": 7
+    },
+    {
+      "label": "CvModal()",
+      "file_type": "code",
+      "source_file": "app/ui/cv/cv-modal.tsx",
+      "source_location": "L9",
+      "id": "cv_modal_cvmodal",
+      "community": 7
+    },
+    {
+      "label": "cv-link.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/cv/cv-link.tsx",
+      "source_location": "L1",
+      "id": "cv_link",
+      "community": 2
+    },
+    {
+      "label": "CvLink()",
+      "file_type": "code",
+      "source_file": "app/ui/cv/cv-link.tsx",
+      "source_location": "L8",
+      "id": "cv_link_cvlink",
+      "community": 2
+    },
+    {
+      "label": "cv-viewer.tsx",
+      "file_type": "code",
+      "source_file": "app/ui/cv/cv-viewer.tsx",
+      "source_location": "L1",
+      "id": "cv_viewer",
+      "community": 7
+    },
+    {
+      "label": "alternateFloat()",
+      "file_type": "code",
+      "source_file": "app/about/page.tsx",
+      "source_location": "L12",
+      "id": "page_alternatefloat",
+      "community": 0
+    },
+    {
+      "label": "portfolio.ts",
+      "file_type": "code",
+      "source_file": "app/lib/portfolio.ts",
+      "source_location": "L1",
+      "id": "portfolio",
+      "community": 3
+    },
+    {
+      "label": "fetchRepos()",
+      "file_type": "code",
+      "source_file": "app/lib/portfolio.ts",
+      "source_location": "L30",
+      "id": "portfolio_fetchrepos",
+      "community": 3
+    },
+    {
+      "label": "ref-links.ts",
+      "file_type": "code",
+      "source_file": "app/lib/ref-links.ts",
+      "source_location": "L1",
+      "id": "ref_links",
+      "community": 6
+    },
+    {
+      "label": "use-escape-key.ts",
+      "file_type": "code",
+      "source_file": "app/lib/hooks/use-escape-key.ts",
+      "source_location": "L1",
+      "id": "use_escape_key",
+      "community": 7
+    },
+    {
+      "label": "useEscapeKey()",
+      "file_type": "code",
+      "source_file": "app/lib/hooks/use-escape-key.ts",
+      "source_location": "L4",
+      "id": "use_escape_key_useescapekey",
+      "community": 7
+    },
+    {
+      "label": "use-client-media-query.ts",
+      "file_type": "code",
+      "source_file": "app/lib/hooks/use-client-media-query.ts",
+      "source_location": "L1",
+      "id": "use_client_media_query",
+      "community": 2
+    },
+    {
+      "label": "useClientMediaQuery()",
+      "file_type": "code",
+      "source_file": "app/lib/hooks/use-client-media-query.ts",
+      "source_location": "L5",
+      "id": "use_client_media_query_useclientmediaquery",
+      "community": 2
+    },
+    {
+      "label": "use-hover-effect.ts",
+      "file_type": "code",
+      "source_file": "app/lib/hooks/use-hover-effect.ts",
+      "source_location": "L1",
+      "id": "use_hover_effect",
+      "community": 1
+    },
+    {
+      "label": "useHoverEffect()",
+      "file_type": "code",
+      "source_file": "app/lib/hooks/use-hover-effect.ts",
+      "source_location": "L5",
+      "id": "use_hover_effect_usehovereffect",
+      "community": 1
+    },
+    {
+      "label": "estimateHeight()",
+      "file_type": "code",
+      "source_file": "app/portfolio/page.tsx",
+      "source_location": "L10",
+      "id": "page_estimateheight",
+      "community": 0
+    },
+    {
+      "label": "splitColumns()",
+      "file_type": "code",
+      "source_file": "app/portfolio/page.tsx",
+      "source_location": "L18",
+      "id": "page_splitcolumns",
+      "community": 0
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/cv/route.ts",
+      "source_location": "L1",
+      "id": "route",
+      "community": 6
+    },
+    {
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "app/api/cv/route.ts",
+      "source_location": "L5",
+      "id": "route_get",
+      "community": 6
+    },
+    {
+      "label": "CvPage()",
+      "file_type": "code",
+      "source_file": "app/cv/page.tsx",
+      "source_location": "L3",
+      "id": "page_cvpage",
+      "community": 0
+    }
+  ],
+  "links": [
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "layout",
+      "_tgt": "fonts",
+      "source": "layout",
+      "target": "fonts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "layout",
+      "_tgt": "footer",
+      "source": "layout",
+      "target": "footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "layout",
+      "_tgt": "navbar",
+      "source": "layout",
+      "target": "navbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_src": "layout",
+      "_tgt": "layout_rootlayout",
+      "source": "layout",
+      "target": "layout_rootlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/portfolio/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "slide_in_item",
+      "source": "page",
+      "target": "slide_in_item",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/about/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "arcadiavideo",
+      "source": "page",
+      "target": "arcadiavideo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/about/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "ref_links",
+      "source": "page",
+      "target": "ref_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "title",
+      "source": "page",
+      "target": "title",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "info_slide",
+      "source": "page",
+      "target": "info_slide",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/about/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "cv_link",
+      "source": "page",
+      "target": "cv_link",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/about/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "page_alternatefloat",
+      "source": "page",
+      "target": "page_alternatefloat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/portfolio/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "portfolio_items",
+      "source": "page",
+      "target": "portfolio_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/portfolio/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "portfolio",
+      "source": "page",
+      "target": "portfolio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/portfolio/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "page_estimateheight",
+      "source": "page",
+      "target": "page_estimateheight",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/portfolio/page.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "page_splitcolumns",
+      "source": "page",
+      "target": "page_splitcolumns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/cv/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "cv_viewer",
+      "source": "page",
+      "target": "cv_viewer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/cv/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "page_cvpage",
+      "source": "page",
+      "target": "page_cvpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/MFLogo.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "mflogo",
+      "_tgt": "mflogo_mflogo",
+      "source": "mflogo",
+      "target": "mflogo_mflogo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/slide-in-item.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "slide_in_item",
+      "_tgt": "slide_in_item_slideinitem",
+      "source": "slide_in_item",
+      "target": "slide_in_item_slideinitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/home/info-slide.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "info_slide",
+      "_tgt": "slide_in_item",
+      "source": "slide_in_item",
+      "target": "info_slide",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/home/title.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "title",
+      "_tgt": "use_client_media_query",
+      "source": "title",
+      "target": "use_client_media_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/home/title.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "title",
+      "_tgt": "title_handlemousemove",
+      "source": "title",
+      "target": "title_handlemousemove",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/home/title.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "title",
+      "_tgt": "title_animate",
+      "source": "title",
+      "target": "title_animate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/home/info-slide.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "info_slide",
+      "_tgt": "info_slide_infoslide",
+      "source": "info_slide",
+      "target": "info_slide_infoslide",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-social.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "nav_social",
+      "_tgt": "nav_social_navsocial",
+      "source": "nav_social",
+      "target": "nav_social_navsocial",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-socials.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "nav_socials",
+      "_tgt": "nav_social",
+      "source": "nav_social",
+      "target": "nav_socials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/navbar.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "navbar",
+      "_tgt": "nav_badge",
+      "source": "navbar",
+      "target": "nav_badge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/navbar.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "navbar",
+      "_tgt": "nav_mail",
+      "source": "navbar",
+      "target": "nav_mail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/navbar.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "navbar",
+      "_tgt": "use_escape_key",
+      "source": "navbar",
+      "target": "use_escape_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/navbar.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "navbar",
+      "_tgt": "nav_link",
+      "source": "navbar",
+      "target": "nav_link",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/navbar.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "navbar",
+      "_tgt": "nav_expansion_widget",
+      "source": "navbar",
+      "target": "nav_expansion_widget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/navbar.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "navbar",
+      "_tgt": "nav_socials",
+      "source": "navbar",
+      "target": "nav_socials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/navbar.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "navbar",
+      "_tgt": "navbar_handleclick",
+      "source": "navbar",
+      "target": "navbar_handleclick",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/navbar.tsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_src": "navbar",
+      "_tgt": "navbar_clsx",
+      "source": "navbar",
+      "target": "navbar_clsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-badge.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "nav_badge",
+      "_tgt": "use_hover_effect",
+      "source": "nav_badge",
+      "target": "use_hover_effect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-badge.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "nav_badge",
+      "_tgt": "nav_badge_navbadge",
+      "source": "nav_badge",
+      "target": "nav_badge_navbadge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-mail.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "nav_mail",
+      "_tgt": "ref_links",
+      "source": "nav_mail",
+      "target": "ref_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-mail.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "nav_mail",
+      "_tgt": "use_hover_effect",
+      "source": "nav_mail",
+      "target": "use_hover_effect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-link.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "nav_link",
+      "_tgt": "nav_link_clsx",
+      "source": "nav_link",
+      "target": "nav_link_clsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-expansion-widget.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "nav_expansion_widget",
+      "_tgt": "nav_expansion_widget_navexpansionwidget",
+      "source": "nav_expansion_widget",
+      "target": "nav_expansion_widget_navexpansionwidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-socials.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "nav_socials",
+      "_tgt": "ref_links",
+      "source": "nav_socials",
+      "target": "ref_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-socials.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "nav_socials",
+      "_tgt": "nav_social_wrapper",
+      "source": "nav_socials",
+      "target": "nav_social_wrapper",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-socials.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "nav_socials",
+      "_tgt": "cv_modal",
+      "source": "nav_socials",
+      "target": "cv_modal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-socials.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "nav_socials",
+      "_tgt": "use_client_media_query",
+      "source": "nav_socials",
+      "target": "use_client_media_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-socials.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "nav_socials",
+      "_tgt": "nav_socials_openmodal",
+      "source": "nav_socials",
+      "target": "nav_socials_openmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/navbar/nav-socials.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "nav_socials",
+      "_tgt": "nav_socials_closemodal",
+      "source": "nav_socials",
+      "target": "nav_socials_closemodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/footer/footer-link.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "footer_link",
+      "_tgt": "footer_link_footerlink",
+      "source": "footer_link",
+      "target": "footer_link_footerlink",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/footer/footer.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "footer",
+      "_tgt": "footer_link",
+      "source": "footer_link",
+      "target": "footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/footer/footer.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "footer",
+      "_tgt": "ref_links",
+      "source": "footer",
+      "target": "ref_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/footer/footer.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "footer",
+      "_tgt": "cv_modal",
+      "source": "footer",
+      "target": "cv_modal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/footer/footer.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "footer",
+      "_tgt": "use_client_media_query",
+      "source": "footer",
+      "target": "use_client_media_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/video/VideoSkeleton.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "videoskeleton",
+      "_tgt": "videoskeleton_videoskeleton",
+      "source": "videoskeleton",
+      "target": "videoskeleton_videoskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/video/ArcadiaVideo.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "arcadiavideo",
+      "_tgt": "videoskeleton",
+      "source": "videoskeleton",
+      "target": "arcadiavideo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/video/VideoComponent.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "videocomponent",
+      "_tgt": "videocomponent_videocomponent",
+      "source": "videocomponent",
+      "target": "videocomponent_videocomponent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/portfolio/portfolio-items.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "portfolio_items",
+      "_tgt": "portfolio",
+      "source": "portfolio_items",
+      "target": "portfolio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/portfolio/portfolio-items.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "portfolio_items",
+      "_tgt": "portfolio_items_langchipclass",
+      "source": "portfolio_items",
+      "target": "portfolio_items_langchipclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/portfolio/portfolio-items.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "portfolio_items",
+      "_tgt": "portfolio_items_relativetime",
+      "source": "portfolio_items",
+      "target": "portfolio_items_relativetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/portfolio/portfolio-items.tsx",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_src": "portfolio_items",
+      "_tgt": "portfolio_items_clsx",
+      "source": "portfolio_items",
+      "target": "portfolio_items_clsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/cv/cv-pdf-renderer.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "cv_pdf_renderer",
+      "_tgt": "ref_links",
+      "source": "cv_pdf_renderer",
+      "target": "ref_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/cv/cv-pdf-renderer.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "cv_pdf_renderer",
+      "_tgt": "cv_pdf_renderer_cvpdfrenderer",
+      "source": "cv_pdf_renderer",
+      "target": "cv_pdf_renderer_cvpdfrenderer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/cv/cv-modal.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "cv_modal",
+      "_tgt": "cv_viewer",
+      "source": "cv_modal",
+      "target": "cv_viewer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/cv/cv-modal.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "cv_modal",
+      "_tgt": "use_escape_key",
+      "source": "cv_modal",
+      "target": "use_escape_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/cv/cv-modal.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "cv_modal",
+      "_tgt": "cv_modal_cvmodal",
+      "source": "cv_modal",
+      "target": "cv_modal_cvmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/cv/cv-link.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "cv_link",
+      "_tgt": "cv_modal",
+      "source": "cv_modal",
+      "target": "cv_link",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/cv/cv-link.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "cv_link",
+      "_tgt": "use_client_media_query",
+      "source": "cv_link",
+      "target": "use_client_media_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/cv/cv-link.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "cv_link",
+      "_tgt": "cv_link_cvlink",
+      "source": "cv_link",
+      "target": "cv_link_cvlink",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/ui/cv/cv-viewer.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "cv_viewer",
+      "_tgt": "ref_links",
+      "source": "cv_viewer",
+      "target": "ref_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/lib/portfolio.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "portfolio",
+      "_tgt": "portfolio_fetchrepos",
+      "source": "portfolio",
+      "target": "portfolio_fetchrepos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/cv/route.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "route",
+      "_tgt": "ref_links",
+      "source": "ref_links",
+      "target": "route",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/lib/hooks/use-escape-key.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "use_escape_key",
+      "_tgt": "use_escape_key_useescapekey",
+      "source": "use_escape_key",
+      "target": "use_escape_key_useescapekey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/lib/hooks/use-client-media-query.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "use_client_media_query",
+      "_tgt": "use_client_media_query_useclientmediaquery",
+      "source": "use_client_media_query",
+      "target": "use_client_media_query_useclientmediaquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/lib/hooks/use-hover-effect.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "use_hover_effect",
+      "_tgt": "use_hover_effect_usehovereffect",
+      "source": "use_hover_effect",
+      "target": "use_hover_effect_usehovereffect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/portfolio/page.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "page_splitcolumns",
+      "_tgt": "page_estimateheight",
+      "source": "page_estimateheight",
+      "target": "page_splitcolumns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/cv/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "route",
+      "_tgt": "route_get",
+      "source": "route",
+      "target": "route_get",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}
