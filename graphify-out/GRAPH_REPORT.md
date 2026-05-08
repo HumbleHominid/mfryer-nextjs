@@ -1,10 +1,10 @@
 # Graph Report - app  (2026-05-08)
 
 ## Corpus Check
-- Corpus is ~5,683 words - fits in a single context window. You may not need a graph.
+- Corpus is ~5,720 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 63 nodes · 74 edges · 10 communities detected
+- 63 nodes · 74 edges · 9 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
@@ -17,43 +17,39 @@
 
 ## Communities
 
-### Community 0 - "Arcadia Info Page"
+### Community 0 - "Home Page & Info Slides"
 Cohesion: 0.2
 Nodes (2): estimateHeight(), splitColumns()
 
-### Community 1 - "Navigation Components"
+### Community 1 - "Navbar Controls"
 Cohesion: 0.18
 Nodes (0): 
 
-### Community 2 - "Title & CV Link"
+### Community 2 - "CV PDF & Social Icons"
+Cohesion: 0.22
+Nodes (0): 
+
+### Community 3 - "CV Modal & Viewer"
 Cohesion: 0.29
 Nodes (0): 
 
-### Community 3 - "Portfolio Section"
+### Community 4 - "Title & Media Query Hook"
+Cohesion: 0.29
+Nodes (0): 
+
+### Community 5 - "Portfolio Section"
 Cohesion: 0.33
 Nodes (0): 
 
-### Community 4 - "Social Nav & Modal"
+### Community 6 - "Footer & Layout"
 Cohesion: 0.33
 Nodes (0): 
 
-### Community 5 - "App Layout & Footer"
-Cohesion: 0.33
-Nodes (0): 
-
-### Community 6 - "CV PDF & API Route"
-Cohesion: 0.4
-Nodes (0): 
-
-### Community 7 - "CV Modal Viewer"
-Cohesion: 0.4
-Nodes (0): 
-
-### Community 8 - "Logo Component"
+### Community 7 - "Logo Component"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 9 - "Video Component"
+### Community 8 - "Video Component"
 Cohesion: 1.0
 Nodes (0): 
 
