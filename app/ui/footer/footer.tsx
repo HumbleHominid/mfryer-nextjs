@@ -1,17 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Email, GitHub, CV } from "@/app/lib/ref-links";
 import { DocumentIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import FooterLink from "@/app/ui/footer/footer-link";
 import CvModal from "@/app/ui/cv/cv-modal";
-import { useClientMediaQuery } from "@/app/lib/hooks/use-client-media-query";
+import { useCvModal } from "@/app/lib/hooks/use-cv-modal";
 
 export default function Footer() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const isMobile = useClientMediaQuery("(max-width: 640px)");
+  const { isOpen, open, close, isMobile } = useCvModal();
   const footerLinkClass =
     "flex items-center gap-2 hover:underline hover:underline-offset-4 hover:cursor-pointer";
 
@@ -37,10 +35,7 @@ export default function Footer() {
             <span>CV</span>
           </FooterLink>
         ) : (
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className={footerLinkClass}
-          >
+          <button onClick={open} className={footerLinkClass}>
             <DocumentIcon className="w-5" />
             <span>CV</span>
           </button>
@@ -51,7 +46,7 @@ export default function Footer() {
           <span>{Email}</span>
         </FooterLink>
       </footer>
-      <CvModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <CvModal isOpen={isOpen} onClose={close} />
     </>
   );
 }

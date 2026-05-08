@@ -9,6 +9,12 @@ import NavLink, { NavLinkData } from "@/app/ui/navbar/nav-link";
 import NavExpansionWidget from "@/app/ui/navbar/nav-expansion-widget";
 import NavSocials from "@/app/ui/navbar/nav-socials";
 
+const routeLinks: NavLinkData[] = [
+  { href: "/", routeName: "Home", text: "Back to home" },
+  { href: "/about", routeName: "About", text: "More about me" },
+  { href: "/portfolio", routeName: "Portfolio", text: "Other projects" },
+];
+
 export default function Navbar() {
   const [isNavExpanded, setNavExpanded] = useState(false);
   const [showSubNav, setShowSubNav] = useState(false);
@@ -29,12 +35,6 @@ export default function Navbar() {
   }
 
   useEscapeKey(() => handleClick(false), isNavExpanded && !isCvModalOpen);
-
-  const routeLinks: NavLinkData[] = [
-    { href: "/", routeName: "Home", text: "Back to home" },
-    { href: "/about", routeName: "About", text: "More about me" },
-    { href: "/portfolio", routeName: "Portfolio", text: "Other projects" },
-  ];
 
   return (
     <>

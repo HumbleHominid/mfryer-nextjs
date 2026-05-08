@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { GitHub, CV, Bluesky, Email, LinkedIn } from "@/app/lib/ref-links";
 import { DocumentIcon } from "@heroicons/react/24/solid";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
@@ -8,8 +7,14 @@ import Image from "next/image";
 import NavSocial from "@/app/ui/navbar/nav-social";
 import NavSocialWrapper from "@/app/ui/navbar/nav-social-wrapper";
 import CvModal from "@/app/ui/cv/cv-modal";
-import { useClientMediaQuery } from "@/app/lib/hooks/use-client-media-query";
+import { useCvModal } from "@/app/lib/hooks/use-cv-modal";
 import clsx from "clsx";
+
+const socials = [
+  { id: "linkedin", href: LinkedIn, src: "/icons/linked-in.png", alt: "LinkedIn", title: "LinkedIn", width: 635, height: 540 },
+  { id: "github",   href: GitHub,   src: "/icons/github-mark-dark.svg", alt: "GitHub", title: "GitHub", width: 98, height: 96 },
+  { id: "bluesky",  href: Bluesky,  src: "/icons/bluesky_icon.svg", alt: "Bluesky", title: "Bluesky", width: 600, height: 530 },
+];
 
 export default function NavSocials({
   isNavExpanded,
@@ -20,11 +25,8 @@ export default function NavSocials({
   collapseCallback?: () => void;
   onCvModalChange?: (isOpen: boolean) => void;
 }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => { setIsModalOpen(true); onCvModalChange?.(true); };
-  const closeModal = () => { setIsModalOpen(false); onCvModalChange?.(false); };
-  const isMobile = useClientMediaQuery("(max-width: 640px)");
-  let count = 0;
+  const { isOpen, open, close, isMobile } = useCvModal(onCvModalChange);
+
   return (
     <>
       <div
@@ -34,50 +36,26 @@ export default function NavSocials({
         )}
       >
         {/* Front decorator */}
-        <NavSocialWrapper visible={isNavExpanded} delayFactor={++count}>
+        <NavSocialWrapper visible={isNavExpanded} delayFactor={1}>
           <div className="h-1 w-16 rounded-sm bg-purple-800 sm:w-32" />
         </NavSocialWrapper>
-        {/* LinkedIn */}
-        <NavSocialWrapper visible={isNavExpanded} delayFactor={++count}>
-          <NavSocial href={LinkedIn}>
-            <Image
-              src="/icons/linked-in.png"
-              alt="LinkedIn Icon"
-              title="LinkedIn"
-              width={635}
-              height={540}
-              className="h-auto w-8 md:w-10"
-            />
-          </NavSocial>
-        </NavSocialWrapper>
-        {/* GitHub */}
-        <NavSocialWrapper visible={isNavExpanded} delayFactor={++count}>
-          <NavSocial href={GitHub}>
-            <Image
-              src="/icons/github-mark-dark.svg"
-              alt="GitHub Icon"
-              title="GitHub"
-              width={98}
-              height={96}
-              className="h-auto w-8 md:w-10"
-            />
-          </NavSocial>
-        </NavSocialWrapper>
-        {/* Bluesky */}
-        <NavSocialWrapper visible={isNavExpanded} delayFactor={++count}>
-          <NavSocial href={Bluesky}>
-            <Image
-              src="/icons/bluesky_icon.svg"
-              alt="Bluesky Icon"
-              title="Bluesky"
-              width={600}
-              height={530}
-              className="h-auto w-8 md:w-10"
-            />
-          </NavSocial>
-        </NavSocialWrapper>
+        {/* Social icons */}
+        {socials.map(({ id, href, src, alt, title, width, height }, index) => (
+          <NavSocialWrapper key={id} visible={isNavExpanded} delayFactor={index + 2}>
+            <NavSocial href={href}>
+              <Image
+                src={src}
+                alt={`${alt} Icon`}
+                title={title}
+                width={width}
+                height={height}
+                className="h-auto w-8 md:w-10"
+              />
+            </NavSocial>
+          </NavSocialWrapper>
+        ))}
         {/* CV */}
-        <NavSocialWrapper visible={isNavExpanded} delayFactor={++count}>
+        <NavSocialWrapper visible={isNavExpanded} delayFactor={socials.length + 2}>
           {isMobile ? (
             <div onClick={collapseCallback}>
               <NavSocial href={CV} target="">
@@ -92,7 +70,7 @@ export default function NavSocials({
             </div>
           ) : (
             <button
-              onClick={openModal}
+              onClick={open}
               className="hover:cursor-pointer hover:drop-shadow-md hover:filter"
               aria-label="View CV"
             >
@@ -109,7 +87,7 @@ export default function NavSocials({
           )}
         </NavSocialWrapper>
         {/* Email */}
-        <NavSocialWrapper visible={isNavExpanded} delayFactor={++count}>
+        <NavSocialWrapper visible={isNavExpanded} delayFactor={socials.length + 3}>
           <NavSocial href={`mailto:${Email}`}>
             <EnvelopeIcon
               title="Hire me!"
@@ -120,7 +98,7 @@ export default function NavSocials({
           </NavSocial>
         </NavSocialWrapper>
       </div>
-      <CvModal isOpen={isModalOpen} onClose={closeModal} />
+      <CvModal isOpen={isOpen} onClose={close} />
     </>
   );
 }

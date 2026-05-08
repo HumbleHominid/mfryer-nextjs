@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import CvModal from "@/app/ui/cv/cv-modal";
-import { useClientMediaQuery } from "@/app/lib/hooks/use-client-media-query";
+import { useCvModal } from "@/app/lib/hooks/use-cv-modal";
 
 export default function CvLink() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const isMobile = useClientMediaQuery("(max-width: 640px)");
+  const { isOpen, open, close, isMobile } = useCvModal();
 
   if (isMobile) {
     return (
@@ -21,12 +19,12 @@ export default function CvLink() {
     <>
       <button
         className="hover:cursor-pointer hover:underline hover:underline-offset-4"
-        onClick={() => setIsModalOpen(true)}
+        onClick={open}
         aria-label="View CV"
       >
         CV
       </button>
-      <CvModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <CvModal isOpen={isOpen} onClose={close} />
     </>
   );
 }
