@@ -19,8 +19,9 @@ type GitHubRepo = {
 };
 
 const favoriteRepos = [
-  "urban-mobility-risk-analysis",
+  "toi-triage",
   "battleship_rl",
+  "urban-mobility-risk-analysis",
   "arcadia-website",
   "mfryer-nextjs",
   // "entity-component-system",
