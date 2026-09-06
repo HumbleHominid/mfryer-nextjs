@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
@@ -8,19 +8,19 @@ import { CV_EMBED } from "@/app/lib/ref-links";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
+// The canvas needs a concrete color, so resolve the CSS variable client-side.
+// Static after mount, so it never notifies.
+const subscribeNever = () => () => {};
+const readBgColor = () =>
+  getComputedStyle(document.documentElement)
+    .getPropertyValue("--background")
+    .trim();
+
 export default function CvPdfRenderer() {
   const [numPages, setNumPages] = useState<number | null>(null);
   const [containerWidth, setContainerWidth] = useState<number>(0);
-  const [bgColor, setBgColor] = useState<string>("");
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setBgColor(
-      getComputedStyle(document.documentElement)
-        .getPropertyValue("--background")
-        .trim(),
-    );
-  }, []);
+  const bgColor = useSyncExternalStore(subscribeNever, readBgColor, () => "");
 
   useEffect(() => {
     if (!containerRef.current) return;

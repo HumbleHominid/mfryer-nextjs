@@ -13,31 +13,37 @@ export default function CvModal({
   isOpen: boolean;
   onClose: () => void;
 }) {
-  const [mounted, setMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [hasEntered, setHasEntered] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // Derived, so closing starts the exit transition in the same render.
+  const isAnimating = isOpen && hasEntered;
 
   useEffect(() => {
     if (isOpen) {
-      setIsVisible(true);
-      const raf = requestAnimationFrame(() =>
-        requestAnimationFrame(() => setIsAnimating(true)),
-      );
-      return () => cancelAnimationFrame(raf);
+      // Mount hidden one frame before animating in, so the transition has a
+      // painted opacity-0 state to start from.
+      let animateRaf = 0;
+      const mountRaf = requestAnimationFrame(() => {
+        setIsVisible(true);
+        animateRaf = requestAnimationFrame(() => setHasEntered(true));
+      });
+      return () => {
+        cancelAnimationFrame(mountRaf);
+        cancelAnimationFrame(animateRaf);
+      };
     } else {
-      setIsAnimating(false);
-      const timer = setTimeout(() => setIsVisible(false), 200);
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+        setHasEntered(false);
+      }, 200);
       return () => clearTimeout(timer);
     }
   }, [isOpen]);
 
   useEscapeKey(onClose, isOpen);
 
-  if (!mounted || !isVisible) return null;
+  if (!isVisible) return null;
 
   return createPortal(
     <div

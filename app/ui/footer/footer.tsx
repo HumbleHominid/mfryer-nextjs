@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Email, GitHub, CV } from "@/app/lib/ref-links";
 import { DocumentIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import FooterLink from "@/app/ui/footer/footer-link";

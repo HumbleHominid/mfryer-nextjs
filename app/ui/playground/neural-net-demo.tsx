@@ -119,31 +119,34 @@ export default function NeuralNetDemo() {
     syncPredictions();
   }, [numLayers, nodesPerLayer, syncPredictions]);
 
-  const runFrame = useCallback(() => {
-    if (!isTrainingRef.current) return;
-    const { inputs, targets } = GATE_DATA[gate];
-    let loss = 0;
-    for (let i = 0; i < STEPS_PER_FRAME; i++) {
-      loss = networkRef.current.trainStep(inputs, targets, LEARNING_RATE);
-      epochRef.current++;
-      if (epochRef.current >= MAX_EPOCHS || loss < LOSS_THRESHOLD) {
-        isTrainingRef.current = false;
-        setIsTraining(false);
-        break;
+  const runFrame = useCallback(
+    function step() {
+      if (!isTrainingRef.current) return;
+      const { inputs, targets } = GATE_DATA[gate];
+      let loss = 0;
+      for (let i = 0; i < STEPS_PER_FRAME; i++) {
+        loss = networkRef.current.trainStep(inputs, targets, LEARNING_RATE);
+        epochRef.current++;
+        if (epochRef.current >= MAX_EPOCHS || loss < LOSS_THRESHOLD) {
+          isTrainingRef.current = false;
+          setIsTraining(false);
+          break;
+        }
       }
-    }
 
-    lossHistoryRef.current = [...lossHistoryRef.current, loss].slice(-200);
-    setEpoch(epochRef.current);
-    setLossHistory([...lossHistoryRef.current]);
+      lossHistoryRef.current = [...lossHistoryRef.current, loss].slice(-200);
+      setEpoch(epochRef.current);
+      setLossHistory([...lossHistoryRef.current]);
 
-    const preds = inputs.map((inp) => networkRef.current.predict(inp));
-    setPredictions(preds);
+      const preds = inputs.map((inp) => networkRef.current.predict(inp));
+      setPredictions(preds);
 
-    if (isTrainingRef.current) {
-      rafRef.current = requestAnimationFrame(runFrame);
-    }
-  }, [gate]);
+      if (isTrainingRef.current) {
+        rafRef.current = requestAnimationFrame(step);
+      }
+    },
+    [gate],
+  );
 
   useEffect(() => {
     if (isTraining) {
