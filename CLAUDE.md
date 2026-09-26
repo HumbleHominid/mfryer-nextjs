@@ -1,12 +1,7 @@
 ## Core Principles
 
 - Never use emojis.
-
-## Commit Authorship
-
-When committing code changes:
-- Never add Claude as a commit author.
-- Always commit as using the default git settings
+- Do not use emdashes.
 
 ## Documentation Style
 

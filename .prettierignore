@@ -2,3 +2,4 @@ node_modules
 .next
 graphify-out
 app/graphify-out
+.claude

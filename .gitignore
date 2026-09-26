@@ -43,8 +43,8 @@ next-env.d.ts
 .vscode
 
 # Graphify
-graphify-out/manifest.json
-graphify-out/cost.json
+graphify-out/
+.graphifyignore
 
 # Claude
-.claude/settings.local.json
+claude.md
