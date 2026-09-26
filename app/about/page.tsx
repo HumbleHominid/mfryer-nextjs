@@ -1,16 +1,12 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import clsx from "clsx";
 import { YouTube, GitHub } from "@/app/lib/ref-links";
 import ArcadiaVideo from "@/app/ui/video/ArcadiaVideo";
 import CvLink from "@/app/ui/cv/cv-link";
 export const metadata: Metadata = {
   title: "About",
 };
-
-const alternateFloat = (i: number) =>
-  i % 2 === 0 ? "float-left sm:mr-4" : "float-right sm:ml-4";
 
 export default function Page() {
   return (
@@ -70,10 +66,7 @@ export default function Page() {
           alt="Diplomas"
           width={816}
           height={459}
-          className={clsx(
-            "mb-4 h-auto w-full rounded-sm shadow-xl sm:mb-2 sm:w-7/12 md:w-1/2",
-            alternateFloat(0),
-          )}
+          className="float-left mb-4 h-auto w-full rounded-sm shadow-xl sm:mr-4 sm:mb-2 sm:w-7/12 md:w-1/2"
         />
         <p className="sm:text-justify">
           During my schooling at Montana Tech, I served as the Secretary to my
@@ -131,10 +124,7 @@ export default function Page() {
           alt="Fish"
           width={1024}
           height={771}
-          className={clsx(
-            "mb-4 h-auto w-full rounded-sm shadow-xl sm:mb-2 sm:w-7/12 md:w-1/2 lg:w-7/12",
-            alternateFloat(2),
-          )}
+          className="float-right mb-4 h-auto w-full rounded-sm shadow-xl sm:mb-2 sm:ml-4 sm:w-7/12 md:w-1/2 lg:w-7/12"
         />
         <p className="sm:text-justify">
           Not all my hobbies are related to the computer. I also love getting

@@ -49,6 +49,7 @@ export default function NavSocials({
                 title={title}
                 width={width}
                 height={height}
+                sizes="(min-width: 768px) 40px, 32px"
                 className="h-auto w-8 md:w-10"
               />
             </NavSocial>

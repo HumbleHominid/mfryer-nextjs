@@ -1,5 +1,7 @@
+"use client";
+
 import VideoSkeleton from "@/app/ui/video/VideoSkeleton";
-import { Suspense } from "react";
+import { useState } from "react";
 
 export default function ArcadiaVideo({
   width,
@@ -8,6 +10,7 @@ export default function ArcadiaVideo({
   width: number;
   height: number;
 }) {
+  const [isLoaded, setIsLoaded] = useState(false);
   const aspectRatio = (9 / 16) * 100;
   return (
     <div
@@ -15,24 +18,25 @@ export default function ArcadiaVideo({
       style={{ paddingBottom: `${aspectRatio}%` }}
       className="relative h-0 shadow-lg"
     >
-      <Suspense
-        fallback={
+      {!isLoaded && (
+        <div className="absolute left-0 top-0 h-full w-full">
           <VideoSkeleton
             imgSrc="/arcadia_thumbnail.png"
             alt="Arcadia Thumbnail"
             width={width}
             height={height}
           />
-        }
-      >
-        <iframe
-          width={width}
-          height={height}
-          src="https://www.youtube.com/embed/46N37f4qUBo"
-          allowFullScreen
-          className="absolute left-0 top-0 h-full w-full"
-        />
-      </Suspense>
+        </div>
+      )}
+      <iframe
+        width={width}
+        height={height}
+        src="https://www.youtube.com/embed/46N37f4qUBo"
+        title="Arcadia SMP video"
+        allowFullScreen
+        onLoad={() => setIsLoaded(true)}
+        className="absolute left-0 top-0 h-full w-full"
+      />
     </div>
   );
 }

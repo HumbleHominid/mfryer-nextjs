@@ -29,14 +29,16 @@ const favoriteRepos = [
 ];
 
 async function fetchRepos(): Promise<Repo[]> {
-  const res = await fetch("https://api.github.com/users/HumbleHominid/repos");
+  const res = await fetch(
+    "https://api.github.com/users/HumbleHominid/repos?per_page=100",
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
 
-  const data: GitHubRepo[] = await res.json();
-  const repos: Repo[] = data
+  const data: unknown = await res.json();
+  const repos: Repo[] = (Array.isArray(data) ? (data as GitHubRepo[]) : [])
     .filter((repo) => !repo.private)
     .map((repo) => ({
       title: repo.name,

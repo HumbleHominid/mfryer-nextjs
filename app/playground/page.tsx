@@ -19,7 +19,7 @@ export default function PlaygroundPage() {
           Neural networks as universal approximators
         </h2>
         <p className="text-slate-700 sm:text-justify">
-          Neural networks with can approximate any continuous function to
+          Neural networks can approximate any continuous function to
           arbitrary precision in just one layer and enough neurons. This sounds
           like a superpower but it comes with a catch: the Universal
           Approximation Theorem says nothing about <em>how efficiently</em> a

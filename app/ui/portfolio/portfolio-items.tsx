@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import Link from "next/link";
 import { LinkIcon, StarIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
@@ -45,10 +45,15 @@ export default function PortfolioItem({ data }: { data: Repo }) {
 
   useEffect(() => {
     const el = descRef.current;
-    if (el) setIsOverflowing(el.scrollHeight > el.clientHeight);
+    if (!el) return;
+    const checkOverflow = () =>
+      setIsOverflowing(el.scrollHeight > el.clientHeight);
+    checkOverflow();
+    window.addEventListener("resize", checkOverflow);
+    return () => window.removeEventListener("resize", checkOverflow);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = titleRef.current;
     if (!el) return;
     const container = el.parentElement;

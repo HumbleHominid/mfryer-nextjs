@@ -3,7 +3,6 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { XMarkIcon, ArrowDownTrayIcon } from "@heroicons/react/24/outline";
-import { CV_PDF } from "@/app/lib/ref-links";
 import clsx from "clsx";
 
 const CvPdfRenderer = dynamic(() => import("@/app/ui/cv/cv-pdf-renderer"), {
@@ -39,7 +38,7 @@ export default function CvViewer({
         ) : null}
         <div className="flex items-center gap-3 place-self-end">
           <a
-            href={CV_PDF}
+            href="/api/cv?download=1"
             download="Michael_Fryer_CV.pdf"
             className="rounded p-1.5 hover:cursor-pointer hover:bg-yellow-50 hover:shadow"
             aria-label="Download CV"

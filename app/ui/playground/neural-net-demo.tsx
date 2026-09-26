@@ -94,9 +94,10 @@ export default function NeuralNetDemo() {
     0.5, 0.5, 0.5, 0.5,
   ]);
 
-  const networkRef = useRef<NeuralNetwork>(
-    buildNetwork(numLayers, nodesPerLayer),
-  );
+  const networkRef = useRef<NeuralNetwork | null>(null);
+  if (networkRef.current === null) {
+    networkRef.current = buildNetwork(numLayers, nodesPerLayer);
+  }
   const rafRef = useRef<number | null>(null);
   const epochRef = useRef(0);
   const lossHistoryRef = useRef<number[]>([]);
@@ -104,7 +105,7 @@ export default function NeuralNetDemo() {
 
   const syncPredictions = useCallback(() => {
     const { inputs } = GATE_DATA[gate];
-    setPredictions(inputs.map((inp) => networkRef.current.predict(inp)));
+    setPredictions(inputs.map((inp) => networkRef.current!.predict(inp)));
   }, [gate]);
 
   const resetNetwork = useCallback(() => {
@@ -125,7 +126,7 @@ export default function NeuralNetDemo() {
       const { inputs, targets } = GATE_DATA[gate];
       let loss = 0;
       for (let i = 0; i < STEPS_PER_FRAME; i++) {
-        loss = networkRef.current.trainStep(inputs, targets, LEARNING_RATE);
+        loss = networkRef.current!.trainStep(inputs, targets, LEARNING_RATE);
         epochRef.current++;
         if (epochRef.current >= MAX_EPOCHS || loss < LOSS_THRESHOLD) {
           isTrainingRef.current = false;
@@ -138,7 +139,7 @@ export default function NeuralNetDemo() {
       setEpoch(epochRef.current);
       setLossHistory([...lossHistoryRef.current]);
 
-      const preds = inputs.map((inp) => networkRef.current.predict(inp));
+      const preds = inputs.map((inp) => networkRef.current!.predict(inp));
       setPredictions(preds);
 
       if (isTrainingRef.current) {
@@ -194,12 +195,19 @@ export default function NeuralNetDemo() {
         <div className="flex items-end justify-between gap-4 md:contents">
           {/* Gate selector */}
           <div className="flex flex-col gap-1 md:order-1">
-            <label className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+            <label
+              htmlFor="gate-select"
+              className="text-xs font-semibold uppercase tracking-widest text-slate-500"
+            >
               Logic Gate
             </label>
             <select
+              id="gate-select"
               value={gate}
-              onChange={(e) => setGate(e.target.value as Gate)}
+              onChange={(e) => {
+                setGate(e.target.value as Gate);
+                resetNetwork();
+              }}
               disabled={isTraining}
               className="rounded border border-slate-300 bg-white px-3 py-1.5 font-mono text-sm focus:outline-none disabled:opacity-50"
             >
@@ -242,10 +250,14 @@ export default function NeuralNetDemo() {
         <div className="flex items-end gap-6 md:contents">
           {/* Hidden layers slider */}
           <div className="flex w-1/2 flex-col gap-1 md:order-2 md:w-36">
-            <label className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+            <label
+              htmlFor="hidden-layers-range"
+              className="text-xs font-semibold uppercase tracking-widest text-slate-500"
+            >
               Hidden Layers: {numLayers}
             </label>
             <input
+              id="hidden-layers-range"
               type="range"
               min={0}
               max={2}
@@ -257,10 +269,14 @@ export default function NeuralNetDemo() {
           </div>
           {/* Nodes per layer slider */}
           <div className="flex w-1/2 flex-col gap-1 md:order-3 md:w-36">
-            <label className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+            <label
+              htmlFor="nodes-per-layer-range"
+              className="text-xs font-semibold uppercase tracking-widest text-slate-500"
+            >
               Nodes / Layer: {nodesPerLayer}
             </label>
             <input
+              id="nodes-per-layer-range"
               type="range"
               min={1}
               max={5}

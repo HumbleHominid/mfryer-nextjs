@@ -40,7 +40,11 @@ export default function Footer() {
           </button>
         )}
         {/* Email */}
-        <FooterLink href={`mailto:${Email}`} className={footerLinkClass}>
+        <FooterLink
+          href={`mailto:${Email}`}
+          className={footerLinkClass}
+          target="_self"
+        >
           <EnvelopeIcon className="w-5" />
           <span>{Email}</span>
         </FooterLink>

@@ -1,6 +1,5 @@
 import { Metadata } from "next";
-import PortfolioItem from "@/app/ui/portfolio/portfolio-items";
-import SlideInItem from "@/app/ui/slide-in-item";
+import PortfolioLayout from "@/app/ui/portfolio/portfolio-layout";
 import { getRepos, type Repo } from "@/app/lib/portfolio";
 
 export const metadata: Metadata = {
@@ -43,32 +42,7 @@ export default async function Page() {
     <main className="flex w-full flex-col">
       <h1 className="mb-10 text-8xl font-thin md:text-9xl">Portfolio</h1>
 
-      {/* Mobile: single full-width column */}
-      <div className="flex flex-col gap-6 md:hidden">
-        {repos.map((item) => (
-          <SlideInItem key={item.title}>
-            <PortfolioItem data={item} />
-          </SlideInItem>
-        ))}
-      </div>
-
-      {/* md+: two height-balanced flex columns */}
-      <div className="hidden gap-6 md:flex">
-        <div className="flex min-w-0 flex-1 flex-col gap-6">
-          {leftCol.map((item) => (
-            <SlideInItem key={item.title}>
-              <PortfolioItem data={item} />
-            </SlideInItem>
-          ))}
-        </div>
-        <div className="flex min-w-0 flex-1 flex-col gap-6">
-          {rightCol.map((item) => (
-            <SlideInItem key={item.title}>
-              <PortfolioItem data={item} />
-            </SlideInItem>
-          ))}
-        </div>
-      </div>
+      <PortfolioLayout repos={repos} leftCol={leftCol} rightCol={rightCol} />
     </main>
   );
 }

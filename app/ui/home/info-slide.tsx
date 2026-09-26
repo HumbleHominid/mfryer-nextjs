@@ -30,7 +30,7 @@ export default function InfoSlide({
         alt={alt}
         width={width}
         height={height}
-        loading="eager"
+        sizes="(max-width: 640px) 100vw, 50vw"
         className={`${SIDE_CLASSES[side]} ${imageClassName}`}
       />
       {children}

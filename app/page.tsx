@@ -205,7 +205,7 @@ export default function Home() {
             <Link
               href={`mailto:${Email}`}
               rel="noopener noreferrer"
-              target="_blank"
+              target="_self"
               title="Hire me!"
             >
               <span className="font-extrabold text-indigo-800 hover:underline hover:underline-offset-4">

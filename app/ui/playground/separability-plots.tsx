@@ -60,6 +60,7 @@ function GatePlotSvg({ gate, id }: { gate: GatePlot; id: string }) {
       <svg
         viewBox="0 0 160 155"
         className="w-32 md:w-40"
+        role="img"
         aria-label={`${gate.name} input space`}
       >
         <defs>
