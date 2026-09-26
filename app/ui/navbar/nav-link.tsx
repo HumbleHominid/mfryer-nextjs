@@ -1,6 +1,5 @@
 import Link from "next/link";
 import clsx from "clsx";
-import { useState } from "react";
 
 export type NavLinkData = {
   href: string;
@@ -19,25 +18,20 @@ export default function NavLink({
   isNavExpanded: boolean;
   routeClickCallback: () => void;
 }) {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <div
       style={{ transitionDelay: `${200 * (index + 1)}ms` }}
       className={clsx(
-        "flex items-center gap-4 py-2 transition-all duration-1000 ease-in-out",
+        "flex items-center gap-4 py-2 transition-all duration-1000 ease-in-out has-[a:hover]:gap-6",
         isNavExpanded
           ? "translate-x-0 opacity-100"
           : "translate-x-full opacity-0",
-        isHovered ? "gap-6" : "gap-4",
       )}
     >
       {/* Route Name */}
       <Link
         href={data.href}
-        onClick={() => routeClickCallback()}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onClick={routeClickCallback}
         className="overflow-visible"
       >
         <span className="text-3xl font-extrabold text-purple-950 filter transition-colors hover:text-white hover:drop-shadow-md md:text-5xl">

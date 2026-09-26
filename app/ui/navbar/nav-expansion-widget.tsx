@@ -13,7 +13,7 @@ export default function NavExpansionWidget({
       aria-label="Toggle navigation menu"
       aria-expanded={isNavExpanded}
       className="cursor-pointer border-0 bg-transparent px-2 py-3"
-      onClick={() => clickCallback()}
+      onClick={clickCallback}
     >
       <div className="h-4 w-16 overflow-hidden">
         <div

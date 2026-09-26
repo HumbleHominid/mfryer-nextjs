@@ -10,21 +10,24 @@ export default function SlideInItem({
   children: React.ReactNode;
   className?: string;
 }) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [show, doShow] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
-      const topPos = (el: HTMLElement) => el.getBoundingClientRect().top;
-      const divPos = ref.current ? topPos(ref.current) : 0;
+    const el = ref.current;
+    if (!el) return;
 
-      if (divPos < 0.95 * window.innerHeight) doShow(true);
-    };
-
-    onScroll();
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          doShow(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "0px 0px -5% 0px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   return (

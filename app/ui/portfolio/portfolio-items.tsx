@@ -26,15 +26,15 @@ function langChipClass(lang: string | null): string {
   }
 }
 
+const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
+
 function relativeTime(date: Date | string): string {
   const d = date instanceof Date ? date : new Date(date);
   const days = Math.floor((Date.now() - d.getTime()) / 86_400_000);
-  if (days === 0) return "today";
-  if (days === 1) return "yesterday";
-  if (days < 30) return `${days}d ago`;
+  if (days < 30) return rtf.format(-days, "day");
   const months = Math.floor(days / 30);
-  if (months < 12) return `${months}mo ago`;
-  return `${Math.floor(months / 12)}y ago`;
+  if (months < 12) return rtf.format(-months, "month");
+  return rtf.format(-Math.floor(months / 12), "year");
 }
 
 export default function PortfolioItem({ data }: { data: Repo }) {
